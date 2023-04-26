@@ -1,0 +1,22 @@
+
+/*body 글꼴을 변경*/
+ body{
+    font-family: "NanumGothic";
+    font-size: 10px;
+    color: darkblue;
+    background-color: whitesmoke;
+}
+/*동일한 이름을 가진 클래스들끼리 선택해서 지정
+.클래스명{}
+*/
+.female{
+    color: red;
+}
+.male{
+    color: springgreen;
+}
+ul{
+    /*리스트 앞의 점 없애기*/
+    list-style: none;
+}
+-->

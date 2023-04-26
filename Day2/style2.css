@@ -1,0 +1,28 @@
+
+
+
+
+/*동시 선택학
+태그 클래스이름,아이디이름
+li.클래스이름
+*/
+
+li.key{
+    color: blue;
+}
+
+/*내부 선택하기*/
+ul li{
+    font-style: italic;
+}
+
+/*li 중에 마우스를 올리면 배경색 보여주기*/
+li:hover{
+    background-color: aquamarine;
+}
+-->
+
+
+
+
+

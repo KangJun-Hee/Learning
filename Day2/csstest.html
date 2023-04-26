@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>셀렉터 기본</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .main{
+            color: deeppink;
+        }
+        .sub{
+            color: blue;
+        }
+        #useless{
+            color: red;
+            font-size: 80px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>개발자 취업</h1>
+
+    <h2>회사가 원하는 것?</h2>
+    <ul>
+      <li class="main">기술력 - 얼마나 준비되었는지?</li>
+      <li>성장성 - 더욱 발전 가능한지?</li>
+      <li class="sub">팀워크 - 함께 일하기 좋은 사람인지?</li>
+    </ul>
+
+    <h2>준비해야 할 것?</h2>
+    <ul>
+      <li>자소서 - 나를 회사에 파는 광고. 좋은 광고란?</li>
+      <li class="main">포트폴리오 - 직접 만든 무언가. 실제 물건은 어떤지?</li>
+      <li class="sub">
+        코딩 테스트 - 직접적 실력 검증. 온라인 및 화이트 보드 테스트
+      </li>
+    </ul>
+
+    <h2>자격증도 준비해야 할까요?</h2>
+    <p>
+      굳이 필요 <span id="useless">X</span>, 회사에서 직접 명시한 게 아니라면.
+    </p>
+  </body>
+</html>
