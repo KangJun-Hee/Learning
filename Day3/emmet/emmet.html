@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에밋</title>
+</head>
+<body>
+    <!--태그랑 css 문법을 자동완성 시켜주는 기능
+    명령어를 작성, tap
+
+
+    자식요소 > 태그 안에 태그를 집어 넣을 때 사용
+    div 태그 자동완성은 div만 쳐도 됨.
+-->
+
+<div></div>
+
+<!-- div > p 탭-->
+<div>
+    <p></p>
+</div>
+
+<!-- div > p > span 탭-->
+<div>
+    <p><span></span></p>
+</div>
+
+<!--li 여러개 or 태그 여러개 만들고 싶을 때. *숫자
+ex) ul>ul*5-->
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+
+
+<!-- 자매 + 
+div > p + span -->
+<div>
+    <p></p>
+    <span></span>
+
+<!-- 올라가기 ^
+ex) div>ol>li^p+a-->
+<div>
+    <ol>
+        <li></li>
+    </ol>
+    <p></p>
+    <a href=""></a>
+</div>
+<!-- 올라가기 ^^
+ex) div>ol>li^^div-->
+<div>
+    <ol>
+        <li></li>
+    </ol>
+</div>
+<div></div>
+
+<!-- .클래스이름 탭-->
+<div class="class"></div>
+<div class="orange"></div>
+
+<ul>
+    <li class="class"></li>
+</ul>
+
+
+
+
+
+<!-- $@숫자*
+*는 반복하기
+
+ex:ul>li.item$@#*5-->
+<ul>
+    <li class="item1" id=""></li>
+    <li class="item2" id=""></li>
+    <li class="item3" id=""></li>
+    <li class="item4" id=""></li>
+    <li class="item5" id=""></li>
+</ul>
+
+
+
+<!-- 아이디 값으로 선언 #
+span#hello-->
+<span id="hello"></span>
+<form action="" id="search"></form>
+</div>
+
+
+<!-- 클래스이름이 여러개
+div.class.class2.class3-->
+<div class="class class2 class3"></div>
+
+
+
+
+<!-- 속성 태그명[키워드=값,] 
+p[title="hello wolrd"]
+td[rowspan=2 colspan=3 title]-->
+<p title="hello wolrd"></p>
+<td rowspan="2" colspan="3" title=""></td>
+
+<!-- 텍스트 태그명{값}
+.fruit{apple}
+a{bced}-->
+<div class="fruit">apple</div>
+<a href="">bced</a>
+
+
+
+<!-- table
+table>.row>.col-->
+<table>
+    <tr class="row">
+        <td class="col"></td>
+    </tr>
+</table>
+<!--table>.row$*2>.col$-->
+<table>
+    <tr class="row1">
+        <td class="col1"></td>
+    </tr>
+    <tr class="row2">
+        <td class="col2"></td>
+    </tr>
+</table>
+
+
+<!-- 실습 + 예제 
+div.container>ul.list>li.list-item*5>a{list$}-->
+<div class="container">
+    <ul class="list">
+        <li class="list-item"><a href="">list1</a></li>
+        <li class="list-item"><a href="">list2</a></li>
+        <li class="list-item"><a href="">list3</a></li>
+        <li class="list-item"><a href="">list4</a></li>
+        <li class="list-item"><a href="">list5</a></li>
+    </ul>
+</div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+.container{
+    height: 500px;
+    width: 600px;
+    background-color:  yellow;
+    border: 3px solid black;
+    display: flex;
+    
+    /*주축설정 (왼쪽오른쪽)*/
+    justify-content: center;
+    
+    
+    /*교차축 설정 (위아래)*/
+    align-items: center;
+
+    /* direction row 기본설정
+    오른쪽왼쪽 주축
+    위아래     교차축
+    
+    column    기본축*/
+    flex-direction: row;
+    /*데이터 개수가 많아도 한 줄로 정리 nowrap
+    데이터의 개수가 많으면 여러개줄 자동정렬 wrap*/
+    flex-wrap: wrap;   
+}
+.item{
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    border: 3px solid black;
+    margin: 10px;
+    padding: 5px;
+}
