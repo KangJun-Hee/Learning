@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>폼과 자바스크립트</title>
+	<link rel="stylesheet" href="order.css" />
+    <script defer src="formindex.js"></script>
+</head>
+<body>
+
+    <!-- id name 상속 구조처럼 이름을 가지고 접근.
+    선택자 자체가 없을 때
+    폼 배열을 사용해서 데이터를 확인
+    -->
+
+
+	<div id="container">
+	<form name="order">
+      <fieldset>
+				<legend>상품 정보</legend>
+				<ul>
+					<li>
+						<label class="field" for="product">상품 : </label>
+						<input type="text" class="input-box" id="product" name="product">
+					</li>
+					<li>
+						<label class="field" for="prod-num">갯수 : </label>
+						<input type="number" class="input-box"  id="prod-num" name="prod-num" value="1" min="1">
+					</li>
+				</ul>
+			</fieldset>
+			<fieldset>
+				<legend>주문 정보</legend>
+				<ul>
+					<li>
+						<label class="field" for="order-name">이름 : </label>
+						<input type="text" class="input-box" id="order-name" name="order-name">
+					</li>
+					<li>
+						<label class="field" for="order-tel">연락처 : </label>
+						<input type="text" class="input-box" id="order-tel" name="order-tel">	
+					</li>
+					<li>
+						<label class="field" for="order-addr">주소 : </label>
+						<input type="text" class="input-box" id="order-addr" name="order-addr">
+					</li>
+				</ul>
+			</fieldset>
+	
+			<button type="submit" class="order">주문하기</button>
+		</form>		
+	</div>
+
+</body>
+</html>
+<!--
+form 태그 
+	   - 사용자 의견이나 정보를 알기 위해 입력할 큰 틀을 만드는데 사용
+	   - 폼은 입력된 데이터를 한번에 서버로 전송한다.
+	   - 전송한 데이터는 웹 서버가 처리하고 결과를 따른 또 다른 웹페이지를
+	    보여준다.  
+
+        클라이언트(나) -> 네이버서버(통신)
+        action: 폼에서 서버쪽으로 스크립트 파일 지정
+                내가 만든 웹페이지.jsp, .html, .do
+
+        name: 폼 식별하기 위한 이름
+        accept-charset : 폼에 전송시 문자열 인코딩 "utf-8"
+        target: action 스크립트 파일을 다른 창에 혹은 다른 위치에  열도록 지정
+        !*method*!:폼을 서버로 보낼 때 http메서드
+                   get:입력한 데이터를 url 뒤쪽에 다 붙여서 보내기
+                       보안성 떨어진다.
+                   post:url 뒤쪽에 아무것도 작성하지 않는다.
+                        http메서드 안쪽에 요청하는 파일을 생성하거나 업데이트해서
+                        서버로 보낸다.
+
+
+
+
+	form 태그 동작 
+		- 폼이 있는 웹페이지 방문한다.
+		- 폼 내용입력
+		- 폼 안에 있는 모든 데이터를 웹서버로 보낸다.
+		- 웹서버는 받은 폼 데이터를 처리하기 위해서 웹 프로그램으로 보낸다.
+		- 웹 프로그램은 폼데이터를 처리한다.
+		- 처리 결과에 따른 새로운 html 페이지를 웹서버로 보낸다.
+		- 웹 서버는 받은 html 페이지를 브라우저에 보낸다.
+		- 브라우저는 받은 html 페이지를 보여줍니다.
+-->
