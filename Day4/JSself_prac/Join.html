@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="goHome.js"></script>
+    <script defer src="Join.js"></script>
+    <style>
+        #grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        p {
+            font-weight: 900;
+            font-size: 25px;
+        }
+
+        #btn {
+            background-color: rgb(0, 71, 153);
+            width: 250px;
+            height: 45px;
+            font-size: 100%;
+            color: white;
+            border-radius: 4px;
+        }
+
+        #id,#pw {
+            width: 30%;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+        }
+    </style>
+    <title>Join</title>
+</head>
+
+<body>
+    <img src="홈.jpg" align="left" onclick="goHome()"><br>
+    <img src="덕성여대_.jpg" alt="덕성여대교내" width="930">
+
+    <div id="grid">
+        <div class="items">
+            <p>회원정보</p>
+            <input type="button" value="회원가입" id="btn"><br>
+            
+        </div>
+        <div class="items2">
+            <p>회원가입</p>
+            이름 : <input type="text" id="name"><br>
+            아이디 : <input type="text" id="id"><br>
+            패스워드 : <input type="text" id="pw"><br>
+            전화번호 : <input type="text" id="phnum"><br>
+            <button id="btn" onclick="Join()">가입하기</button>
+        </div>
+    </div>
+</body>
+
+</html>
