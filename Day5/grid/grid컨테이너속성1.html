@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid container</title>
+    <style>
+        /*
+        css grid는 2차원레이아웃 시스템을 제공한다.
+        바둑판처럼!
+        grid는 flex와 마찬가지로 컨테이너와 아이템 2가지.
+
+        container:item을 감싸는 부모요소.그 안에 item배치.
+                    (컨테이너의 자식요소)
+        그리드 라인:그리드를 구분하는 선
+        그리드 트랙:2개의 그리드 라인 사이의 공간
+                    열이나 행으로 볼 수 있다.
+        그리드 셀: 그리드를 구성하는 단위(1개의 item)
+        그리드 영역:4개의 그리드라인으로 둘러싸인 공간
+        그리드 갭(gap):간격
+
+
+        display:grid컨테이너를 정의한다.
+                block특성으로 컨테이너를 정의한다
+                (1줄에 1개씩 아이템 div)
+
+        display:inline-grid;inline특성을 가진 grid컨테이너
+                가로정렬
+                (1줄에 여러개씩 올라감)
+
+        */
+
+        .container1{
+            display:grid;
+            width:300px;
+            height:300px;
+            border:4px solid green;
+        }
+        .container1 .item1{
+            border:2px solid orange;
+        }
+        .container2{
+            display:inline-grid;
+            width:300px;
+            height:300px;
+            border:4px solid blue;
+        }
+        .container2 .item2{
+            border:2px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container1">
+		<div class="item1">1</div>
+		<div class="item1">2</div>
+		<div class="item1">3</div>
+	</div>
+	<div class="container1">
+		<div class="item1">4</div>
+		<div class="item1">5</div>
+		<div class="item1">6</div>
+	</div>
+
+	<div class="container2">
+		<div class="item2">11</div>
+		<div class="item2">22</div>
+		<div class="item2">33</div>
+	</div>
+
+	<div class="container2">
+		<div class="item2">44</div>
+		<div class="item2">55</div>
+		<div class="item2">66</div>
+	</div>
+
+</body>
+</html>

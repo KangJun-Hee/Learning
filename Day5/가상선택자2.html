@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상선택자2</title>
+    <style>
+        /*nth-child : 선택자 자매요소 중 n번째 요소라면 선택
+        인덱스는 nth-child(index) 지정
+        인덱스는 1부터 시작된다.*/
+        .fruits1 li:nth-child(2){
+            color:red;
+        }
+
+        /*
+        연산
+        ()안에 n을 사용하면 0부터 시작해서 1씩 증가된다.
+        n 이용한 곱셈 연산시 *별표 사용안함. n앞에 숫자를 적용한다.
+        n을 이용한 덧셈 뺄셈 연산시 사용가능하다. n 뒤쪽에 적용
+        */
+
+        /*짝수 번째 모든 요소를 선택한다.
+        홀수 odd 짝수 even */
+        .fruits2 li:nth-child(2n){
+            color: brown;
+        }
+        /*홀수 번째 모든 요소를 선택한다.
+        1번째 요소부터 2번째마다 선택하겠다~*/
+        .fruits2 li:nth-child(2n+1){
+            color: aqua;
+        }
+        /*3번째 이후 모든 요소를 선택!*/
+        .fruits3 li:nth-child(n+3){
+            color: hotpink;
+        }
+
+        /* -n + 5    앞에서부터 5개만 선택한다*/
+
+        .fruits4 p:nth-child(1){
+            color:brown ;
+        }
+        .fruits4 p:nth-child(2){
+            color:aquamarine ;
+        }
+    </style>
+</head>
+<body>
+    <ul class="fruits1">
+		<li>딸기</li>
+		<li>사과</li> <!-- nth-child(2) -->
+		<li>오렌지</li>
+		<li>망고</li>
+	</ul>
+	<hr/>
+
+	<ul class="fruits2">
+		<li>딸기</li> <!-- nth-child(2n) -->
+		<li>사과</li> <!-- nth-child(2n + 1) -->
+		<li>오렌지</li> <!-- nth-child(2n) -->
+		<li>망고</li> <!-- nth-child(2n + 1) -->
+	</ul>
+	<hr/>
+
+	<ul class="fruits3">
+		<li>딸기</li>
+		<li>사과</li>
+		<li>오렌지</li> <!-- nth-child(n + 3) -->
+		<li>망고</li> <!-- nth-child(n + 3) -->
+	</ul>
+	<hr/>
+
+	<ul class="fruits4">
+		<div>딸기</div>
+		<p>사과</p>
+		<p>오렌지</p>
+		<span>망고</span>
+	</ul>
+	<hr/>
+
+	<div class="box-group">
+		<div>1</div>
+		<div>2</div>
+		<div>3
+			<p>3-1</p>
+			<div>3-2</div>
+			<div>3-3</div>
+		</div>
+	</div>
+
+</body>
+</html>

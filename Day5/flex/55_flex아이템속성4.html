@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>flex 아이템 속성</title>
+
+<style type="text/css">
+
+	/*
+		flex-basis: flex item의 공간 분배 전 기본 너비를 설정한다.
+	*/
+
+	.container1 {
+		border: 4px solid red;
+		display: flex;
+	}
+	
+	.container1 .item1 {
+		height: 100px;
+		border: 4px solid blue;
+		border-radius: 10px;
+		background-color: skyblue;
+		
+		/* width이 지정되고 flex-grow가 1이면 item의 크기가 데이터의 크기와 상관없이 모두 같은 크기를 가진다. */
+		width: 100px;
+		flex-grow: 1;
+	}
+
+	.container2 {
+		border: 4px solid red;
+		display: flex;
+	}
+	
+	.container2 .item2 {
+		height: 100px;
+		border: 4px solid blue;
+		border-radius: 10px;
+		background-color: skyblue;
+		
+		/* width이 지정되지않고 flex-grow가 1이면 item의 크기가 데이터의 크기를 제외한 공간이 모두 같은 크기를 가진다. */
+		/* width: 100px; */
+		flex-grow: 1;
+	}
+
+	.container3 {
+		border: 4px solid red;
+		display: flex;
+	}
+	
+	.container3 .item3 {
+		height: 100px;
+		border: 4px solid blue;
+		border-radius: 10px;
+		background-color: skyblue;
+		
+		/* flex-basis: auto;로 설정하면 위의 container2와 똑같이 표현된다. */
+		/* flex-basis: auto; */ /* 기본값 */
+		/* 
+			flex-basis의 크기를 지정하면 지정된 크기보다 표시할 가장 긴 단어의 크기가 크면 단어의 크기에 item의 
+			크기가 맞춰지고 지정된 크기보다 단어의 크기가 작으면 지정된 크기로 아이템의 크기가 맞춰진다.	
+		*/
+		flex-basis: 200px;
+	}
+
+</style>
+
+</head>
+<body>
+
+	<div class="container1">
+		<div class="item1">GoodGoodGoodGoodGoodGoodGoodGoodGoodGoodGoodGood job!!</div>
+		<div class="item1">A</div>
+		<div class="item1">Hello worldHello worldHello world</div>
+	</div>
+
+	<div class="container2">
+		<div class="item2">GoodGoodGoodGoodGoodGoodGoodGoodGoodGoodGoodGood job!!</div>
+		<div class="item2">A</div>
+		<div class="item2">Hello worldHello worldHello world</div>
+	</div>
+
+	<div class="container3">
+		<div class="item3">GoodGood GoodGoodGoodGoodGoodGoodGoodGoodGoodGoodGoodGoodGoodGoodGoodGood job!!</div>
+		<div class="item3">A</div>
+		<div class="item3">Hello world Hello world Hello world Hello world Hello world</div>
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

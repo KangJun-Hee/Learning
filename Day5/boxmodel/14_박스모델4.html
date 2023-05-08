@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>박스 모델 - 마진 중복</title>
+
+<style type="text/css">
+
+	/*
+		마진 중복(병합, collapse): 마진의 특정 값들이 중복되어 합쳐지는 현상
+		1. 형제 요소들의 margin-top과 margin-bottom이 만났을 때 
+		2. 부모 요소의 margin-top과 자식 요소의 margin-top이 만났을 때
+		3. 부모 요소의 margin-bottom과 자식 요소의 margin-bottom이 만났을 때
+		
+		마진 중복 계산: 마진 중복 현상이 발생될 때 중복값을 계산하는 방법
+		1. 둘 다 양수: A(30px), b(10px) => 더 큰 값으로 합쳐진다. => 30px
+		2. 둘 다 음수: A(-30px), b(-10px) => 더 작은 값으로 합쳐진다. => -30px
+		3. 양수와 음수: A(-30px), b(10px) => 산수를 한다. => -20px
+	*/
+
+	.parent {
+		width: 300px;
+		height: 100px;
+		background-color: cyan;
+		margin-top: 50px;
+	}
+
+	.child {
+		width: 100px;
+		height: 100px;
+		background-color: tomato;
+		margin: 50px;
+	}
+
+</style>
+
+</head>
+<body>
+
+	<div class="parent">
+		<div class="child">1</div>
+		<div class="child">2</div>
+		<div class="child">3</div>
+	</div>
+
+</body>
+</html>

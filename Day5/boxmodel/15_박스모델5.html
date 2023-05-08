@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>박스 모델 - 안쪽 여백</title>
+
+<style type="text/css">
+
+	/*
+		padding: 요소의 내부 여백을 지정한다.
+		px, %, em, rem, cm 등을 단위로 사용하고 기본값은 0이다.
+		auto: 브라우저가 너비를 계산한다.
+		%: 부모 요소에 대한 비율로 지정된다.
+		
+		padding => 단축 속성, 여러 개별 속성을 한꺼번에 지정할 수 있다.
+		padding 위쪽 오른쪽 아래쪽 왼쪽
+		padding 위쪽 [왼쪽 오른쪽] 아래쪽
+		padding [위쪽 아래쪽] [왼쪽 오른쪽]
+		padding [위쪽 아래쪽 왼쪽 오른쪽]
+		
+		padding-top, padding-bottom, padding-left, padding-right => 개별 속성 
+		padding-top: 요소의 내부 위쪽 여백을 지정한다.
+		padding-bottom: 요소의 내부 아래쪽 여백을 지정한다.
+		padding-left: 요소의 내부 왼쪽 여백을 지정한다.
+		padding-right: 요소의 내부 오른쪽 여백을 지정한다.
+		
+		크기 증가: 추가된 padding 값 만큼 요소가 커지는 현상
+	*/
+
+	/* padding 포함 140px * 140px => 크기 증가 */
+	.box1 {
+		width: 100px;
+		height: 100px;
+		background-color: mediumorchid;
+		padding: 20px;
+	}
+	
+	/* padding 포함 140px * 140px => 수동 크기 계산 */
+	.box2 {
+		width: 60px;
+		height: 80px;
+		background-color: chocolate;
+		padding: 30px 40px;
+	}
+	
+	/* padding 포함 140px * 140px => 자동 크기 계산 */
+	.box3 {
+		width: 140px;
+		height: 140px;
+		background-color: hotpink;
+		padding: 15px 20px;
+		/* box-sizing: border-box; 속성을 지정하면 지정된 padding에 따른 전체 크기가 자동으로 계산된다. */
+		box-sizing: border-box;
+	}
+
+</style>
+
+</head>
+<body>
+
+	<div class="box1">
+		Hello world!!!!!
+	</div>
+
+	<div class="box2">
+		Hello world!!!!!
+	</div>
+
+	<div class="box3">
+		Hello world!!!!!
+	</div>
+
+</body>
+</html>

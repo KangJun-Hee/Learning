@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid 컨테이너속성2</title>
+    <style>
+        /*  
+        grid-template-rows: 행의 크기를 정의하며 행의 이름도
+                             정의할 수 있다.
+        grid-template-columns: 열의 크기 및 열의 이름도 정의가능
+                             하다. 
+
+        fr(fraction, 공간비율) 이라는 단위를 쓴다. 
+        repeat()함수를 사용할 수있다. 
+
+        */
+
+        .container {
+            width: 300px;
+            height: 300px;
+            border: 4px solid green;
+            display: grid;
+            /*
+            reeat(반복횟수, 너비):행 높이 또는 열 너비를 반복해서
+            지정한다. 
+            */
+            /* grid-template-rows: repeat(2, 100px); */
+            /* grid-template-columns: 200px 200px 200px; */
+            /* grid-template-columns: repeat(3, 200px); */
+
+            /* fr(fraction, 공간 비율) */
+            /* 1fr 1fr => 2개의 행 또는 열이 컨테이너 전체 크기에 1 : 1 비율로 채워진다. */
+            /* grid-template-rows: 1fr 1fr; 
+            2번째 인수를 몇번만큼 반복한다
+            
+            */
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        /*grid-template-rows: 1행크기 2행크기 ...;
+        /* grid-template-rows: [선이름] 1행크기 [선이름] 2행크기 [선이름] ...; */
+
+        grid-template-columns: 1열크기 2열크기 ...;
+
+        /* grid-template-columns: [선이름] 1열크기 [선이름] 2열크기 [선이름] ...; */
+        */
+         .container .item {
+            border: 2px dashed orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">11</div>
+        <div class="item">22</div>
+        <div class="item">33</div>
+        <div class="item">44</div>
+        <div class="item">55</div>
+        <div class="item">66</div>
+    </div>
+</body>
+
+</html>

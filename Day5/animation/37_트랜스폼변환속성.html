@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>트랜스폼 변환 속성</title>
+
+<style type="text/css">
+
+	/*
+		transform 변환 속성
+		
+		backface-visibility: 3D 변환으로 회전될 요소의 뒷면 숨김을 설정한다.
+			=> visible: 기본값, 뒷면을 보여준다.
+			=> hidden: 뒷면을 숨긴다.
+			
+		perspective: 하위 요소를 관찰하는 원근 거리를 설정한다.
+			=> 관찰 대상의 부모(조상) 요소에 적용해서 하위 요소들을 관찰하는 원근 거리를 설정한다.
+			=> 관찰 대상이 여러개 일 때 사용한다. => 기준점 설정
+			
+		transform-style: 3D 변환 요소의 자식 요소도 3D 변환을 사용할지 여부를 설정한다.
+			=> flat: 기본값, 자식 요소의 3D 변환을 사용하지 않는다.
+			=> preserve-3d: 자식 요소의 3D 변환을 사용한다.
+		
+		transform-origin: 요소의 변환 기준점을 설정한다.
+			=> x축: left, center, right, %단위로 지정, 50%가 기본값
+			=> y축: top, center, bottom, %단위로 지정, 50%가 기본값
+			=> x축 y축 순서로 지정해야 하고 z축을 지정하면 효과가 적용되지 않는다.
+	*/
+
+	.img {
+		width: 200px;
+		border: 1px solid tomato;
+		margin: 100px;
+		transition-duration: 1s;
+		
+		backface-visibility: visible;
+		transform-origin: right top;
+	}
+	
+	.img:hover {
+		transform: rotateZ(180deg);
+	}
+
+	.perspective {
+		width: 300px;
+		padding: 70px;
+		perspective: 1000px;
+	}
+	
+	.grand-parent {
+		width: 300px;
+		border: 3px solid green;
+		transition-duration: 1s;
+		transform-style: preserve-3d;
+		transform-origin: 100% 100%;
+	}
+	
+ 	.grand-parent:hover {
+		transform: rotateZ(45deg);
+	}
+	
+	.parent {
+		width: 300px;
+		border: 3px solid dodgerblue;
+		transition-duration: 1s;
+		transform-style: preserve-3d;
+		transform-origin: 0% 0%;
+	}
+	
+	.parent:hover {
+		transform: rotateY(45deg);
+	}
+	
+	.child {
+		width: 300px;
+		border: 3px solid tomato;
+		transition-duration: 1s;
+	}
+	
+	.child:hover {
+		transform: rotateX(45deg);
+	}
+
+</style>
+
+</head>
+<body>
+
+	<img class="img" alt="안드로이드" src="./images/android.png"/>
+
+	<div class="perspective">
+		<div class="grand-parent">
+			<div class="parent">
+				<img class="child" alt="자바" src="./images/java.png"/>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
