@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="게시글등록.js"></script>
+<title>게시글 등록</title>
+<style>
+table, td {
+	border: 2px solid gray;
+	border-collapse: collapse;
+}
+
+table {
+	width: 70%;
+}
+
+#row {
+	text-weight: bold;
+	text-align: center;
+	width: 30%;
+	height: 50px;
+}
+</style>
+</head>
+<body>
+	<h1>게시글 등록</h1>
+	<form method="" action="">
+		<input type="hidden" value="board_write" name="command">
+		<table id="intable">
+			<tr>
+				<td id="row">제목*</td>
+				<td><input type="text" name="title"></td>
+			</tr>
+			<tr>
+				<td id="row">아이디*</td>
+				<td><input type="text" name="id"></td>
+			</tr>
+			<tr>
+				<td id="row">비밀번호*</td>
+				<td><input type="password" name="pass"></td>
+			</tr>
+			<tr>
+				<td id="row">내용</td>
+				<td><textarea cols="60" rows="10" name="content"></textarea></td>
+			</tr>
+		</table>
+	</form>
+	<button id="add" onclick="tableAdd()">등록</button>
+	<button>초기화</button>
+	<button>취소</button>
+
+
+	<h2>게시글 리스트</h2>
+	<table id="newtable">
+		<thread>
+		<tr>
+			<th>글번호</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>작성일</th>
+			<th>조회수</th>
+		</tr>
+		<tr id="newtr">
+		</tr>
+		</thread>
+		<tbody id="newtbody">
+		</tbody>
+	</table>
+
+</body>
+</html>
+
+
+function tableAdd() { let intable = document.getElementById('intable');
+let input = intable.row; for (i = 0; i < input.length; i++) { let row =
+input[i]; let tdsNum = row.childElementCount; row.onclick=function(){
+return function(){ let str = ""; for (let j = 0; j < tdsNum; j++) { let
+row_value = this.cells[j].innerHTML; str += row_value + ''; };
+document.querySelector('newtable').innerText = str; }; }(row); } } let
+table = document.getElementById('newtable'); let newRow =
+table.insertRow(); let newCell1 = newRow.insertCell(0); let newCell2 =
+newRow.insertCell(1); let newCell3 = newRow.insertCell(2); let newCell4
+= newRow.insertCell(3); let newCell5 = newRow.insertCell(4);
+
+
+newCell1.innerText = "i"; let div = document.getElementById("newtable");
+div.appendChild(newRow); } // /** * */
+
+
+
+
+
+
+

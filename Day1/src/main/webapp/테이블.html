@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript 테이블</title>
+
+<script type="text/javascript" src="./js/table.js"></script>
+</head>
+
+<body>
+
+	<form action="?">
+		<table id="inTable" border="1" cellpadding="5" cellspacing="0">
+			<tr>
+				<th>아이디</th>
+				<td><input type="text" name="id" id="input"/></td>
+			</tr>
+			<tr>
+				<th>비밀번호</th>
+				<td><input type="text" name="password" id="input"/></td>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td><input type="text" name="address" id="input"/></td>
+			</tr>
+			<tr>
+				<th>전화번호</th>
+				<td><input type="text" name="phoneNo" id="input"/></td>
+			</tr>
+		</table><br/>
+		
+		<input type="button" value="추가" onclick="tableAdd()" id="add"/>
+	</form><br/>
+
+	<input type="button" value="마지막 데이터부터 1행씩 삭제" onclick="removeLast()"/>
+	<input type="button" value="전체 삭제" onclick="removeAll()"/><br/><br/>
+	
+	<div id="addTable">
+		<table id="ctb" border="1" cellpadding="5" cellspacing="0">
+			<thead>
+				<tr>
+					<th>아이디</th>
+					<th>비밀번호</th>
+					<th>주소</th>
+					<th>전화번호</th>
+					<th>&nbsp;</th>
+				</tr>
+				<tr class="newtr">
+				
+				</tr>
+			</thead>
+			<tbody id="addtr">
+			
+			</tbody>
+		</table>
+	</div>
+	
+</body>
+</html>
