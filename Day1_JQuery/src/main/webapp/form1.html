@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="js/query3.js"></script>
+</head>
+<body>
+	<form>
+		<input type="text" /> 
+		<input type="text" /> 
+		<input type="button" value="선택" onclick="choice()" />
+		<input type="radio" value="수강 과정명" onclick="choice2()" />
+		<input type="checkbox" value="자바 웹 개발자 양성" onclick="choice3()" />
+		
+		<div id="a">
+			자바 웹 개발자 양성
+		</div>
+		
+		<select style="width: 200px;">
+			<option>===== 선택하세요 =====</option>
+			<option value="HTML">HTML</option>
+			<option value="CSS">CSS</option>
+			<option value="JavaScript">JavaScript</option>
+			<option value="jQuery">jQuery</option>
+		</select>
+		
+		<fieldset style="width: 200px;">
+			<legend>성별</legend>
+			<label> 
+				<input type="radio" name="gender" value="남자" />남자
+			</label> 
+			<label> 
+				<input type="radio" name="gender" value="여자" />여자
+			</label>
+		</fieldset>
+	</form>
+
+</body>
+</html>

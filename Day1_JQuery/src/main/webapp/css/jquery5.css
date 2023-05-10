@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+a{
+	text-decoration: none;
+	color:white;
+}
+
+.menu{
+	background-color: black;
+	width:150px;
+	border:2px solid yellow;
+	transition:0.5s;
+}
+
+.menu:hover{
+	background-color: hotpink;
+	width:250px;
+	
+}
+
+div{
+	color:yellow;	
+}
+div:hover, a:hover{
+	text-decoration: underline;
+	color:blue;
+	background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

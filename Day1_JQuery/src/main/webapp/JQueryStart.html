@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제이쿼리 시작하기</title>
+<!-- 원본파일 받은 것 -->
+<script type="text/javascript" src="js/jquery-3.6.4.min.js"></script>
+<!-- 내가 만든 것! -->
+<script type="text/javascript" src="js/jquery1.js"></script>
+</head>
+<body>
+	<!-- 제이쿼리
+	자바스크립트가 너무 기니까 간단히 쓸 수 있는 라이브러리
+	- 오픈소스기반의 자바스트립트 라이브러리
+	- 짧고 단순한 코드로 웹페이지에 적용가능!
+	- $로 시작해 그 안에 문서 등등
+	
+	제이쿼리 사용법
+	1. 제이쿼리 파일을 다운받는 방법
+	2. CDN 웹주소 파일로 연결해서 파일 가져오기
+	
+	javascript 작성법
+		=> document.getElementById('id').style.color = 'red';
+	jQuery 작성법
+		=> $('css 선택자').메소드('속성','속성값');
+		   $('#id').css('color','red');
+		   
+		   $() <- 함수
+		    - 제이쿼리 객체를 반환해서 그 안에 있는 메서드들을 사용해서
+		      구현할 수 있다.
+		   
+		   
+		   -->
+	<h2>CSS 선택자</h2>
+	<div>
+		<ul>
+			<li><span>태그로 선택하기</span></li>
+			<li id="t1">id로 선택하기</li>
+			<li class="t2">class로 선택하기</li>
+			<li><span>자식 선택자로 선택하기</span></li>
+			<li><b><span>자손 선택자로 선택하기</span></b></li>
+			<li>nth-child로 선택하기</li>
+			<li id="t1">first로 선택하기</li>
+			<li class="t2">last로 선택하기</li>
+		</ul>
+	</div>
+	<div>
+		<button type="button" onclick="a1()">태그</button>
+		<button type="button" onclick="a2()">아이디</button>
+		<button type="button" onclick="a3()">클래스</button>
+		<button type="button" onclick="a4()">자식 선택자</button>
+		<button type="button" onclick="a5()">자손 선택자</button>
+		<button type="button" onclick="a6()">nth-child</button>
+		<button type="button" onclick="a7()">first-child</button>
+		<button type="button" onclick="a8()">last-child</button>
+	</div>
+	
+	
+	
+	
+	
+	
+</body>
+</html>

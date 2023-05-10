@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form2</title>
+<script type="text/javascript" src="js/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="js/jquery4.js"></script>
+</head>
+
+<body>
+	<form id="single" action="?"/>
+		<div>
+			<span>사용자</span>
+			<input id="infoBox" type="text" name="userID"/>
+			<span class="error" style="color: red; font-weight: bold;">
+			반드시 입력해야 합니다.
+			</span>
+		</div><br/>
+		
+		<!-- <input type="submit" value="입력하기"/> -->
+		<button type="submit">입력하기</button>
+	</form><br/>
+
+	<fieldset style="width: 300px;">
+		<legend>체크 여부 확인</legend>
+		<input type="checkbox" name="all"/>전체선택<br/>
+		<input type="checkbox" name="chk" value="1000"/>
+		<b>사과</b>
+		<br/>
+		<input type="checkbox" name="chk" value="2000"/>
+		<b>바나나</b>
+		<br/>
+		<input type="checkbox" name="chk" value="5000"/>
+		<b>망고</b>
+		<br/>
+		<input type="checkbox" name="chk" value="3000"/>
+		<b>오렌지</b>
+		<br/><br/>
+		<input id="confirm" type="button" value="확인"/><br/><br/>
+		<span>선택한 과일 가격</span>
+		<div id="result">
+			메롱
+		</div>
+	</fieldset>
+	
+</body>
+</html>

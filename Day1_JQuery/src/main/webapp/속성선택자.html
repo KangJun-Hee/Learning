@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- CDN으로 제이쿼리 다운받은 거 -->
+<script type="text/javascript" src="js/jquery-3.6.4.min.js"></script>
+<!-- 내가 만든 거 -->
+<script type="text/javascript" src="js/jquery2.js"></script>
+</head>
+<body>
+
+	<h2>속성 선택자</h2>
+	
+	이미지 크기를 모두 200px*200px
+	<button type="button" onclick="imgSize()">클릭</button>
+	<br />
+	
+	이미지를 숨기기
+	<button type="button" onclick="idSelector()">클릭</button>
+	<br />
+	투명도 변경
+	<button type="button" onclick="classSelector()">클릭</button>
+	<br />
+	이미지 중에 타이틀값에 특정 문자가 들어가면 변경
+	<button type="button" onclick="includeSelector()">클릭</button>
+	<br />
+	이미지 변경
+	<button type="button" onclick="changeImg()">클릭</button>
+	<br />
+
+	<table>
+		<tr>
+			<td><img id="selId" title="img01+" src="./images/img01.jpg" /></td>
+			<td><img title="img02" src="./images/img02.jpg" /></td>
+			<td><img class="selClass" title="img023+"
+				src="./images/img03.jpg" /></td>
+			<td><img class="selClass" title="img04" src="./images/img04.jpg" /></td>
+		</tr>
+		<tr>
+			<td><img id="selId" title="img01-img01" src="./images/img01.jpg" /></td>
+			<td><span><img title="image02 img02"
+					src="./images/img02.jpg" /></span></td>
+			<td><img class="selClass" title="img023"
+				src="./images/img03.jpg" /></td>
+			<td><img class="selClass" title="img04-img04"
+				src="./images/img04.jpg" /></td>
+		</tr>
+	</table>
+
+</body>
+</html>
