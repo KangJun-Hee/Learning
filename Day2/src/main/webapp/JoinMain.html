@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/JoinMain.js"></script>
+<style>
+	#legend{
+		font-weight:700;
+		font-size:25px;
+	}
+	fieldset{
+		display:flex;
+		flex-direction: column;
+		
+		width:30%;
+		border:none;
+	}
+	input{
+		margin: 9%;
+		border-left:none;border-right:none;border-top:none;
+	}
+	.error_next_box{
+		color:red;
+		display: none;
+	}
+	button{
+		height:40px;
+		background-color: navy;
+		color:white;
+		
+		border-radius:8px;
+	}
+</style>
+</head>
+<body>
+	<form action="">
+		<fieldset align="center">
+			<legend id="legend">회원가입</legend>
+			
+			<input type="text" placeholder="아이디" name="id"><div class="error_next_box"></div>
+			<input type="text" placeholder="비밀번호" name="pw">
+			<input type="text" placeholder="비밀번호 확인" name="pwc">
+			<input type="text" placeholder="이름" name="name">
+			<input type="text" placeholder="이메일" name="email">
+			<input type="text" placeholder="닉네임" name="nick">
+			<input type="text" placeholder="전화번호" name="ph">
+			
+			<button type="button" onclick="check()">JOIN</button>
+		</fieldset>
+	</form>
+</body>
+</html>

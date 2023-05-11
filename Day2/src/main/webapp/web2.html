@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>웹 스토리지</title>]
+<script defer type="text/javascript" src="web.js"></script>
+</head>
+<body>
+	<h1>web2</h1>
+	localStorage
+		- 로컬에서 도메인 별로 지속되는 storage공간(저장공간)
+		- 제한 시간 없고, 브라우저가 꺼지기 전까진 살아있다.
+		- 값을 지우려면 직접 지워 줘야 한다.
+		- 여러 새 창, 새 탭이 열려도 데이터가 공유가 가능하다!
+		
+	sessionStorage
+		- 세션이 (프로세스, 탭, 브라우저)종료될 때까지 지속되는 storage
+		- 새 창, 새 탭이 열리면 데이터 공유가 X안 된다X
+		
+	프로퍼티 타입으로 key와 value를 저장함. js에서 object(객체)처럼
+	저장 가능. 무조건 문자열 밖에 저장이 안 된다.
+	
+	<!-- 값을 저장, 불러오기 -->
+	setItem('key':'value')이면 로컬,세선스토리지에 저장한다고 생각해라.
+	
+	getItem('key')
+	
+	removeItem('key')해당 키를 받으면 한 쌍을 동시에 제거!
+	
+	clear()모든 데이터 지우기
+	
+	length : 저장된 key,value 해당하는 길이를 반환한다
+	
+	Object.keys() 현재 웹 스토리지에 있는 모든 key만 가져온다!
+	
+	웹스토리지 확인법
+	크롬 -> f12 -> 어플리케이션 -> 스토리지(로컬,세선 지정)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>
