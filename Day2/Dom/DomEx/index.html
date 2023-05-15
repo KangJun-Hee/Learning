@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목없음</title>
+    <script defer src="index.js"></script>
+    <style>
+        body {
+            padding-top: 1rem;
+        }
+
+        article {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    </style>
+    <!-- bootstrap 5.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class = "container">
+    <h1 id="heading">DOM 객체와 이벤트처리</h1>
+    <article id="practice-1">
+        <h2>주문할게요</h2>
+        <p>대학 CC커플 나컴공과 나컴순. 수업을 마치고, 중국집으로 밥을 먹으러 갔다. 주문을 위해 버튼을 누르는데..</p>
+        <div class="targets">
+            <button type="button" id="order-bell" class="btn btn-primary">주문벨을 눌러주세요</button>
+        </div>
+    </article>
+</body>
+</html>
+<!--
+    이벤트처리
+    이벤트란 선택, 클릭, 전송 등의 특정 상황
+    이벤트의 처리는 3단계
+
+    event : 버튼, 드롭다운, 스크롤 대상(targetting)
+            감시할 대상을 지정한다.
+    listening : 특정 이벤트를 지속적으로 감시하다가
+                이벤트가 발생하면 이벤트를 처리하는
+                함수로 연결(실행)
+
+    headling : 발생한 이벤트를 수행(처리)한다.
+-->

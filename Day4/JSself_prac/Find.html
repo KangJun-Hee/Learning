@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="goHome.js"></script>
+    <style>
+        #grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .items2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr
+        }
+
+        p {
+            font-weight: 900;
+            font-size: 25px;
+        }
+
+        #btn {
+            background-color: rgb(0, 71, 153);
+            width: 250px;
+            height: 45px;
+            font-size: 100%;
+            color: white;
+            border-radius: 4px;
+        }
+
+        text {
+            background-color: aqua;
+        }
+
+        #idpw {
+            width: 242px;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+        }
+    </style>
+    <title>Findippw</title>
+</head>
+
+<body>
+    <img src="홈.jpg" align="left" onclick="goHome()"><br>
+    <img src="덕성여대_.jpg" alt="덕성여대교내" width="930">
+
+    <div id="grid">
+        <div class="items">
+            <p>회원정보</p>
+            <input type="button" value="ID/PW찾기" id="btn"><br>
+
+        </div>
+        <div class="items2">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <p>ID/PW찾기</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>ID</p>
+                        <input type="text" id="idpw" placeholder="이름을 입력하세요"><br>
+                        <input type="text" id="idpw" placeholder="전화번호를 입력하세요"><br>
+                        <input type="button" value="ID찾기" id="btn"><br>
+                    </td>
+                    <td>
+                        <p>PW</p>
+                        <input type="text" id="idpw" placeholder="아이디를 입력하세요"><br>
+                        <input type="text" id="idpw" placeholder="전화번호를 입력하세요"><br>
+                        <input type="button" value="PW찾기" id="btn">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

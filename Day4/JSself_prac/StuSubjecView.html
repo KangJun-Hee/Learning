@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="goHome.js"></script>
+    <script defer src="goSubJoin.js"></script>
+    
+    
+    <title>수강과목조회</title>
+    <style>
+        #grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+        #btn {
+            background-color: rgb(0, 71, 153);
+            width: 250px;
+            height: 45px;
+            font-size: 100%;
+            color: white;
+            border-radius: 4px;
+        }
+        #btn2 {
+            background-color: rgb(30, 46, 65);
+            /* width: 250px;
+            height: 25px; */
+            font-size: 70%;
+            color: white;
+            border-radius: 4px;
+        }
+        text {
+            background-color: aqua;
+        }
+
+        #idpw {
+            width: 30%;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+        }
+    </style>
+    <title>학사관리(학생로그인후)</title>
+</head>
+
+<body>
+    <img src="홈.jpg" align="left" onclick="goHome()">
+    <img src="로그아웃.jpg" align="left" onclick="goHome()"><br>
+    <img src="덕성여대_.jpg" alt="덕성여대교내" width="930">
+
+    <div id="grid">
+        <div class="items">
+            <p style="font-weight: 900; font-size: 25px;">학사관리</p>
+            <button id="btn">수강과목조회</button><br>
+            <button id="btn" onclick="goSubJoin()">수강신청/철회</button>
+        </div>
+        <div class="items">
+            <p style="font-size: 20px;">수강과목조회</p>
+            <div id="grid2">
+            <button id="btn2" style="width:60px">NO.</button>
+            <button id="btn2" style="width:200px">과목명</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+</head>
+<body>
+    
+</body>
+</html>

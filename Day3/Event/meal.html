@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>제목 없음</title>
+       
+        <script defer src="event.js"></script>
+        <!-- bootstrap 5.2 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+        body {
+            padding-top: 1rem;
+        }
+        article {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        </style>
+    </head>
+    <body class="container">
+  
+        <article id="practice-2">
+            <h2>뭐 먹을까?</h2>
+            <p>"뭐 먹을까?" 컴공이가 물었다. 돌아온 대답. "오빠가 먹고 싶은거" 갑자기 그는 생각이 많아졌다. 그녀의 진심은..?</p>
+            <div class="targets">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <input class="form-check-input me-1" type="checkbox" name="answers" value="a" id="answer-a">
+                        <label class="form-check-label">A. 중국집에서 먹기 싫어</label>
+                    </li>
+                    <li class="list-group-item">
+                        <input class="form-check-input me-1" type="checkbox" name="answers" value="b" id="answer-b">
+                        <label class="form-check-label">B. 센스 있게 내가 먹고 싶은 걸로 골라봐</label>
+                    </li>
+                    <li class="list-group-item ">
+                        <input class="form-check-input me-1" type="checkbox" name="answers" value="c" id="answer-c">
+                        <label class="form-check-label">C. 오빠가 좋아하는건 나도 좋아</label>
+                    </li>
+                </ul>
+            </div>
+        </article>
+        <article id="practice-3">
+            <h2>장바구니 담기</h2>
+            <p>다행히, 그녀의 컨디션이 좋아보인다. 그렇게 컴공이는 맘편히 주문을 하는데..</p>
+            <p class="targets">
+                <button type="button" class="btn btn-sm btn-outline-dark">짜장</button>
+                <button type="button" class="btn btn-sm btn-outline-dark">짬뽕</button>
+                <button type="button" class="btn btn-sm btn-outline-dark">볶음밥</button>
+                <button type="button" class="btn btn-sm btn-outline-dark">탕수육</button>
+            </p>
+            <div class="bg-light" id="order-list">
+                >> []이 주문되었습니다.
+            </div>
+        </article>
+    </body>
+</html>
