@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Google</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+<style>
+	header{
+		display:flex;
+		justify-content:flex-end;
+	}
+	a{
+		text-decoration-line:none;
+		color:rgb(139, 139, 139);
+		font-size: 14px;
+	}
+	main{
+		display: flex;
+		flex-direction: column;
+		align-items:center;
+	}
+	#google{
+		margin-top: 18%; 
+		margin-bottom:5%;
+	}
+	.search{
+		height:40px;
+
+		display:flex;
+		border: 1px solid rgb(207, 207, 207);
+		border-radius:20px;
+	}
+	#simg{
+		width:20px;
+	}
+	input{
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+	button{
+		background-color: transparent;
+		border: none;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<div style="padding-right:15px">
+		<a href="">Gmail</a>
+		</div>
+		<div style="padding-right:15px">
+		<a href="">이미지</a>
+		</div>
+		<button type="button"><img src="menu.png" width="15px"></button>
+	</header>
+	
+	<main>
+		<img src="google.png" id="google" width="300px">
+		<div class="search">
+			<button type="button"><img src="find.png" onclick="" id="simg"></button>
+			<input type="text" placeholder="Google 검색 또는 URL 입력" style="border:none;">
+			<button type="button"><img src="mic.png" onclick="" id="simg"></button>
+		</div>
+	</main>
+	
+	<footer>
+	</footer>
+</body>
+</html>
