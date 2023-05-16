@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script defer src="check.js"></script>
+
+    <style>
+        header {
+            height: 100px;
+            border: 4px solid #FFCA4B;
+        }
+
+        legend {
+            margin-top: 30px;
+            font-size: 23px;
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .big {
+            font-size: 20px;
+
+        }
+
+        input,
+        select {
+            height: 42px;
+            border-radius: 8px;
+            border: 1px solid gainsboro;
+            padding-left: 14px;
+            font-size: 15px;
+        }
+
+        #inputw {
+            width: 100%;
+        }
+
+        .txts {
+            font-size: 12px;
+            color: #b7b7b7;
+        }
+
+        .agree .txts {
+            padding-top: 5px;
+        }
+
+        button {
+            width: 100%;
+            height: 42px;
+            background-color: white;
+            border: 1px solid #FFCA4B;
+            border-radius: 8px;
+            color: #FFCA4B;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .snslog {
+            display: flex;
+            width: 31%;
+            margin-top: 15px;
+            margin-left: 16%;
+        }
+
+        #rcIDsrch,
+        #postsrch {
+            width: 30%;
+            height: 30px;
+            font-size: 11px;
+            margin-top: 5px;
+        }
+
+        #rcID_adrs_w {
+            width: 100%;
+        }
+
+        #rcID_adrs_w2 {
+            width: 15%;
+            font-size: 12px;
+        }
+
+
+        .agree {
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            padding-top: 17px;
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-bottom: 17px;
+        }
+
+        footer {
+            margin-top: 8px;
+            border: 4px solid #FFCA4B;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        header
+    </header>
+
+    <main style="display:flex; justify-content:center; ">
+        <form action="">
+            <legend>회원가입</legend>
+
+            <div style="margin-bottom: 80px;">
+                <p class="big">* 필수사항</p>
+                <hr>
+                <p>이메일</p>
+                <div class="flex">
+                    <input type="text" placeholder="이메일" id="inputw">
+                    <p>@</p>
+                    <select name="" id="inputw" style="height: 46px;">
+                        <option value="선택해주세요" selected>선택해주세요</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="hanmail.net">hanmail.net</option>
+                        <option value="daum.net">daum.net</option>
+                        <option value="gmail.com">gmail.com</option>
+                        <option value="nate.com">nate.com</option>
+                        <option value="hotmail.com">hotmail.com</option>
+                        <option value="outlook.com">outlook.com</option>
+                        <option value="icloud.com">icloud.com</option>
+                        <option value="직접입력">직접입력</option>
+                    </select>
+                </div>
+                <button type="button" id="ebtn" onclick="emailcheck()">이메일 중복확인</button>
+
+                <p>비밀번호</p>
+                <p class="txts">영문, 숫자를 포함한 8자 이상의 비밀번호를 입력해주세요.</p>
+                <input type="text" placeholder="비밀번호" id="inputw" style="width: 95%;" minlength="8">
+                <p>비밀번호 확인</p>
+                <input type="text" placeholder="비밀번호확인" id="inputw" style="width: 95%;" minlength="8">
+                <p>닉네임</p>
+                <p class="txts">다른 유저와 겹치지 않도록 입력해주세요. (2~15자)</p>
+                <input type="text" placeholder="별명 (2~15자)" id="inputw" style="width: 95%;" minlength="2"
+                    maxlength="15">
+            </div>
+            <div style="margin-bottom: 80px;">
+                <p class="big">선택사항</p>
+                <hr>
+                <p>생년월일</p>
+                <select name="" style="width: 28%;">
+                    <option value="선택" selected>선택</option>
+                    <option value="1981">1981</option>
+                    <option value="1991">1991</option>
+                    <option value="2001">2001</option>
+                    <option value="2010">2011</option>
+                    <option value="2021">2021</option>
+                </select>년
+                <select name="" style="width: 28%;">
+                    <option value="선택" selected>선택</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>월
+                <select name="" style="width: 28%;">
+                    <option value="선택" selected>선택</option>
+                    <option value="1981">1981</option>
+                    <option value="1991">1991</option>
+                    <option value="2001">2001</option>
+                    <option value="2010">2011</option>
+                    <option value="2021">2021</option>
+                </select>일
+                <p>성별</p>
+                <div style="display: flex; justify-content: space-around;">
+                    <div class="flex">
+                        <input type="radio" name="gen">
+                        <p>선택안함</p>
+                    </div>
+                    <div class="flex">
+                        <input type="radio" name="gen">
+                        <p>여성</p>
+                    </div>
+                    <div class="flex">
+                        <input type="radio" name="gen">
+                        <p>남성</p>
+                    </div>
+                </div>
+                <p>추천인 ID</p>
+                <div class="flex" id="rcID_adrs">
+                    <input type="text" id="rcID_adrs_w">
+                    <button type="button" id="rcIDsrch" onclick="rcIDsrchf()">추천인 아이디 검색</button>
+                </div>
+                <p>주소</p>
+                <div class="flex" id="rcID_adrs">
+                    <input type="text" placeholder="우편번호" id="rcID_adrs_w2">
+                    <button type="button" id="postsrch">우편번호 찾기</button>
+                </div>
+                <input type="text">
+                <input type="text">
+                <p>회사전화</p>
+                <input type="text" style="width:95%">
+            </div>
+            </div>
+
+
+            <p class="big">약관동의</p>
+            <div class="agree">
+                <div>
+                    <div class="flex">
+                        <input type="checkbox">
+                        <p>전체동의</p>
+                        <p class="txts">선택항목에 대한 동의 포함</p>
+                    </div>
+                    <hr>
+                    <div class="flex">
+                        <input type="checkbox">
+                        <p>만 14세 이상입니다</p>
+                        <p class="txts" style="color:#FFCA4B;">(필수)</p>
+                    </div>
+                    <div class="flex">
+                        <input type="checkbox">
+                        <p>이용약관</p>
+                        <p class="txts" style="color:#FFCA4B;">(필수)</p>
+                    </div>
+                    <div class="flex">
+                        <input type="checkbox">
+                        <p>개인정보수집 및 이용동의</p>
+                        <p class="txts" style="color:#FFCA4B;">(필수)</p>
+                    </div>
+                    <div class="flex">
+                        <input type="checkbox">
+                        <p>개인정보 마케팅 활용 동의</p>
+                        <p class="txts">(선택)</p>
+                    </div>
+                    <div class="flex">
+                        <input type="checkbox">
+                        <p>이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신</p>
+                        <p class="txts">(선택)</p>
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="jbtn"
+                style="margin-top: 11px; background-color: #FFCA4B; color: white;">회원가입하기</button>
+        </form>
+    </main>
+
+
+
+    <footer>
+        footer
+    </footer>
+
+</body>
+
+</html>

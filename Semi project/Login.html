@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script defer src="logcheck.js"></script>
+    <style>
+        header {
+            height: 100px;
+            border: 4px solid #FFCA4B;
+        }
+
+        
+        legend {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 23px;
+            text-align: center;
+        }
+
+        .log {
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+            margin: 15px;
+        }
+
+        input {
+            height: 42px;
+            border-radius: 8px;
+            border: 1px solid gainsboro;
+            padding-left: 14px;
+            font-size: 15px;
+        }
+
+        #pw {
+            margin-bottom: 14px;
+        }
+
+        #loginbtn,
+        #joinbtn {
+            height: 42px;
+            background-color: white;
+            border: 1px solid #FFCA4B;
+            border-radius: 8px;
+            color: #FFCA4B;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .snslog {
+            display: flex;
+            margin-top: 15px;
+            margin-left: 10%;
+        }
+
+        #ordercheck {}
+
+        footer {
+            margin-top: 20px;
+            border: 4px solid #FFCA4B;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        header
+    </header>
+
+    <main style="display:flex; justify-content:center;">
+        <form class="log">
+                <legend>로그인</legend>
+                <input type="text" placeholder="아이디" id="userID">
+                <input type="text" placeholder="비밀번호" id="userPW">
+
+                <button type="button" id="loginbtn" onclick="logcheck()" style="background-color: #FFCA4B; color: white; margin-top: 14px;">로그인</button>
+                <button type="button" id="joinbtn" onclick="location.href='join.html'">회원가입</button>
+
+                <div class="snslog">
+                    <a href="Join.html" target="_blank"><img src="facebook.png" style="width:70%"></a>
+                    <a href="Join.html" target="_blank"><img src="kakao.png" style="width:70%"></a>
+                    <a href="Join.html" target="_blank"><img src="twitter.png" style="width:70%"></a>
+                </div>
+        </form>
+        <form class="log" id="ordercheck">
+                <legend>비회원 주문조회</legend>
+                <input type="text" placeholder="주문자명">
+                <input type="text" placeholder="주문번호" id="pw">
+
+                <button type="button" id="loginbtn" style="background-color: #FFCA4B; color: white;">주문조회</button>
+        </form>
+    </main>
+
+
+
+    <footer>
+        footer
+    </footer>
+</body>
+
+</html>
