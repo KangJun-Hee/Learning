@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입폼</title>
+    <script defer src="2.js"></script>
+    <style>
+        body{
+            background-color: rgb(218, 237, 255);
+        }
+        #flex {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input {
+            width: 200px;
+            border: none;
+            border-bottom: 2px dashed black;
+            height: 35px;
+        }
+
+        #msg{
+            border: none;
+        }
+
+        #em{
+            width: 88px;
+        }
+
+        button {
+            background-color: rgb(132, 219, 190);
+            width: 100%;
+            height: 50px;
+            margin-top: 30px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <fieldset style="width: 350px; padding: 5%; background-color: white;">
+            <div id="flex">
+                <div>
+                    <p>아이디</p>
+                </div>
+                <div>
+                    <input type="text" id="id">
+                </div>
+            </div>
+            <div id="flex">
+                <div style="margin-right: 111px;">
+                    <p>패스워드</p>
+                </div>
+                <div>
+                    <input type="text" id="pw" onclick="msg()">
+                    <span></span>
+                </div>
+            </div>
+            <div id="flex">
+                <div>
+                    <p>패스워드 확인</p>
+                </div>
+                <div>
+                    <input type="text" id="pwc">
+                </div>
+            </div>
+            <div id="flex">
+                <div>
+                    <p>이메일</p>
+                </div>
+                <div>
+                    <input type="text" onclick="inputcheck()" id="em">@
+                    <input type="text" onclick="inputcheck()" id="em">
+                </div>
+            </div>
+            <div id="flex">
+                <div style="margin-right: 128px;">
+                    <p>주소</p>
+                </div>
+                <div>
+                    <input type="text" onclick="inputcheck()">
+                    <input type="text" onclick="inputcheck()">
+                </div>
+            </div>
+            <button>가입</button>
+        </fieldset>
+    </form>
+</body>
+
+</html>
