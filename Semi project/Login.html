@@ -6,14 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인</title>
-    <script defer src="check.js"></script>
+    <script defer src="js/check.js"></script>
     <style>
-        header {
-            height: 100px;
-            border: 4px solid #FFCA4B;
-        }
-
-        
+       
         legend {
             margin-top: 30px;
             margin-bottom: 15px;
@@ -21,6 +16,7 @@
             text-align: center;
         }
 
+        /* 로그인통째 */
         .log {
             display: flex;
             flex-direction: column;
@@ -62,17 +58,12 @@
             font-size: 11px;
         }
 
-        footer {
-            margin-top: 20px;
-            border: 4px solid #FFCA4B;
-        }
+
     </style>
 </head>
 
 <body>
-    <header>
-        header
-    </header>
+ 
 
     <main style="display:flex; justify-content:center;">
         <form class="log">
@@ -95,10 +86,10 @@
         </form>
         <form class="log" id="ordercheck">
                 <legend>비회원 주문조회</legend>
-                <input type="text" placeholder="주문자명">
-                <input type="text" placeholder="주문번호" id="pw">
+                <input type="text" placeholder="주문자명" id="oname">
+                <input type="text" placeholder="주문번호" id="onumber" style="margin-bottom: 14px;">
 
-                <button type="button" id="loginbtn" style="background-color: #FFCA4B; color: white;">주문조회</button>
+                <button type="button" id="loginbtn" onclick="ordercheck()"style="background-color: #FFCA4B; color: white;">주문조회</button>
                 <p>주문번호는 주문시 발송된 문자(SMS)에서 확인 가능합니다.</p>
 
         </form>
@@ -106,9 +97,7 @@
 
 
 
-    <footer>
-        footer
-    </footer>
+ 
 </body>
 
 </html>
