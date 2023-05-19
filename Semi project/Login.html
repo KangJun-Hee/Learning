@@ -8,12 +8,12 @@
     <title>로그인</title>
     <script defer src="js/check.js"></script>
     <style>
-       
         legend {
             margin-top: 30px;
             margin-bottom: 15px;
-            font-size: 23px;
+            font-size: 19px;
             text-align: center;
+            color: rgb(81, 81, 81);
         }
 
         /* 로그인통째 */
@@ -30,10 +30,7 @@
             border: 1px solid gainsboro;
             padding-left: 14px;
             font-size: 15px;
-        }
-
-        #pw {
-            margin-bottom: 14px;
+            margin-bottom: 9px;
         }
 
         #loginbtn,
@@ -45,59 +42,83 @@
             color: #FFCA4B;
             font-size: 17px;
             font-weight: 700;
+            margin-bottom: 9px;
+        }
+        #loginbtn{
+            background-color: #FFCA4B; 
+            color: white; 
+            margin-top: 14px;
+        }
+       
+        #loginbtn:hover{
+            background-color: #ffc02e;
         }
 
+        #joinbtn:hover{
+            background-color: #fff8e7;
+            color: #FFCA4B;
+        }
         .snslog {
             display: flex;
             margin-left: 10%;
         }
 
-        p{
+        p {
             color: #b9b9b9;
             text-align: center;
             font-size: 11px;
         }
 
-
+       
     </style>
 </head>
 
 <body>
- 
 
-    <main style="display:flex; justify-content:center;">
-        <form class="log">
+
+    <main>
+        <!-- 로고 들어갈 div -->
+        <div style="margin-top: 5%; display:flex; justify-content:center;">
+            <img src="img/logobit.jpeg" style="width: 150px;">
+        </div>
+
+        <div style="display:flex; justify-content:center; margin-bottom: 5%;">
+            <form class="log">
                 <legend>로그인</legend>
                 <input type="text" placeholder="아이디" id="userID">
                 <input type="password" placeholder="비밀번호" id="userPW">
 
-                <button type="button" id="loginbtn" onclick="logcheck()" style="background-color: #FFCA4B; color: white; margin-top: 14px;">로그인</button>
+                <button type="button" id="loginbtn" onclick="logcheck()">로그인</button>
                 <button type="button" id="joinbtn" onclick="location.href='join.html'">회원가입</button>
-                    
+
 
                 <p>SNS계정으로 간편 로그인/회원가입</p>
                 <div class="snslog">
-                    <a href="https://www.facebook.com/" target="_blank"><img src="/img/facebook.png" style="width:70%"></a>
-                    <a href="https://accounts.kakao.com/login/?continue=https%3A%2F%2Faccounts.kakao.com%2Fweblogin%2Faccount%2Finfo#login" target="_blank"><img src="/img/kakao.png" style="width:70%"></a>
-                    <a href="https://twitter.com/i/flow/login" target="_blank"><img src="img/twitter.png" style="width:70%"></a>
+                    <a href="https://www.facebook.com/" target="_blank"><img src="/img/facebook.png"
+                            style="width:70%"></a>
+                    <a href="https://accounts.kakao.com/login/?continue=https%3A%2F%2Faccounts.kakao.com%2Fweblogin%2Faccount%2Finfo#login"
+                        target="_blank"><img src="/img/kakao.png" style="width:70%"></a>
+                    <a href="https://twitter.com/i/flow/login" target="_blank"><img src="img/twitter.png"
+                            style="width:70%"></a>
                 </div>
                 <p style="font-size: 13px; color: #dadada;">로그인에 문제가 있으신가요?</p>
 
-        </form>
-        <form class="log" id="ordercheck">
+            </form>
+            <form class="log" id="ordercheck">
                 <legend>비회원 주문조회</legend>
                 <input type="text" placeholder="주문자명" id="oname">
                 <input type="text" placeholder="주문번호" id="onumber" style="margin-bottom: 14px;">
 
-                <button type="button" id="loginbtn" onclick="ordercheck()"style="background-color: #FFCA4B; color: white;">주문조회</button>
+                <button type="button" id="loginbtn" onclick="ordercheck()" style="margin-top: 8px;"                ">주문조회</button>
                 <p>주문번호는 주문시 발송된 문자(SMS)에서 확인 가능합니다.</p>
 
-        </form>
+            </form>
+        </div>
     </main>
 
 
 
- 
+
 </body>
 
 </html>

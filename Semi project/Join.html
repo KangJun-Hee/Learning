@@ -33,7 +33,7 @@
             padding-left: 14px;
             font-size: 15px;
         }
-
+     
         .inputw {
             width: 100%;
         }
@@ -58,6 +58,19 @@
             font-weight: 700;
         }
 
+        button:hover{
+            background-color: #fff8e7;
+        }
+
+        #jbtn{
+            margin-top: 11px; 
+            margin-bottom: 50px; 
+            background-color: #FFCA4B; 
+            color: white;
+        }
+        #jbtn:hover{
+            background-color: #ffc02e;
+        }
 
         #rcIDsrch,
         #postsrch {
@@ -86,12 +99,15 @@
             padding-bottom: 17px;
         }
 
+        input[type=radio], input[type=checkbox]{
+            accent-color: #FFCA4B;
+        }
     </style>
 </head>
 
 <body>
 
-    <main style="display:flex; justify-content:center; ">
+    <main style="display:flex; justify-content:center; margin-bottom: 15%;">
         <form action="">
             <legend>회원가입</legend>
 
@@ -101,7 +117,7 @@
                 <p>이메일</p>
                 <div class="flex">
                     <input type="text" placeholder="이메일" class="inputw" id="userID">
-                    <p>@</p>
+                    <p style="margin-left: 2%; margin-right: 2%;">@</p>
                     <select id="email" onchange=""class="inputw" style="height: 46px;">
                         <option value="선택해주세요" selected>선택해주세요</option>
                         <option value="naver.com">naver.com</option>
@@ -115,7 +131,7 @@
                         <option value="직접입력">직접입력</option>
                     </select>
                 </div>
-                <button type="button" id="ebtn" onclick="emailcheck()">이메일 중복확인</button>
+                <button type="button" id="ebtn" onclick="emailcheck()" style="margin-top: 1%;">이메일 중복확인</button>
 
                 <p>비밀번호</p>
                 <p class="txts">영문, 숫자를 포함한 8자 이상의 비밀번호를 입력해주세요.</p>
@@ -135,15 +151,16 @@
                 <p class="big">선택사항</p>
                 <hr>
                 <p>생년월일</p>
-                <select name="" style="width: 28%;">
+                <div style="display: flex; justify-content: space-between;">
+                <select name="" style="width: 25%;">
                     <option value="선택" selected>선택</option>
                     <option value="1981">1981</option>
                     <option value="1991">1991</option>
                     <option value="2001">2001</option>
                     <option value="2010">2011</option>
                     <option value="2021">2021</option>
-                </select>년
-                <select name="" style="width: 28%;">
+                </select><p>년</p>
+                <select name="" style="width: 25%;">
                     <option value="선택" selected>선택</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -157,8 +174,8 @@
                     <option value="10">10</option>
                     <option value="11">11</option>
                     <option value="12">12</option>
-                </select>월
-                <select name="" style="width: 28%;">
+                </select><p>월</p>
+                <select name="" style="width: 25%;">
                     <option value="선택" selected>선택</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -172,7 +189,8 @@
                     <option value="10">10</option>
                     <option value="11">11</option>
                     <option value="12">12</option>
-                </select>일
+                </select><p>일</p>
+            </div>
                 <p>성별</p>
                 <div style="display: flex; justify-content: space-around;">
                     <div class="flex">
@@ -191,15 +209,17 @@
                 <p>추천인 ID</p>
                 <div class="flex" id="rcID_adrs">
                     <input type="text" id="rcID_adrs_w">
-                    <button type="button" id="rcIDsrch" onclick="rcIDsrchf()">검색</button>
+                    <button type="button" id="rcIDsrch" onclick="rcIDsrchf()" style="margin-left: 3%;">검색</button>
                 </div>
                 <p>주소</p>
                 <div class="flex" id="rcID_adrs">
                     <input type="text" placeholder="우편번호" id="rcID_adrs_w2">
-                    <button type="button" id="postsrch">우편번호 찾기</button>
+                    <button type="button" id="postsrch" style="width: 25%; margin-left: 2%;">우편번호 찾기</button>
                 </div>
+                <div style="margin-top: 2%;">
                 <input type="text" id="adrs1">
                 <input type="text" id="adrs2">
+                </div>
                 <p>회사전화</p>
                 <input type="text" style="width:95%">
             </div>
@@ -216,12 +236,12 @@
                     </div>
                     <hr>
                     <div class="flex">
-                        <input type="checkbox" name="agree" onclick="checkSelectAll()">
+                        <input type="checkbox" name="agree" onclick="checkSelectAll()" id="magree">
                         <p>이용약관</p>
                         <p class="txts" style="color:#FFCA4B;">(필수)</p>
                     </div>
                     <div class="flex">
-                        <input type="checkbox" name="agree" onclick="checkSelectAll()">
+                        <input type="checkbox" name="agree" onclick="checkSelectAll()" id="magree">
                         <p>개인정보수집 및 이용동의</p>
                         <p class="txts" style="color:#FFCA4B;">(필수)</p>
                     </div>
@@ -237,7 +257,7 @@
                     </div>
                 </div>
             </div>
-            <button type="button" id="jbtn" style="margin-top: 11px; margin-bottom: 50px; background-color: #FFCA4B; color: white;"
+            <button type="button" id="jbtn" style=""
                 onclick="joinUser()">회원가입하기</button>
         </form>
     </main>
