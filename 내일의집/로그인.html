@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <script defer src="회원가입로그인.js"></script>
+    <style>
+      legend {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-size: 23px;
+        text-align: center;
+      }
+
+      /* 로그인통째 */
+      .log {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        margin: 15px;
+      }
+
+      input {
+        height: 42px;
+        border-radius: 8px;
+        border: 1px solid gainsboro;
+        padding-left: 14px;
+        font-size: 15px;
+      }
+
+      #pw {
+        margin-bottom: 14px;
+      }
+
+      #loginbtn,
+      #joinbtn {
+        height: 42px;
+        background-color: white;
+        border: 1px solid #ffca4b;
+        border-radius: 8px;
+        color: #ffca4b;
+        font-size: 17px;
+        font-weight: 700;
+      }
+
+      .snslog {
+        display: flex;
+        margin-left: 10%;
+      }
+
+      p {
+        color: #b9b9b9;
+        text-align: center;
+        font-size: 11px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main style="display: flex; justify-content: center">
+      <form class="log">
+        <legend>로그인</legend>
+        <input type="text" placeholder="아이디" id="userID" />
+        <input type="password" placeholder="비밀번호" id="userPW" />
+
+        <button
+          type="button"
+          id="loginbtn"
+          onclick="logcheck()"
+          style="background-color: #ffca4b; color: white; margin-top: 14px"
+        >
+          로그인
+        </button>
+        <button type="button" id="joinbtn" onclick="location.href='join.html'">회원가입</button>
+
+        <p>SNS계정으로 간편 로그인/회원가입</p>
+        <div class="snslog">
+          <a href="https://www.facebook.com/" target="_blank"
+            ><img src="/img/facebook.png" style="width: 70%"
+          /></a>
+          <a
+            href="https://accounts.kakao.com/login/?continue=https%3A%2F%2Faccounts.kakao.com%2Fweblogin%2Faccount%2Finfo#login"
+            target="_blank"
+            ><img src="/img/kakao.png" style="width: 70%"
+          /></a>
+          <a href="https://twitter.com/i/flow/login" target="_blank"
+            ><img src="img/twitter.png" style="width: 70%"
+          /></a>
+        </div>
+        <p style="font-size: 13px; color: #dadada">로그인에 문제가 있으신가요?</p>
+      </form>
+      <form class="log" id="ordercheck">
+        <legend>비회원 주문조회</legend>
+        <input type="text" placeholder="주문자명" id="oname" />
+        <input type="text" placeholder="주문번호" id="onumber" style="margin-bottom: 14px" />
+
+        <button
+          type="button"
+          id="loginbtn"
+          onclick="ordercheck()"
+          style="background-color: #ffca4b; color: white"
+        >
+          주문조회
+        </button>
+        <p>주문번호는 주문시 발송된 문자(SMS)에서 확인 가능합니다.</p>
+      </form>
+    </main>
+  </body>
+</html>

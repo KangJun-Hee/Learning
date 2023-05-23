@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="csy_shopping.css" />
+    <script src="https://kit.fontawesome.com/27c271a788.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    
+    <title>식품-쇼핑</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+    h1{font-family: 'Dongle', sans-serif;
+        }
+</style>  
+  </head>
+  <body>
+    <!-- 네비바 -->
+      <nav>
+        <div class="wy_containerNav">
+            <h1>내일의 집</h1>
+            <div class='wy_navOut'>
+                <div class="wy_navIN">
+                    <ul>
+                        <li  style="font-size: large;">내집자랑</li>
+                        <li  style="font-size: large;">쇼핑</li>
+                        <!-- <li>셀프 인테리어 가이드</li> -->
+                    </ul>
+                </div>
+                <div class="wy_navIN" id="wy_search">
+                    <span id="wy_icon1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                        <input type="text" placeholder="통합검색" size="25">
+
+                </div>
+                <div class="wy_navIN" id="wy_navLogin">
+                    <ul>
+                        <li> <a href="">로그인</a></li>
+                        <li> <a href="">회원가입</a></li>
+                        <li> <a href="">고객센터</a></li>
+                    </ul>
+                </div>
+                <div class="wy_navIN" id="wy_navUser" style="display: none;">
+                    <ul>
+                        <li> <a href="">아이콘</a></li>
+                        <li> <a href="">아이콘</a></li>
+                        <li> <a href="">사진</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+    
+    <form id="csy_form">
+      
+      <div id="csy_shoppingMenu">
+        <table>
+          <thead class="csy_theadMenu" id="csy_furniture">
+            <th><a href="csy_shoppingFurniture.html">가구</a> </th>
+          </thead>
+          <tbody class="csy_tbodyMenu" ">
+            <tr>
+              <td >침대</td>
+            </tr>
+            <tr>
+              <td >소파</td>
+            </tr>
+            <tr>
+              <td>테이블・식탁・책상</td>
+            </tr>
+            <tr>
+              <td>서랍・수납장</td>
+            </tr>
+            <tr>
+              <td>거실장・TV장</td>
+            </tr>
+            <tr>
+              <td>선반</td>
+            </tr>
+            <tr>
+              <td>진열장・책장</td>
+            </tr>
+            <tr>
+              <td>의자</td>
+            </tr>
+            <tr>
+              <td>행거・옷장</td>
+            </tr>
+            <tr>
+              <td>거울</td>
+            </tr>
+            <tr>
+              <td>화장대・콘솔</td>
+            </tr>
+            <tr>
+              <td>유아동가구</td>
+            </tr>
+            <tr>
+              <td>야외가구</td>
+            </tr>
+            <tr>
+              <td>가벽・파티션</td>
+            </tr>
+          </tbody>
+          <thead class="csy_theadMenu">
+            <th><a href="csy_shoppingFebric.html">패브릭</a></th>
+          </thead>
+          <tbody class="csy_tbodyMenu">
+            <tr>
+              <td>여름패브릭</td>
+            </tr>
+            <tr>
+              <td>침구세트</td>
+            </tr>
+            <tr>
+              <td>커튼・부자재</td>
+            </tr>
+            <tr>
+              <td>러그・카페트</td>
+            </tr>
+            <tr>
+              <td>이불・이불솜</td>
+            </tr>
+            <tr>
+              <td>베개・베개커버</td>
+            </tr>
+            <tr>
+              <td>토퍼・패드</td>
+            </tr>
+            <tr>
+              <td>매트리스커버</td>
+            </tr>
+            <tr>
+              <td>블라인드・롤스크린</td>
+            </tr>
+            <tr>
+              <td>매트</td>
+            </tr>
+            <tr>
+              <td>쿠션・방석</td>
+            </tr>
+            <tr>
+              <td>소파・생활커버</td>
+            </tr>
+            <tr>
+              <td>홈패브릭</td>
+            </tr>
+            <tr>
+              <td>주방패브릭</td>
+            </tr>
+          </tbody>
+          <thead class="csy_theadMenu">
+            <th><a href="csy_shoppingDigital.html">가전・디지털</a></th>
+          </thead>
+          <tbody class="csy_tbodyMenu" >
+            <tr>
+              <td >에어컨</td>
+            </tr>
+            <tr>
+              <td>선풍기・제습기</td>
+            </tr>
+            <tr>
+              <td>냉장고</td>
+            </tr>
+            <tr>
+              <td>TV</td>
+            </tr>
+            <tr>
+              <td>세탁기・건조기</td>
+            </tr>
+            <tr>
+              <td>청소기</td>
+            </tr>
+            <tr>
+              <td>주방가전</td>
+            </tr>
+            <tr>
+              <td>컴퓨터・노트북</td>
+            </tr>
+            <tr>
+              <td>모니터</td>
+            </tr>
+            <tr>
+              <td>복합기・프린터・스캐너</td>
+            </tr>
+            <tr>
+              <td>휴대폰</td>
+            </tr>
+            <tr>
+              <td>태블릿PC</td>
+            </tr>
+            <tr>
+              <td>스마트워치・밴드</td>
+            </tr>
+            <tr>
+              <td>카메라</td>
+            </tr>
+            <tr>
+              <td>게임기・드론</td>
+            </tr>
+            <tr>
+              <td>음향가전</td>
+            </tr>
+            <tr>
+              <td>영상가전</td>
+            </tr>
+            <tr>
+              <td>계절가전</td>
+            </tr>
+            <tr>
+              <td>생활・건강가전</td>
+            </tr>
+          </tbody>
+          <thead class="csy_theadMenu">
+            <th><a href="csy_shoppingKitchen.html">주방용품</a></th>
+          </thead>
+          <tbody class="csy_tbodyMenu">
+            <tr>
+              <td>그릇・식기</td>
+            </tr>
+            <tr>
+              <td>냄비・프라이팬・솥</td>
+            </tr>
+            <tr>
+              <td>컵・잔・텀블러</td>
+            </tr>
+            <tr>
+              <td>수저・커트러리</td>
+            </tr>
+            <tr>
+              <td>주방수납・정리</td>
+            </tr>
+            <tr>
+              <td>식기건조대</td>
+            </tr>
+            <tr>
+              <td>보관・용기・도시락</td>
+            </tr>
+            <tr>
+              <td>주방잡화</td>
+            </tr>
+            <tr>
+              <td>조리도구</td>
+            </tr>
+            <tr>
+              <td>칼・도마・커팅기구</td>
+            </tr>
+            <tr>
+              <td>주방패브릭</td>
+            </tr>
+            <tr>
+              <td>주방일회용품</td>
+            </tr>
+            <tr>
+              <td>커피・티용품</td>
+            </tr>
+            <tr>
+              <td>와인・칵테일용품</td>
+            </tr>
+          </tbody>
+          <thead class="csy_theadMenu">
+            <th>식품</th>
+          </thead>
+          <tbody class="csy_tbodyMenu" id="csy_tbodyMenuOpen">
+            <tr>
+              <td id="csy_menuClick1" >밀키트・간편식</td>
+            </tr>
+            <tr>
+              <td  id="csy_menuClick2">과일・정육・수산</td>
+            </tr>
+            <tr>
+              <td>면류・통조림</td>
+            </tr>
+            <tr>
+              <td>소스・조미료</td>
+            </tr>
+            <tr>
+              <td>간식・과자・떡</td>
+            </tr>
+            <tr>
+              <td>베이커리・잼</td>
+            </tr>
+            <tr>
+              <td>커피・차</td>
+            </tr>
+            <tr>
+              <td>생수・음료</td>
+            </tr>
+            <tr>
+              <td>우유・유제품</td>
+            </tr>
+            <tr>
+              <td>건강식품</td>
+            </tr>
+          </tbody>
+          <thead class="csy_theadMenu">
+            <th><a href="csy_shoppingPlant.html">데코・식물</a></th>
+          </thead>
+          <tbody class="csy_tbodyMenu">
+            <tr>
+              <td>디퓨저・캔들</td>
+            </tr>
+            <tr>
+              <td>플라워・식물</td>
+            </tr>
+            <tr>
+              <td>홈갤러리</td>
+            </tr>
+            <tr>
+              <td>인테리어소품</td>
+            </tr>
+            <tr>
+              <td>시계</td>
+            </tr>
+            <tr>
+              <td>월데코・장식</td>
+            </tr>
+            <tr>
+              <td>데스크・디자인문구</td>
+            </tr>
+            <tr>
+              <td>DIY・취미・공예</td>
+            </tr>
+            <tr>
+              <td>파티・완구</td>
+            </tr>
+            <tr>
+              <td>크리스마스</td>
+            </tr>
+          </tbody>
+          <thead class="csy_theadMenu">
+            <th><a href="csy_shoppingLemp.html">조명</a></th>
+          </thead>
+          <tbody class="csy_tbodyMenu">
+            <tr>
+              <td>천장등</td>
+            </tr>
+            <tr>
+              <td>장스탠드</td>
+            </tr>
+            <tr>
+              <td>단스탠드</td>
+            </tr>
+            <tr>
+              <td>무드등</td>
+            </tr>
+            <tr>
+              <td>LED등</td>
+            </tr>
+            <tr>
+              <td>데스크스탠드</td>
+            </tr>
+            <tr>
+              <td>벽조명</td>
+            </tr>
+            <tr>
+              <td>센서등</td>
+            </tr>
+            <tr>
+              <td>형광등</td>
+            </tr>
+          </tbody>
+          <thead class="csy_theadMenu">
+            <th><a href="csy_shoppingStorage.html">수납・정리</a></th>
+          </thead>
+          <tbody class="csy_tbodyMenu">
+            <tr>
+              <td>서랍장・트롤리</td>
+            </tr>
+            <tr>
+              <td>리빙박스・바구니</td>
+            </tr>
+            <tr>
+              <td>빨래바구니</td>
+            </tr>
+            <tr>
+              <td>행거</td>
+            </tr>
+            <tr>
+              <td>선반</td>
+            </tr>
+            <tr>
+              <td>옷걸이</td>
+            </tr>
+            <tr>
+              <td>옷정리・이불정리</td>
+            </tr>
+            <tr>
+              <td>화장대・테이블정리</td>
+            </tr>
+            <tr>
+              <td>현관・신발정리</td>
+            </tr>
+            <tr>
+              <td>후크・수납걸이</td>
+            </tr>
+          </tbody>
+          <thead class="csy_theadMenu">
+            <th><a href="csy_shoppingCamping.html">캠핑・레저</a></th>
+          </thead>
+          <tbody class="csy_tbodyMenu">
+            <tr>
+              <td>캠핑용품</td>
+            </tr>
+            <tr>
+              <td>홈트레이닝</td>
+            </tr>
+            <tr>
+              <td>레저</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="csy_shoppingItem">
+        <div id="csy_displayOn1" class="csy_body">
+          <div id="csy_shoppingTitle">
+            <p>식품 > 밀키트・간편식</p>
+
+            <div class="wy_carousel">
+              <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                  <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                          aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                          aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                          aria-label="Slide 3"></button>
+                  </div>
+                  <div class="carousel-inner" id="wy_carousel_inner">
+                      <div class="carousel-item active"><!--캐러셀아이템-->
+                        
+                          <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/store/banners/category_banners/168198114516950843.png?gif=1&amp;w=850&amp;webp=1&quot;
+                              class="d-block w-100" alt="...">
+                          
+                      </div>
+                      <div class="carousel-item">
+                        
+                          <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/store/banners/category_banners/168321242395006330.png
+                          " class="d-block w-100"
+                              alt="...">
+                      </div>
+                      <div class="carousel-item">
+
+                          <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/store/banners/category_banners/167816195813589236.jpg" class="d-block w-100"
+                              alt="...">
+                      </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                  </button>
+              </div>
+            </div>
+
+            <select name="" id="csy_tab"><option value="">침구 사이즈</option></select>
+            <select name="" id="csy_tab"><option value="">프레임 형태</option></select>
+            <select name="" id="csy_tab"><option value="">헤드 유무</option></select>
+            <select name="" id="csy_tab"><option value="">매트 쿠션감</option></select>
+            <select name="" id="csy_tab"><option value="">매트리스 종류</option></select>
+            <select name="" id="csy_tab"><option value="">주요 소재</option></select>
+            <select name="" id="csy_tab"><option value="">유형</option></select>
+            <select name="" id="csy_tab"><option value="">브랜드</option></select>
+            <select name="" id="csy_tab"><option value="">배송</option></select>
+            <select name="" id="csy_tab"><option value="">색상</option></select>
+            <select name="" id="csy_tab"><option value="">가격</option></select>
+            <p id="between"><a>전체 16,345개</a>
+              <select name="" id="" style="border: none; font-size: 13px;">
+                <option value="">인기순</option>
+              </select></p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <a href="csy_shoppingDetail.html">
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/168048249618994434.jpg?gif=1&w=960&h=960&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </a>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">헤이몰리</a></td>
+              </tr>
+              <tr>
+                <td>어메이징 원목 침대 매트리스 깔판</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>85% </a>9,900</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/156687402696538490.jpg?gif=1&w=1280&h=1280&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">노르웨이숲</a></td>
+              </tr>
+              <tr>
+                <td>침대 프레임 원목 깔판 매트리스 받침대 7size</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>65% </a>19,000</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/167573585169146490.jpg?gif=1&w=1280&h=1280&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">리샘</a></td>
+              </tr>
+              <tr>
+                <td>캐더린 LED 통서랍 수납침대 매트선택 (SS/Q)</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>10% </a>199,000</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/166668491757404762.jpg?gif=1&w=1280&h=1280&c=c&webp=1"
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">알파침대</a></td>
+              </tr>
+              <tr>
+                <td>클레어 LED 2단 수납침대 + 매트선택 (SS/Q) 3colors</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>10% </a>215,000</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/168387000242808180.png?gif=1&w=1280&h=1280&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">올쏘퍼니처</a></td>
+              </tr>
+              <tr>
+                <td>아이비 원목 침대 프레임 (매트리스선택) (슈퍼싱글/퀸)</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>10% </a>179,000</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/167031541436318775.jpg?gif=1&w=1280&h=1280&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">리샘</a></td>
+              </tr>
+              <tr>
+                <td>루이스 3단 빅서랍 무헤드 수납침대 SS/Q</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>10% </a>119,000</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/165597073691671785.jpg?gif=1&w=1280&h=1280&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><a class="csy_itemTitle">어라운드화이트</a></td>
+            </tr>
+            <tr>
+              <td>네드 무헤드 4단 멀티 통서랍형 수납 침대 SS/Q</td>
+            </tr>
+            <tr>
+              <td><strong><a id='csy_itemSale'>10% </a>259,000</td>
+            </tr>
+            <tr>
+              <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+            </tr>
+            <tr>
+              <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+            </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/167746588388385413.jpg?gif=1&w=1280&h=1280&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">포스트모던</a></td>
+              </tr>
+              <tr>
+                <td>룩셈 LED 서랍 수납침대 프레임 SS/Q/K 매트리스</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>10% </a>189,000</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/160914245501580027.jpg?gif=1&w=1280&h=1280&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">엔투엔퍼니쳐</a></td>
+              </tr>
+              <tr>
+                <td>레인 짜맞춤 평상형 원목 침대 프레임 4size</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>10% </a>474,000</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="csy_displayOn2" class="csy_body">
+          <div id="csy_shoppingTitle">
+            <p>식품 > 과일・정육・수산</p>
+
+            <div class="wy_carousel">
+              <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                  <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                          aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                          aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                          aria-label="Slide 3"></button>
+                  </div>
+                  <div class="carousel-inner" id="wy_carousel_inner">
+                      <div class="carousel-item active"><!--캐러셀아이템-->
+                        
+                          <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/store/banners/category_banners/168198114516950843.png?gif=1&amp;w=850&amp;webp=1&quot;
+                              class="d-block w-100" alt="...">
+                          
+                      </div>
+                      <div class="carousel-item">
+                        
+                          <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/store/banners/category_banners/168321242395006330.png
+                          " class="d-block w-100"
+                              alt="...">
+                      </div>
+                      <div class="carousel-item">
+
+                          <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/store/banners/category_banners/167816195813589236.jpg" class="d-block w-100"
+                              alt="...">
+                      </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                  </button>
+              </div>
+            </div>
+
+            <select name="" id="csy_tab"><option value="">침구 사이즈</option></select>
+            <select name="" id="csy_tab"><option value="">프레임 형태</option></select>
+            <select name="" id="csy_tab"><option value="">헤드 유무</option></select>
+            <select name="" id="csy_tab"><option value="">매트 쿠션감</option></select>
+            <select name="" id="csy_tab"><option value="">매트리스 종류</option></select>
+            <select name="" id="csy_tab"><option value="">주요 소재</option></select>
+            <select name="" id="csy_tab"><option value="">유형</option></select>
+            <select name="" id="csy_tab"><option value="">브랜드</option></select>
+            <select name="" id="csy_tab"><option value="">배송</option></select>
+            <select name="" id="csy_tab"><option value="">색상</option></select>
+            <select name="" id="csy_tab"><option value="">가격</option></select>
+            <p id="between"><a>전체 16,345개</a>
+              <select name="" id="" style="border: none; font-size: 13px;">
+                <option value="">인기순</option>
+              </select></p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/166745388177629913.jpg?gif=1&w=640&h=640&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">먼데이하우스</a></td>
+              </tr>
+              <tr>
+                <td>POL 아쿠아텍스 3인소파 2colors(스툴무료증정)</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>85% </a>199,000</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/162876191111910209.jpg?gif=1&w=640&h=640&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">상도가구</a></td>
+              </tr>
+              <tr>
+                <td>데이앤나잇 1인 좌식쇼파 2colors</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>85% </a>28,900</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/161474487162984019.jpg?gif=1&w=640&h=640&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">삼익가구</a></td>
+              </tr>
+              <tr>
+                <td>데이앤나잇 1인 좌식쇼파 2colors</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>85% </a>199,000</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/165603720335463032.jpg?gif=1&w=640&h=640&c=c&webp=1"
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">채움가구</a></td>
+              </tr>
+              <tr>
+                <td>스테이 아쿠아텍스 2인 소파</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>85% </a>199,000</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/1531964785710_VEwgN1.jpg?gif=1&w=640&h=640&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">보니애가구</a></td>
+              </tr>
+              <tr>
+                <td>타미 1인 패브릭소파 3colors</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>85% </a>106,900</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/168204564790486727.jpg?gif=1&w=640&h=640&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">보니애가구</a></td>
+              </tr>
+              <tr>
+                <td>프라제르 아쿠아텍스 4인소파 스툴무료증정 2colors</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>85% </a>429,000</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/165597073691671785.jpg?gif=1&w=1280&h=1280&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">어라운드화이트</a></td>
+              </tr>
+              <tr>
+                <td>네드 무헤드 4단 멀티 통서랍형 수납 침대 SS/Q</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>85% </a>259,000</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/167685245904952709.jpg?gif=1&w=640&h=640&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">에보니아</a></td>
+              </tr>
+              <tr>
+                <td>루비 2인쇼파 생활방수 패브릭 소파 7colors</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>85% </a>110,000</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/165042956772259176.jpg?gif=1&w=640&h=640&c=c&webp=1"
+                    alt=""
+                    class="csy_img"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="csy_itemTitle">브리엔츠가구</a></td>
+              </tr>
+              <tr>
+                <td>베니스 아쿠아매직텍스 패브릭 4인용 소파 3colors</td>
+              </tr>
+              <tr>
+                <td><strong><a id='csy_itemSale'>85% </a>449,000</td>
+              </tr>
+              <tr>
+                <td><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+              </tr>
+              <tr>
+                <td><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- 푸터 -->
+      <div id="footer">footer</div>
+    </form>
+    <script src="csy_shoppingMain.js"></script>
+  </body>
+</html>

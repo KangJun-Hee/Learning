@@ -1,0 +1,382 @@
+.wy_navIN a{
+    text-decoration: none;
+    color: #000;
+}
+/* 마우스 이벤트 */
+#csy_shoppingMenu .csy_theadMenu :hover {color: #FFCA4B; cursor: pointer;}
+#csy_shoppingMenu .csy_tbodyMenu :hover {color: #FFCA4B; cursor: pointer;}
+#csy_BottomMid :hover {color: #FFCA4B; cursor: pointer;}
+#csy_orderSide #csy_orderBtnForm :hover {cursor: pointer;}
+.csy_body table :hover img {transform: scale(1.05); cursor: pointer;}
+#csy_payTable tr :hover {border: 3px solid #FFCA4B; cursor: pointer;}
+#csy_payTable tr :hover > p{border: none; cursor: pointer;}
+#csy_payTable tr :hover > img{border: none; cursor: pointer;}
+
+.csy_body table td {overflow: hidden; border-radius: 10px;}
+/* 쇼핑 메인 화면 */
+#csy_form {display: grid; grid-template-columns: 3fr 9fr; text-align: left;}
+#csy_shoppingMenu th {font-size: 20px;}
+
+#csy_shoppingMenu a {text-decoration: none; color: black;}
+#csy_shoppingMenu {grid-column: 1; grid-row: 2; margin-top: 23px;}
+#csy_shoppingItem {grid-column: 2; grid-row: 2; margin-top: 25px;}
+
+#csy_shoppingTitle {grid-column-start: 1; grid-column-end: 4; grid-row: 1;}
+#csy_shoppingBody {grid-row: 2; grid-column-start: 1; grid-column-end: 4; display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto; grid-gap: 20px;}
+
+#csy_displayOn2 {display: grid; grid-template-rows: auto; grid-template-columns: 1fr 1fr 1fr; grid-gap: 20px;}
+#csy_displayOn1 {display: grid; grid-template-rows: auto; grid-template-columns: 1fr 1fr 1fr; grid-gap: 20px;}
+
+.wy_carousel {grid-column-start: 1 ; grid-column-end: 4; grid-row: 2}
+
+.csy_tbodyMenu {font-size: 14px;}
+.csy_img { width: 100%; border-radius: 10px;}
+#between {display: flex; justify-content: space-between; margin-top: 30px; font-size: 13px;}
+#csy_tab {font-size: 15px; width: auto; height: 40px; padding: 5px; border-radius: 5px; border-color: lightgray;}
+
+/* 카드형 상품글 폰트 */
+.csy_itemTitle {color: gray; font-size: 14px; text-decoration: none;}
+
+#csy_itemSale {color: #FFCA4B; font-size: 18px; }
+#csy_star {color: #FFCA4B;}
+#csy_saleIcon {background-color:lightcoral; border-radius: 5px; font-size: 11px; color:white; padding: 4px;}
+#csy_freeIcon {background-color: gainsboro; border-radius: 5px; font-size: 11px;  padding: 4px;}
+
+/* 쇼핑 디테일 화면 */
+#csy_form2 {display: grid; grid-template-columns: 1fr auto auto 1fr; grid-template-rows: auto; grid-gap: 20px;}
+.csy_img2 {border-radius: 10px; width: 500px; margin-right: 50px;}
+#csy_shoppingImage {grid-row: 2; grid-column: 2;}
+#csy_shoppingText {grid-row: 2; grid-column: 3;}
+#csy_itemTextBottom {grid-row:3; grid-column-start: 1; grid-column-end: 5;}
+#csy_BottomMid {display: flex; justify-content:space-around; background-color:whitesmoke; border: 1px solid gainsboro; border-left: none;border-right: none; padding: 20px; font-size: 18px;}
+#csy_BottomMid table {width: 1150px; text-align: center;}
+#csy_BottomMid td {width: 20%;}
+#csy_bottom {grid-row: 4; grid-column-start: 2; grid-column-end: 4; text-align: center;}
+
+#csy_bottomImg {width: 100%;}
+#csy_bottomImg2 {width: 60%;}
+#csy_itemSelect {width: 420px; height: 40px; border-radius: 10px;}
+.csy_between {display: flex; justify-content: space-between; font-size: 25px;}
+.csy_btn2 {width: 207px; height: 50px; background-color: #FFCA4B; border-radius: 5px; border: none; color: white; font-size: 18px;}
+.csy_btn1 {width: 207px; height: 50px; background-color:white; border-radius: 5px; border: 2px solid #FFCA4B; color:#FFCA4B; font-size: 18px;}
+#csy_selectArea { padding: 10px; background-color: #FFCA4B; border: 1px solid;}
+#csy_itemCount {width: 40px; border-radius: 8px; border: 1px solid;}
+#csy_right {float: right;};
+
+/* 쇼핑 디테일 화면 폰트 */
+#csy_beforePrice {color: gainsboro; text-decoration:line-through;}
+#csy_Price {font-size: 35px;}
+.csy_itemName {font-size: 25px;}
+#bookmarkIcon {width: 25px; height: 25px; margin-top: 10px;}
+#csy_gray {color: gray;}
+#csy_btn2Font{text-decoration: none; color: white;}
+.csy_tab {color:black; text-decoration: none; }
+
+/* 주문/결제 화면 */
+#csy_form3 {display: grid; grid-template-columns: 2fr 6fr 4fr 1fr; grid-gap: 20px;}
+#csy_orderMain {grid-row: 2; grid-column: 2;}
+#csy_orderSide {grid-row: 2; grid-column: 3; border: 1px solid gainsboro; position: fixed; top:10%; left:65%; background-color: whitesmoke;}
+
+#csy_line {border: none; border-top: 3px solid gainsboro;}
+#csy_orderImg {width: 90px; border-radius: 5px; margin: 10px;}
+#csy_orderText1 {font-size: 30px;}
+#csy_orderText2 {font-size: 20px;}
+.csy_orderText3 {color:gray}
+#csy_orderText4 {font-size: 12px;}
+.csy_orderInputText {width: 250px; height: 42px; border-radius: 8px; border: 1px solid gainsboro; font-size: 15px; margin-bottom: 10px;}
+.csy_orderSelect {width: 250px; height: 42px; border-radius: 8px; border: 1px solid gainsboro;}
+.csy_img3 {width: 70px;}
+#csy_payTable td {border: 2px solid; border-color: gainsboro}
+
+#footer {grid-row: 3; height: 200px; width: 100%; border: 1px solid; grid-column-start: 1; grid-column-end: 5;}
+
+/* 주문/결제 폰트 */
+#csy_fontSize1 {font-size: 15px; margin-bottom: -5px;}
+#csy_fontColor1 {color: cornflowerblue; font-size: 12px};
+
+/* 우영님 css */
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1011;
+    /* background: linear-gradient(to top, #fffde7e1, #ffca4b); */
+}
+nav {
+    display: flex;
+    border-bottom: 1px solid #f0ca71;
+    background-color: white;
+
+}
+
+
+#wy_navLogin a:hover {
+    color: #ffca4b;
+}
+
+
+#wy_navTop {}
+
+#wy_navTop2 {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.wy_containerNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.wy_containerNav h1 {
+    min-width: 110px;
+    margin-left: 20px;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.wy_containerNav2 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    min-width: 890px;
+    max-width: 1330px;
+    margin: 0 auto;
+    height: 40px;
+    ;
+
+}
+
+.wy_navOut {
+    display: flex;
+    justify-content: space-between;
+    min-width: 750px;
+    max-width: 1200px;
+    width: calc(100% - 130px);
+
+}
+
+.wy_navIN li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 3px;
+}
+
+#wy_search {
+    display: flex;
+    border: 1px solid rgb(243, 228, 193);
+    border-radius: 20px;
+    height: 40px;
+    margin-top: 1px;
+}
+
+#wy_icon1 {
+    margin: px;
+    margin-left: 20px;
+}
+
+#wy_search input {
+    background: none;
+    border: none;
+    margin: 5px;
+    margin-left: 10px;
+    outline: none;
+}
+
+.wy_navIN ul {
+    margin-top: 8px;
+}
+
+
+
+#wy_navIN2 {
+    margin-left: 20px;
+}
+
+
+
+.wy_mimosaShadow {
+    color: #ffca4b !important;
+    font-weight: 700;
+    /* text-shadow: 1px 2px #FF9636; */
+
+}
+
+/* 여기까지 navbar */
+
+
+/* 캐러셀 */
+.wy_carousel {
+    margin-top: 5px;
+}
+
+#wy_carousel_inner>div>img {
+    box-sizing: border-box;
+    min-width: 100%;
+
+    min-height: 400px;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+#wy_carousel_inner>div {
+    overflow: hidden;
+}
+
+/* #carouselExampleIndicators{
+    max-height: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    max-width: 1330px;
+    min-width: 750px
+} */
+/* 캐러셀 폭제한 */
+
+.wy_shortcuts {
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    margin-top: 50px;
+    z-index: 10;
+}
+
+.wy_icon {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    min-width: 750px;
+    max-width: 1200px;
+}
+
+.wy_icon i {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.wy_iconIn {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    align-items: center;
+}
+
+.wy_lankList {
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    z-index: 10;
+}
+
+.wy_lankListOutline {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    min-width: 900px;
+    max-width: 1230px;
+    
+}
+#wy_lankListInline {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, minmax(120px, 1fr));
+    gap: 30px;
+}
+
+.wy_strong{
+    font-weight: 700;
+    color: rgb(47, 52, 56);
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 25px;
+    line-height: 28px;
+}
+
+.wy_card{
+    position: relative;
+    display: flex;
+    width: 100%;
+    
+    min-width: 0px;
+    flex-flow: column;
+    
+}
+.wy_cardImgW{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 66.5%;
+    /* 카드이미지 가로세로 비율조정 */
+    border-radius: 8px;
+    object-fit: cover;
+    
+}
+.wy_cardImg {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    /* 카드이미지 가로세로 비율조정 */
+    border-radius: 8px;
+    
+    
+}
+
+.wy_img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    }
+
+.wy_cardText{
+    min-width: 0px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgb(47, 52, 56);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    margin-top: 10px;
+}
+.wy_cardText span{
+    font-size: 18px;
+    color: #ffca4b;
+    /* text-shadow: 1px 0 #FF9636,
+     0 1px #FF9636, -1px 0 #FF9636,
+     0 -1px #FF9636; */
+    text-shadow: 1px 1px rgb(250, 171, 0);
+    margin-right: 20px;
+    font-weight : 600;
+}
+
+
+.wy_lankListOutline>div:first-child {
+    display: flex;
+    justify-content: space-between;
+    margin:  30px 10px;
+}
+
+/* .wy_containerMainOut{display: flex;
+    justify-content: center;
+
+} */
+.wy_containerMain{
+    display: flex;
+    max-width: 1320px;
+    margin: 0 auto;
+
+}
+

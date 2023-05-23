@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS only -->
+    <script src="https://kit.fontawesome.com/27c271a788.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/semiProject.css">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!-- CDN 으로 제이쿼리 파일 받아서 사용하기! -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="css/semiProject.css"></script>
+    <title>내일의 집</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        h1 {
+            font-family: 'Dongle', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="wy_navTop ">
+            <div class="wy_containerNav">
+                <h1>내일의 집</h1>
+                <div class='wy_navOut'>
+                    <div class="wy_navIN">
+                        <ul>
+                            <li style="font-size: large;"><a href=""></a>내집자랑</li>
+                            <li style="font-size: large;"><a href="csy_shoppingFurniture.html">쇼핑</a></li>
+                            <!-- <li>셀프 인테리어 가이드</li> -->
+                        </ul>
+                    </div>
+                    <div class="wy_navIN" id="wy_search">
+                        <span id="wy_icon1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+                            <input type="text" placeholder="통합검색" size="25">
+
+                    </div>
+                    <div class="wy_navIN" id="wy_navLogin">
+                        <ul>
+                            <li> <a href="Login.html">로그인</a></li>
+                            <li> <a href="Join.html">회원가입</a></li>
+                            <li> <a href="">고객센터</a></li>
+                        </ul>
+                    </div>
+                    <div class="wy_navIN" id="wy_navUser" style="display: none;">
+                        <ul>
+                            <li> <a href="">아이콘</a></li>
+                            <li> <a href="">아이콘</a></li>
+                            <li> <a href="">사진</a></li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <nav id="wy_navTop2">
+        <!-- nav 2번째줄 -->
+        <div class="wy_containerNav2">
+            <div class="wy_navIN" id="wy_navIN2">
+                <li>홈</li>
+                <li>거실</li>
+                <li>침실</li>
+                <li>주방</li>
+                <li>화장실</li>
+                <li>반려동물</li>
+                <li>이벤트</li>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+
+
+    <div class="wy_carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner" id="wy_carousel_inner">
+                <div class="carousel-item active" data-bs-interval="4000"><!--캐러셀아이템-->
+                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167696794691805128.jpg?gif=1&w=720&webp=1"
+                        class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block"><!--케러샐 설명-->
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="http://www.lxhausys.co.kr/rn/event/2019/0712/images/slide01-01.jpg" class="d-block w-100"
+                        alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="https://storage.heypop.kr/assets/2021/08/12115355/milller_thumb.jpg" class="d-block w-100"
+                        alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+
+    </div>
+    <div class="wy_shortcuts"><!--바로가기-->
+        <div class="wy_icon">
+            <div class="wy_iconIn">
+                <i class="fa-solid fa-couch" style="color: #ffca4b;"></i>
+                <span>거실</span>
+            </div>
+            <div class="wy_iconIn">
+                <i class="fa-solid fa-bed" style="color: #ffca4b;"></i>
+                <span>침실</span>
+            </div>
+            <div class="wy_iconIn">
+                <i class="fa-solid fa-utensils" style="color: #ffca4b;"></i>
+                <span>주방</span>
+            </div>
+            <div class="wy_iconIn">
+                <i class="fa-solid fa-dog" style="color: #ffca4b;"></i>
+                <span>반려동물</span>
+            </div>
+            <div class="wy_iconIn">
+                <i class="fa-solid fa-bath" style="color: #ffca4b;"></i>
+                <span>욕실</span>
+            </div>
+            <div class="wy_iconIn">
+                <i class="fa-solid fa-gift" style="color: #ffca4b;"></i>
+                <span>이벤트</span>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="wy_lankList">
+        <div class="wy_lankListOutline">
+            <div>
+                <strong class="wy_strong">로망을 담은 홈스타일링 💗</strong>
+                <span style="text-shadow: 1px 1px rgb(250, 171, 0); color :#ffca4b; margin-right: 20px;">더보기</span>
+            </div>
+            <div id="wy_lankListInline">
+
+                <div class="wy_card">
+                    <a href="">
+                        <div class="wy_cardImgW">
+
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/projects/cover_images/168165549958176745.jpg?gif=1&amp;w=480&amp;h=320&amp;c=c&amp;q=80&amp;webp=1"
+                                class="wy_img" alt="">
+                            <div style="font-size: 25px; position: absolute; right: 10px; bottom: 5px;">
+                                <i class="fa-regular fa-bookmark" style="color: #ffca4b; z-index: 1;"></i>
+                            </div>
+                        </div>
+                        <div class=wy_cardText>
+                            <p>
+                                <span>
+                                    Silver + Brown = ♥
+                                </span>
+                                차가움과 따뜻함이 공존하는 집
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="wy_card">
+                    <a href="">
+                        <div class="wy_cardImg">
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/168200593689579041.JPG?gif=1&amp;w=480&amp;h=320&amp;c=c&amp;q=80&amp;webp=1"
+                                class="wy_img" alt="">
+                            <div style="font-size: 25px; position: absolute; right: 10px; bottom: 5px;">
+                                <i class="fa-regular fa-bookmark" style="color: #ffca4b; z-index: 1;"></i>
+                            </div>
+                        </div>
+                        <div class=wy_cardText>
+                            <p>
+                                <span>
+                                    숲속의 정원을 담은
+                                </span>
+                                9평 투룸 우드 톤 스타일링
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="wy_card">
+                    <a href="">
+                        <div class="wy_cardImg">
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/168244028542951767.jpg?w=850&amp;h=512&amp;c=c"
+                                class="wy_img" alt="">
+                            <div style="font-size: 25px; position: absolute; right: 10px; bottom: 5px;">
+                                <i class="fa-regular fa-bookmark" style="color: #ffca4b; z-index: 1;"></i>
+                            </div>
+                        </div>
+                        <div class=wy_cardText>
+                            <p><span>원목 가구로 정갈하고 편안하게</span>쉼이 있는 22평🥰</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="wy_card">
+                    <a href="">
+                        <div class="wy_cardImg">
+                            <img class="wy_img" alt=""
+                                src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/expert_reviews/168411740049230475.jpg?w=360&amp;h=256&amp;c=c">
+                            <div style="font-size: 25px; position: absolute; right: 10px; bottom: 5px;">
+                                <i class="fa-regular fa-bookmark" style="color: #ffca4b; z-index: 1;"></i>
+                            </div>
+                        </div>
+                        <div class=wy_cardText>
+                            <p>
+                                <span>
+                                    감각적인 화이트 주방
+                                </span> 품은 33평 모던 하우스🤍
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="wy_lankList">
+        <div class="wy_lankListOutline">
+            <div>
+                <strong class="wy_strong">🏅 Weekly Hot Item 🏅 </strong>
+                <span style="text-shadow: 1px 1px rgb(250, 171, 0); color :#ffca4b;">더보기</span>
+            </div>
+            <div id="wy_lankListInline">
+
+                <div class="wy_card">
+                    <a href="">
+                        <div class="wy_cardImg">
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/168048249618994434.jpg?gif=1&w=960&h=960&c=c&webp=1"
+                                alt="" class="wy_img" />
+
+                            <div style="font-size: 25px; position: absolute; right: 10px; bottom: 5px;">
+                                <i class="fa-regular fa-bookmark" style="color: #ffca4b; z-index: 1;"></i>
+                            </div>
+                        </div>
+                        <div class=wy_cardText style="z-index: 3;">
+                            
+                        </div>
+                    </a>
+                </div>
+                <div class="wy_card">
+                    <a href="">
+                        <div class="wy_cardImg">
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/168048249618994434.jpg?gif=1&w=960&h=960&c=c&webp=1"
+                                alt="" class="wy_img" />
+                            <div style="font-size: 25px; position: absolute; right: 10px; bottom: 5px;">
+                                <i class="fa-regular fa-bookmark" style="color: #ffca4b; z-index: 1;"></i>
+                            </div>
+                        </div>
+                        <div class=wy_cardText>
+                            <a class="csy_itemTitle">헤이몰리</a>
+                            <div>어메이징 원목 침대 매트리스 깔판</div>
+                            <div><strong><a id='csy_itemSale'>85% </a>9,900</div>
+                            <div><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></div>
+                            <div><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="wy_card">
+                    <a href="">
+                        <div class="wy_cardImg">
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/168048249618994434.jpg?gif=1&w=960&h=960&c=c&webp=1"
+                                alt="" class="wy_img" />
+                            <div style="font-size: 25px; position: absolute; right: 10px; bottom: 5px;">
+                                <i class="fa-regular fa-bookmark" style="color: #ffca4b; z-index: 1;"></i>
+                            </div>
+                        </div>
+                        <div class=wy_cardText>
+                            <a class="csy_itemTitle">헤이몰리</a>
+                            <div>어메이징 원목 침대 매트리스 깔판</div>
+                            <div><strong><a id='csy_itemSale'>85% </a>9,900</div>
+                            <div><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></div>
+                            <div><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="wy_card">
+                    <a href="">
+                        <div class="wy_cardImg">
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/168048249618994434.jpg?gif=1&w=960&h=960&c=c&webp=1"
+                                alt="" class="wy_img" />
+                            <div style="font-size: 25px; position: absolute; right: 10px; bottom: 5px;">
+                                <i class="fa-regular fa-bookmark" style="color: #ffca4b; z-index: 1;"></i>
+                            </div>
+                        </div>
+                        <div class=wy_cardText>
+                            <a class="csy_itemTitle">헤이몰리</a>
+                            <div>어메이징 원목 침대 매트리스 깔판</div>
+                            <div><strong><a id='csy_itemSale'>85% </a>9,900</div>
+                            <div><a id='csy_star'>★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></div>
+                            <div><a id="csy_freeIcon">무료배송</a><a id="csy_saleIcon">특가</a></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wy_footer">
+        <footer>
+            <div></div>
+            <div></div>
+        </footer>
+    </div>
+
+
+
+
+</body>
+
+</html>

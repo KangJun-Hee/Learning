@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="csy_shopping.css" />
+    <!-- 우영님 css관련 -->
+    <script src="https://kit.fontawesome.com/27c271a788.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <title>상세페이지</title>
+    <!-- 우영님 css관련 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+    h1{font-family: 'Dongle', sans-serif;
+        }
+</style>  
+
+  </head>
+  <body>
+
+    <!-- 네비바 -->
+    <nav>
+      <div class="wy_containerNav">
+          <h1>내일의 집</h1>
+          <div class='wy_navOut'>
+            <div class="wy_navIN">
+              <ul>
+                <li  style="font-size: large;">내집자랑</li>
+                <li  style="font-size: large;">쇼핑</li>
+                <!-- <li>셀프 인테리어 가이드</li> -->
+              </ul>
+            </div>
+            <div class="wy_navIN" id="wy_search">
+             <span id="wy_icon1">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+             </svg>
+             <input type="text" placeholder="통합검색" size="25">
+            </div>
+            <div class="wy_navIN" id="wy_navLogin">
+             <ul>
+              <li> <a href="">로그인</a></li>
+              <li> <a href="">회원가입</a></li>
+              <li> <a href="">고객센터</a></li>
+             </ul>
+            </div>
+            <div class="wy_navIN" id="wy_navUser" style="display: none;">
+             <ul>
+              <li> <a href="">아이콘</a></li>
+              <li> <a href="">아이콘</a></li>
+              <li> <a href="">사진</a></li>
+             </ul>
+            </div>
+          </div>
+      </div>
+  </nav>
+  
+    <form id="csy_form2">
+      <div id="csy_shoppingImage">
+        <img
+          src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/168048249618994434.jpg?gif=1&w=640&h=640&c=c&webp=1"
+          alt=""
+          class="csy_img2"
+        />
+      </div>
+      <div id="csy_shoppingText">
+        <table class="csy_itemText">
+          <tr>
+            <td><p class="csy_itemTitle">헤이몰리</p></td>
+          </tr>
+          <tr>
+            <td class="csy_between">
+              <p class="csy_itemName" style="margin-bottom: -20px;">어메이징 원목 침대 매트리스 깔판</p
+              ><img src="https://cdn-icons-png.flaticon.com/128/25/25667.png" id="bookmarkIcon" />
+            </td>
+          </tr>
+          <tr>
+            <td><a id="csy_star">★</a>4.5 <a class="csy_itemTitle">리뷰 14,179</a></td>
+          </tr>
+          <tr>
+            <td><a id="csy_itemSale">85% </a><a id="csy_beforePrice">70,000원</a></td>
+          </tr>
+          <tr>
+            <td>
+              <strong><a id="csy_Price" data-value="9900">9,900원</a></strong>
+              <a id="csy_saleIcon">특가</a>
+            </td>
+          </tr>
+          <tr>
+            <td><a id="csy_gray">혜택 </a><a>10P 적립 (WELCOME 0.1% 적립)</a></td>
+          </tr>
+          <tr>
+            <td><a id="csy_gray">배송 </a><a>1개당 15,000원 선결제</a></td>
+          </tr>
+          <tr>
+            <td><br><br></td>
+          </tr>
+          <tr>
+            <td>
+              <select id="csy_itemSelect">
+                <option value="선택 :">사이즈 선택</option>
+                <option value="선택 : SS 사이즈">SS 사이즈</option>
+                <option value="선택 : Q 사이즈">Q 사이즈</option>
+                <option value="선택 : K 사이즈">K 사이즈</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <br />
+              <span id="csy_itemSelectText">선택 : </span>
+              
+              <input
+                type="number"
+                id="csy_itemCount"
+                value="0"
+                min="0"
+                max="100"
+                style="float: right; margin-left: 5px"
+              />
+              <a style="float: right">수량 : </a>
+            </td>
+          </tr>
+          <tr>
+            <td><br /></td>
+          </tr>
+          <tr>
+            <td class="csy_between"><a>주문금액</a><span id="csy_totalPrice">0원</span></td>
+          </tr>
+          <tr>
+            <td>
+              <button class="csy_btn1">장바구니</button>
+              <button class="csy_btn2" id="csy_btn2Font">바로구매</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="csy_itemTextBottom">
+        <div id="csy_BottomMid">
+          <table>
+            <tr>
+              <td><a class="csy_tab" id="csy_infoTab">상품정보</a></td>
+              <td><a class="csy_tab" id="csy_reviewTab">리뷰</a></td>
+              <td><a class="csy_tab" id="csy_QnATab">문의</a></td>
+              <td><a class="csy_tab" id="csy_dilTab">배송/환불</a></td>
+              <td><a class="csy_tab" id="csy_pickTab">추천</a></td>
+            </tr>
+          </table>
+         
+        </div>
+      </div>
+      <div id="csy_bottom">
+        <div id="csy_bottomItemInfo">
+          <img
+            src="https://exit.ohou.se/7edd401762e52751ed6132889ae5267ce24ffb1b/happyput.speedgabia.com/EinHaus/image/YOOJIN/OM/am_01.gif"
+            id="csy_bottomImg"
+            alt=""
+          />
+        </div>
+        <div id="csy_bottomReview"><img src="리뷰.png" alt="" id="csy_bottomImg" /></div>
+        <div id="csy_bottomQnA"><img src="문의.png" alt="" id="csy_bottomImg" /></div>
+        <div id="csy_bottomDil"><img src="환불.png" alt="" id="csy_bottomImg" /></div>
+        <div id="csy_bottomPick">
+          <div>
+          <img src="같은시리즈상품.png" alt="" id="csy_bottomImg" />
+          <!-- <img src="비슷한상품.png" alt="" id="csy_bottomImg2"/> -->
+        </div>
+        </div>
+      </div>
+
+      
+      
+    </form>
+    
+    <!-- 푸터 -->
+    <div id="footer">footer</div>
+
+    <script src="csy_shoppingDetail.js"></script>
+  </body>
+</html>
