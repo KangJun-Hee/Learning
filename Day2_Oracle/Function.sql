@@ -106,74 +106,98 @@ CREATE OR REPLACE PROCEDURE 프로시저 이름
 
 
 
-SET SERVEROUTPUT ON;
+--SET SERVEROUTPUT ON;
+--
+---- 익명 프로시저
+--DECLARE
+--   CURSOR CUR_JOB IS SELECT * FROM JOB; -- 커서 선언
+--   V_JOB JOB%ROWTYPE; --변수 선언, 모든 열의 데이터를 갖고 옴(행참조 : %ROWTYPE)
+--BEGIN
+--    OPEN CUR_JOB; --커서 열기
+--    LOOP --반복
+--    FETCH CUR_JOB INTO V_JOB; --CUR_JOB의 한 행을 V_JOB에 넣음
+--    IF CUR_JOB%NOTFOUND THEN
+--    EXIT;
+--    END IF; --조건문을 통해 루프 탈출
+--    DBMS_OUTPUT.PUT_LINE('EMPNO :' || V_JOB.EMPNO ||
+--                         'ENAME :' || V_JOB.ENAME ||
+--                         'JOB :' || V_JOB.JOB ||
+--                         'DEPTNO :' || V_JOB.DEPTNO);
+--    END LOOP;
+--    CLOSE CUR_JOB;
+--END;
+-- 
+--SELECT * FROM JOB;
+--
+--CREATE OR REPLACE PROCEDURE VALIDATE_JOB
+--(
+--    V_EMPNO JOB.EMPNO%TYPE,
+--    V_DEPTNO JOB.DEPTNO%TYPE
+--)
+--AS
+--    V_JOB JOB%ROWTYPE;
+--    CURSOR CUR_JOB IS SELECT * FROM JOB WHERE EMPNO = V_EMPNO;
+--BEGIN
+--    OPEN CUR_JOB;
+--    FETCH CUR_JOB INTO V_JOB;
+--    IF CUR_JOB%NOTFOUND THEN
+--        DBMS_OUTPUT.PUT_LINE('회원번호 불일치');
+--    ELSIF V_DEPTNO <> V_JOB.DEPTNO THEN
+--        DBMS_OUTPUT.PUT_LINE('부서번호 불일치');
+--    ELSE
+--        DBMS_OUTPUT.PUT_LINE('인증 성공');
+--    END IF;
+--CLOSE CUR_JOB;
+--END;
+-- 
+--EXECUTE VALIDATE_JOB(1, 37);
+--EXECUTE VALIDATE_JOB(4, 22);
+--/
+----슬래시 / 끝났다는 뜻
+--
+--
+--CREATE TABLE CAFE(
+--    CAFEID NUMBER(20),
+--    CAFENAME varchar(20),
+--    CORPORATION VARCHAR2(20),
+--    PRICE NUMBER
+--);
+--
+--CREATE OR REPLACE PROCEDURE INSERTCAFE(
+--    mCAFEID IN number,
+--    mCAFENAME in varchar,
+--    mCORPORATION in VARCHAR2,
+--    mPRICE in number)
+--as
+--begin
+--    insert into cafe(CAFEID,CAFENAME,CORPORATION,PRICE)
+--    values(mCAFEID,mCAFENAME,mCORPORATION,mPRICE);
+--end;
+--
+--exec insertcafe(14,'스타벅스','신세계',7000);
+--exec insertcafe(20,'이디야','이디야',4500);
+--exec insertcafe(03,'빽다방','백종원',3000);
 
--- 익명 프로시저
-DECLARE
-   CURSOR CUR_JOB IS SELECT * FROM JOB; -- 커서 선언
-   V_JOB JOB%ROWTYPE; --변수 선언, 모든 열의 데이터를 갖고 옴(행참조 : %ROWTYPE)
-BEGIN
-    OPEN CUR_JOB; --커서 열기
-    LOOP --반복
-    FETCH CUR_JOB INTO V_JOB; --CUR_JOB의 한 행을 V_JOB에 넣음
-    IF CUR_JOB%NOTFOUND THEN
-    EXIT;
-    END IF; --조건문을 통해 루프 탈출
-    DBMS_OUTPUT.PUT_LINE('EMPNO :' || V_JOB.EMPNO ||
-                         'ENAME :' || V_JOB.ENAME ||
-                         'JOB :' || V_JOB.JOB ||
-                         'DEPTNO :' || V_JOB.DEPTNO);
-    END LOOP;
-    CLOSE CUR_JOB;
-END;
- 
-SELECT * FROM JOB;
+자신을 호출한 곳으로 리턴 해주는 값은 없고 호출되어 실행만 된다.
 
-CREATE OR REPLACE PROCEDURE VALIDATE_JOB
-(
-    V_EMPNO JOB.EMPNO%TYPE,
-    V_DEPTNO JOB.DEPTNO%TYPE
-)
-AS
-    V_JOB JOB%ROWTYPE;
-    CURSOR CUR_JOB IS SELECT * FROM JOB WHERE EMPNO = V_EMPNO;
-BEGIN
-    OPEN CUR_JOB;
-    FETCH CUR_JOB INTO V_JOB;
-    IF CUR_JOB%NOTFOUND THEN
-        DBMS_OUTPUT.PUT_LINE('회원번호 불일치');
-    ELSIF V_DEPTNO <> V_JOB.DEPTNO THEN
-        DBMS_OUTPUT.PUT_LINE('부서번호 불일치');
-    ELSE
-        DBMS_OUTPUT.PUT_LINE('인증 성공');
-    END IF;
-CLOSE CUR_JOB;
-END;
- 
-EXECUTE VALIDATE_JOB(1, 37);
-EXECUTE VALIDATE_JOB(4, 22);
-/
---슬래시 / 끝났다는 뜻
+n  실행환경과 Stored Program 사이에 값을 전달하기 위해 파라미터를 사용한다.
 
+n  파라미터 종류
 
-CREATE TABLE CAFE(
-    CAFEID NUMBER(20),
-    CAFENAME varchar(20),
-    CORPORATION VARCHAR2(20),
-    PRICE NUMBER
-);
+IN : 호출하는 곳에서 함수 or 프로시저로 값을 전달
 
-CREATE OR REPLACE PROCEDURE INSERTCAFE(
-    mCAFEID IN number,
-    mCAFENAME in varchar,
-    mCORPORATION in VARCHAR2,
-    mPRICE in number)
-as
-begin
-    insert into cafe(CAFEID,CAFENAME,CORPORATION,PRICE)
-    values(mCAFEID,mCAFENAME,mCORPORATION,mPRICE);
-end;
+OUT : 함수 or 프로시저에서 호출한 곳으로 값을 전달
 
-exec insertcafe(14,'스타벅스','신세계',7000);
-exec insertcafe(20,'이디야','이디야',4500);
-exec insertcafe(03,'빽다방','백종원',3000);
+IN OUT : 호출하는 곳에서 함수 or 프로시저로 값을 전달하고 동시에 함수 or
+
+프로시저에서 호출한 곳으로 값을 전달하는 변수.
+
+n  프러시저 Header의 끝에는 IS[AS]가 와야하고 Is와 Begin사이에 Begin ~ End에서 사용할
+
+변수를 선언한다.
+
+n  자신의 스키마에서 프로시저를 만들기 위해서는 CREATE PROCEDURE 시스템권한이
+
+있어야 하며 다른 스키마 계정에서 프로시저를 만들기 위해서는
+
+CREATE ANY PROCEDURE 시스템 권한이 이 있어야 한다.
