@@ -1,0 +1,250 @@
+1. 공백치환 함수 ( NULL값 확인 함수 )
+ORACLE에서는 NVL함수를 사용하지만 MYSQL에서는 IFNULL을 사용한다.
+
+Oracle : SELECT NVL('컬럼명', '') FROM DUAL;
+
+MySql : SELECT IFNULL('컬럼명', '') FROM DUAL;~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+
+2. 현재 날짜시간
+ORACLE에서는 SYSDATE를 사용하지만 MYSQL에서는 NOW()함수를 사용한다.
+
+Oracle : SYSDATE
+
+Mysql  : NOW() 
+
+ 
+
+
+ 
+
+3. 날짜포멧 
+
+ORACLE에서는 날짜를 STRING으로 변경시 TO_CHAR()함수를 사용하지만 MYSQL에서는 DATE_FORMAT()함수를 사용한다.
+
+Oracle : TO_CHAR(sysdate,'MMDDYYYYHH24MISS')
+
+Mysql  : DATE_FORMAT(now(),'%Y%m%d%H%i%s')  -> 여기서 대문자Y는 4자리 년도(2021), 소문자 y는 2자리 년도(21)
+
+ 
+
+4. 날짜 포멧 : 요일
+
+Oracle : 요일이 1~7로 인식함  -> TO_CHAR(SYSDATE - 1, 'D') 
+
+Mysql : 요일이 0~6으로 인식   -> DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 1 DAY), '%w')
+
+* 참고로 자바스크립트가 0~6으로 인식하기에 Oracle 쿼리에서 -1을 해서 맞추는 경우가 많다.
+
+* 요일 순서 : 일,월,화,수,목,금,토
+
+ 
+
+5. Like절 '%' 사용법
+
+ORACLE에서는 문자와 문자를 합칠때 '||'을 사용하고, MYSQL에서는 문자와 문자를 합칠때 CONCAT()함수를 사용합니다.
+
+Oracle : SELECT USER_ID FROM KGON WHERE USER_ID LIKE '%' || '문자' || '%'
+
+Mysql : SELECT USER_ID FROM KGON WHERE USER_ID LIKE CONCAT('%','문자','%')~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+6. 형변환
+
+ORACLE에서는 TO_CHAR, TO_NUMBER을 사용하여 형을 변환하지만 MYSQL에서는 CAST를 사용하여 형을 변환합니다.
+
+Oracle : SELECT TO_CHAR(632) FROM DUAL (To_char, To_number 등)
+
+Mysql : SELECT CAST(1234 AS CHAR) FROM DUAL
+
+ 
+
+7. 대소문자 구분함
+
+Oracle : 구분없음
+
+Mysql : 기본적으로 구분하나, 설정으로 변경 가능하다.
+
+ 
+
+8. ROWNUM
+
+
+Oracle : where 절에 rownum > 5 and rownum =< 10 
+
+Mysql : where절 없이 limit 5,10~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+
+ 
+
+10. 문자열 자르기
+
+Oracle: SUBSTR(문자열, 1, 10)
+
+Mysql: SUBSTRING(문자열, 1,10), LEFT(문자열, 3), RIGHT(문자열, 3)~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+11. 문자열 합치기 ( - 문자열을 연결한다고 가정)
+
+Oracle: 문자열(또는 컬럼) ||' - '
+
+Mysql: CONCAT(문자열(또는 컬럼), ' - ')
+
+ 
+
+12. 예약어가 컬럼명일 때
+
+Oracle: 컬럼명을 따옴표(")로 감싸기 (예: select "column" from tab)
+
+Mysql: 컬럼명을 TAB 키 위에 있는 ` 키 ( Single quotation )로 감싸기
+
+ 
+
+13. 저장프로시저 있는지 여부 파악해서 Create 하기
+
+Oracle: CREATE OR REPLACE PROCEDURE 프로시저명
+
+Mysql: DROP PROCEDURE IF EXISTS 프로시저명; 을 한 뒤에 CREATE PROCEDURE 프로시저명
+
+ 
+
+14. 페이징처리가 다름
+
+ORACLE은 ROWNUM을 이용하여 WHERE에서 BETWEEN으로 1~10번째자료를 나타내고,
+
+MYSQL은 LIMIT를 사용하여 1~10번째자료를 나타냄
+
+Oracle : SELECT * FROM ( SELECT ROWNUM , A.* FROM (SELECT * FROM KGON) A )WHERE ROWNUM BETWEEN 0 AND 10
+
+Mysql : SELECT * FROM KGON LIMIT 0, 10
+
+
+
+
+-- 사용자 계정 만들기
+-- CREATE user 계정명 IDENTIFIED by 비밀번호;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- 권한 부여
+-- grant create session, create table, create sequence, create view to 계정명;
+-- 사용자 계정에 테이블 공간 설정
+
+-- alter user 계정명 default tablespace users;
+-- 테이블 공간에 쿼터 할당
+-- alter user 계정명 quota unlimited on users;
+
+
+--PC>sqlplus
+-- oracle sql*plus 에 접속하고자 한다.
+--Enter user-name : system
+--Enter password : password
+-- 패스워드는 오라클 DATABASE 설치시에 입력했던 password 입력
+
+--연결메시지 확인
+--Connected to : Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+
+-- 현재 DB에 생성된 계정 확인
+--select * from ALL_users;    // 모든 계정에 대한 정보 확인
+--select * from DBA_users;    // 모든 계정에 대한 정보 확인
+--select username from ALL_users;    // 모든 계정에 대한 이름 확인
+--select username from DBA_users;    // 모든 계정에 대한 이름 확인
+-- sql 사용자 계정 생성
+-- create user [USERNAME] identified by [PASSWORD];~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--계정 생성 후, 생성된 계정 확인
+-- 계정 비밀번호 변경
+--ALTER USER [USERNAME] IDENTIFIED BY [NEW PASSWORD];
+
+--계정 권한 할당
+ -- 이때 계정이 관리자 계정이어야 합니다.
+ --대표적으로 sys, system 계정이며 오라클 DATABASE 설치시 자동으로 생성되어 있습니다. 
+ --SQL 접속시 [ system / 설치시 입력 비밀번호 ] 으로 system 계정에 접속하고,
+--명령어 [ conn/as sysdba ] 으로 관리자 sys 계정에 접속할 수 있습니다. 
+--GRANT CREATE 권한명 TO 계정;
+-- ----------------------------------------------------
+-- 시스템 권한 종류
+--create user : 데이터 베이스 유저 생성 권한~~~~~~~~~~~~~~~~~~~~~~
+--select any table : 모든 유저의 테이블 조회 권한
+--create any table : 모든 유저의 테이블 생성 권한
+--create session : 테이터베이스 접속 권한
+--create table : 테이블 생성 권한
+--create view : 뷰 생성 권한
+--create proced user : 프로시저 생성 권한
+--create sequence : 시퀀스 생성 권한
+--sysdba : 테이버베이스를 관리하는 최고 권한
+--sysoper : 테이터베이스를 관리하는 권한
+
+
+--Revoke 권한 제거
+-- revoke 권한명 (시스템 명령 또는 SQL 명령) ON 테이블명 FROM 계정;
+--계정삭제
+-- DROP USER 계정명 CASCADE;
+
+-- 현재까지 진행내용 저장하기 / commit하기
+-- commit;
+-- 저장하기 전 바로 내용으로 되돌리기 / rollback하기
+-- rollback;
+-- 현재 연결된 계정 보기
+-- show user
+
+
+
+
+
+
+
+
+
+자주 발생하는 에러 코드 모음
+1. ORA-00001: 무결성 제약 조건에 위배됩니다. (PK 중복)
+
+- 기본키(PK)가 중복값인지 확인
+
+ 
+
+2. ORA-00600: internal error code, arguments: [], [], [] (DB 내부오류)
+
+- CLOB 컬럼이 있는지 확인
+
+ 
+
+3. ORA-00904: invalid identifler, 부적합한 식별자
+
+- 테이블에 없는 컬럼명을 조회했을 때 발생하므로 컬럼명 확인
+
+ 
+
+4. ORA-00918: column ambiguously defined, 열의 정의가 애매합니다.
+
+- 조회, 조건절에 있는 특정 컬럼이 어떤 테이블의 컬럼인지 명확하지 않을 때 발생하므로 정확한 명칭을 제공
+
+SELECT A.NUMBER
+FROM A, B
+WHERE A.NUMBER = B.NUMBER
+  AND A.NAME = '두부'
+5. ORA-00942: 테이블 또는 뷰가 존재하지 않습니다.
+
+- FROM 절에 테이블이 존재하지 않거나 해당 테이블의 스키마 권한이 없는 경우에 발생하므로 테이블명 확인 혹은 권한을 부여
+
+ 
+
+6. ORA-01400: NULL을 삽입할 수 없습니다.
+
+- 기본키(PK)에 NULL이 입력되어 발생하므로 기본키 확인
+
+ 
+
+7. ORA-01438: 이 열에 대해 지정된 전체 자릿수보다 큰 값이 허용됩니다.
+
+- 입력하고자하는 컬럼의 자릿수가 입력할 내용의 자릿수보다 작을 때 발생하므로 해당 컬럼의 자릿수 확인
+
+ 
+
+8. ORA-02899: 열에 대한 값이 너무 큼(실제:13, 최대값:10)
+
+- 입력하고자하는 컬럼의 크기가 입력할 내용의 크기보다 작을 때 발생하므로 해당 컬럼의 크기를 증가시키거나 입력할 내용을 줄임
