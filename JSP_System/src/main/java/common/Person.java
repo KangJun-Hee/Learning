@@ -1,4 +1,4 @@
-package common;
+package common;  //기본 패키지 안에 저장
 
 public class Person {
 	private String name;
@@ -27,5 +27,6 @@ public class Person {
 	public void setAge(int age) {
 		this.age = age;
 	};
+	
 	
 }

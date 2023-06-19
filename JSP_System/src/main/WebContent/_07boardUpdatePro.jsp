@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메인 화면</title>
+<title>07</title>
 </head>
 <body>
-	<h1><a href="02_01_adminMain.jsp">관리자 페이지</a></h1>
-	<h1><a href="03_01_userMain.jsp">사용자 페이지</a></h1>
-	
+
 </body>
 </html>

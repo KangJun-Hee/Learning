@@ -6,9 +6,8 @@ public class UserDTO {
 	private String name;
 	private String reg_date;
 	
-	//1111 / 1111/ 이서희 /20230412
-	
 	public UserDTO() {};
+	
 	public UserDTO(String id, String pw, String name, String reg_date) {
 		super();
 		this.id = id;
@@ -39,6 +38,5 @@ public class UserDTO {
 	}
 	public void setReg_date(String reg_date) {
 		this.reg_date = reg_date;
-	}
-
+	}	
 }

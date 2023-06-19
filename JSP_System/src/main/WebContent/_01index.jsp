@@ -7,8 +7,9 @@
 <title>메인 화면</title>
 </head>
 <body>
-	<h1><a href="02_01_adminMain.jsp">관리자 페이지</a></h1>
-	<h1><a href="03_01_userMain.jsp">사용자 페이지</a></h1>
-	
+	<div align="center">
+		<h2><a href="#">[01]Dummy 파일 추가</a></h2>
+		<h2><a href="_02boardWrite.jsp">[02]새 게시글 추가</a></h2>
+	</div>
 </body>
 </html>

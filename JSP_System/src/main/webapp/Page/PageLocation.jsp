@@ -1,12 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>PageLocation</title>
-</head>
-<body>
 <%@ page import="common.Person"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -24,8 +15,5 @@
         <li>String 객체 : <%= (pString == null) ? "값 없음" : pString %></li>
         <li>Person 객체 : <%= (pPerson == null) ? "값 없음" : ((Person)pPerson).getName() %></li>
     </ul>
-</body>
-</html>
-
 </body>
 </html>

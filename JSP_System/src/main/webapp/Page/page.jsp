@@ -56,24 +56,22 @@
 	 <ul>
 	 	<li> integer 객체 : <%=pInteger%></li>
 	 	
-	 	<!-- 지정한 객체가 문자열이거나 기본타입의 래퍼클래스라면 별도의 형변환이 없다! -->
+	 	<!--  저장한 객체가 문자열이거나 기본 타입의 래퍼 클래스 라면 별도의 형변환이 없다! -->
 	 	<li> String 객체 : <%=pageContext.getAttribute("pageString") %></li>
 	 	<li> Person 객체 :  <%=pPerson.getName()%>,<%=pPerson.getAge()%></li>
 	 </ul>
 	 
-	 <!--  include : 다른 jsp파일을 포함/포함관계이므로 같은 페이지로! -->
+	 <!--  include : 다른 jsp파일을 포함 / 포함관계이므로 같은 페이지로!  -->
 	 <h2> include 된 파일에서 page 영역 읽어오기 </h2>
 	 <%@ include file = "PageInclude.jsp" %>
 	 
 	 
 	 <!-- 페이지 이동 후 page영역 읽어오기  -->
-	 <h2> href페이지 이동후 page영역 읽어 오기 </h2>
+	 <h2> href 페이지 이동 후 page 영역 읽어오기! </h2>
 	 <a href ="PageLocation.jsp">PageLocation.jsp 바로가기</a>
 	 
 	 
-	 
-	 
-	 
+	 	 
 
 </body>
 </html>
