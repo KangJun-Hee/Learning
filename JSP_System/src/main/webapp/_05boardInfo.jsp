@@ -41,16 +41,31 @@
 					</td>
 				</tr>
 				<tr>
-					<td colspan="4"><input type="hidden" name="num"
-						value="<%=board.getNum()%>"> <input type="submit"
-						value="수정하기"> <input type="button" value="삭제하기"
-						onclick="window.location.href='_08boardDelete.jsp?num=<%=board.getNum()%>'">
+					<td colspan="4">
+						<input type="hidden" name="num"
+							value="<%=board.getNum()%>"> <input type="submit"
+							value="수정하기"> 
+						<input type="button" value="삭제하기"
+							onclick="window.location.href='_08boardDelete.jsp?num=<%=board.getNum()%>'">
+						<input type="button" value="댓글 작성하기"
+							onclick="window.location.href='_13boardReplyWrite.jsp?num=<%=board.getNum()%>'">
 						<input type="button" value="목록으로"
-						onclick="window.location.href='_04boardList.jsp'"></td>
+							onclick="window.location.href='_04boardList.jsp'">
+					</td>
 				</tr>
 			</table>
 		</form>
 	</div>
-
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
