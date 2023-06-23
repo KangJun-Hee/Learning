@@ -1,5 +1,5 @@
-<%@page import="com.rentcar.Rentcar"%>
 <%@page import="com.rentcar.RentcarDAO"%>
+<%@page import="com.rentcar.Rentcar"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -7,11 +7,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>08carReserveMain</title>
+<title>Insert title here</title>
 </head>
 <body>
+
 	<%
-	//데이터베이스에연결해 최신순 자동차 3개만 뿌려 주는 데이터 가져옴
+	// 데이터베이스에 연결하여 최신순 자동차 3개만 뿌려주는 데이터를 가져옴 
 	ArrayList<Rentcar> list = RentcarDAO.instance.getSelectCar3();
 	%>
 	<div align="center">
@@ -21,24 +22,27 @@
 						자동차</font></td>
 			</tr>
 			<tr height="240">
+			
 				<%
-				for (int i = 0; i < list.size(); i++) {
-					Rentcar bean = list.get(i);
+					for(int i = 0; i <list.size(); i++){
+						Rentcar bean = list.get(i);
+					
 				%>
-				<td width="333" align="center"><a
-					href="01_main.jsp?center=10_carReserveInfo.jsp?no=<%=bean.getNo()%>">
-						<img alt="" src="imgCar/<%=bean.getImg()%>" width="300"
-						height="220">
-				</a>
-					<p>
-						차량명 :
-						<%=bean.getName()%></p></td>
-				<%
-				}
-				%>
-			</tr>
+				<td width ="333" align="center">
+					<a href ="01_main.jsp?center=10_carReserveInfo.jsp?no=<%=bean.getNo()%>">
+					
+						<img alt="" src="imgCar/<%= bean.getImg()%>"
+							width="300" height ="220">					
+					
+					</a>
+					<p>차량명 : <%= bean.getName() %></p>
+				</td>			
+				<%} %>
+			</tr>	
+		
 		</table>
 
+		<!-- ================================================== -->
 
 		<hr size="3" color="red">
 		<p>
@@ -52,24 +56,13 @@
 			</select> <input type="submit" value="검색" />&nbsp;&nbsp;
 		</form>
 
+		<!--  전체 검색을 눌렀을 때  -->
+		<button
+			onclick="location.href ='01_main.jsp?center=09_carAllList.jsp'">
+			전체 검색</button>
 
-		<!-- 전체검색 눌렀을 때 -->
-		<button onclick="location.href='01_main.jsp?center=09_carAllList.jsp'"
-			type="button">전체 검색</button>
 	</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
 
 

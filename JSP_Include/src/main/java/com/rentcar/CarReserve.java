@@ -1,19 +1,20 @@
 package com.rentcar;
 
 public class CarReserve {
-//차예약
 	private int reserve_seq;
 	private int no;
 	private String id;
 	private int qty;
-	private int dday;                     
+	private int dday;
 	private String rday;
 	private int usein;
 	private int usewifi;
 	private int usenavi;
 	private int useseat;
 
-	public CarReserve() {}
+	
+	public CarReserve() {}	
+	
 	public CarReserve(int reserve_seq, int no, String id, int qty, int dday, String rday, int usein, int usewifi,
 			int usenavi, int useseat) {
 		super();
@@ -29,7 +30,6 @@ public class CarReserve {
 		this.useseat = useseat;
 	}
 
-	
 	public int getReserve_seq() {
 		return reserve_seq;
 	}
@@ -110,11 +110,11 @@ public class CarReserve {
 		this.useseat = useseat;
 	}
 
-	
 	@Override
 	public String toString() {
-		return "CarReserve [reserve_seq=" + reserve_seq + ", no=" + no + ", id=" + id + ", qty=" + qty + ", dday="
-				+ dday + ", rday=" + rday + ", usein=" + usein + ", usewifi=" + usewifi + ", usenavi=" + usenavi
-				+ ", useseat=" + useseat + "]";
+		return " [reserve_seq=" + reserve_seq + ", no=" + no + ", id=" + id + ", qty=" + qty + ", dday=" + dday
+				+ ", rday=" + rday + ", usein=" + usein + ", usewifi=" + usewifi + ", usenavi=" + usenavi + ", useseat="
+				+ useseat + "]";
 	}
+
 }

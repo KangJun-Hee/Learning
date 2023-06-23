@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table>
+	<table>
 		<tr height="100">
 			<td align="center">
 				<hr color="red" size="3">
@@ -24,6 +24,6 @@
 				COPYRIGHTⓒ2015 SAMSUNG ELECTRO-MECHANICS, All rights reserved.
 			</td>
 		</tr>
-</table>
+	</table>
 </body>
 </html>

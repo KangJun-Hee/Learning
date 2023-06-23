@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="06_memberLoginPro.jsp" method="post"> 
+	<form action="06_memberLoginPro.jsp" method="post"> 
 		<table border="1">
 			<tr height="100">
 				<td align="center" colspan="2"> 
@@ -29,6 +29,5 @@
 			</tr>
 		</table>
 	</form>
-
 </body>
 </html>

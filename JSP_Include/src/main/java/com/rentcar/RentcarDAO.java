@@ -4,40 +4,40 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class RentcarDAO {
+
 	public static RentcarDAO instance = new RentcarDAO();
 	public String realpath = "";
 	String filename = "/rentcardata.txt";
 
-	// 데이터를 저장해 활용
+	// 데이터를 저장해서 활용
 	ArrayList<Rentcar> rentcarList = new ArrayList<>();
 	ArrayList<Member> memberList = new ArrayList<>();
 	ArrayList<CarReserve> carReserveList = new ArrayList<>();
 
+	// mysql 에 연결하는 함수를 작성
 	public Connection getConnection() {
 		Connection conn = null;
 
-		// 데이터베이스 연결내용 작성!!
+		// 데이터베이스에 연결하는 내용을 작성!
 		try {
-			String user = "system";
-			String pw = "1234";
-			String url = "jdbc:oracle:thin@localhost:1521:orcl";
+			Class.forName("com.mysql.jc.jdbc.Driver");
+			String url = "jdbc:mysql://localhost:3306/rentcardb04?serverTimezone=UTC";
 
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, "root", "1234");
 
-			conn = DriverManager.getConnection(url, user, pw);
-
-			System.out.println("연결~");
 		} catch (ClassNotFoundException e) {
-			System.out.println("데이터베이스 연결 에러~" + e.toString());
+			System.out.println("드라이버 클래스가 없거나 읽어 올 수 없습니다.");
 		} catch (SQLException e) {
-			System.out.println("DB접속 안됐다~ : " + e.toString());
+			System.out.println("데이터베이스 접속 정보가 올바르지 않습니다.");
 		}
+
 		return conn;
 	}
 
-	// 회원있으면 1리턴,없으면 0
+	// 회원이 있으면 1을 돌려준다. 없으면 0
 	public int getMember(String id, String pw) {
 		int result = 0;
 
@@ -47,13 +47,17 @@ public class RentcarDAO {
 				break;
 			}
 		}
+
 		return result;
+
 	}
 
 	public ArrayList<Rentcar> getSelectCar3() {
+
 		ArrayList<Rentcar> list = new ArrayList<>();
 
 		for (int i = 0; i < rentcarList.size(); i++) {
+
 			list.add(rentcarList.get(i));
 			if (i >= 2) {
 				return list;
@@ -62,45 +66,110 @@ public class RentcarDAO {
 		return list;
 	}
 
-	public ArrayList<Rentcar> getCategoryCar(int cate){
+	// getCategoryCar(category)
+	public ArrayList<Rentcar> getCategoryCar(int cate) {
+
 		ArrayList<Rentcar> list = new ArrayList<>();
-		
-		//rentcarList안에서 반복하며 카테고리내용 가지고 와서 cate비교해
-		//같은 값만 리스트에 넣어서 반환
+
+		// rentcarList안에서 반복을 하면서 카테고리 내용을 가지고 와서 cate비교해서
+		// 같은 값만 리스트에 넣어서 반환한다.
+
 		for (int i = 0; i < rentcarList.size(); i++) {
 			if (rentcarList.get(i).getCategory() == cate) {
+
 				list.add(rentcarList.get(i));
 			}
 		}
+		/*
+		 * for(Rentcar temp : rentcarList) {
+		 * 
+		 * if(temp.getCategory() == cate) { list.add(temp); } }
+		 */
+
 		return list;
+
 	}
-	
-	//리스트에서 no를 이용해서 데이터를 꺼내가기~
+
+	// 리스트에서 no을 이용해서 데이터를 꺼내가기!
 	public Rentcar getOneCar(int no) {
-		//실제번호1,2,3와 리스트에 저장되는 값은 좀 다르다~ 0부터 시작하니까
-		no-=1;
+
+		// 실제 번호 1,2,3,4 -> 리스트에 저장되는 값은 좀 다르다!
+		no = no - 1;
 		return rentcarList.get(no);
 	}
-	
-	//예약리스트에 저장하기~
+
+	// 예약 리스트에 저장하기 !
 	public void setReserveCar(CarReserve bean) {
-		//예약리스트에서 공통적인 예약번호 적기위해 가장큰번호 갖고온다~
+
+		// 예약리스트에서 공통적인 예약번호를 적기위해서 가장큰 번호를 가지고 온다.
 		int max_num = 0;
-		
-		if(carReserveList.size() > 0) {
-			int last = carReserveList.size()-1;
+
+		if (carReserveList.size() > 0) {
+			int last = carReserveList.size() - 1;
 			max_num = carReserveList.get(last).getNo();
 		}
-		//만약 데이터가 첨 저장되는 거라면 걍 추가
+		// 만약 데이터가 처음 저장 되는 것이라면 그냥 추가
 		bean.setReserve_seq(max_num);
 		carReserveList.add(bean);
-		
-		//파일에 저장하는 메서드를 호출!
+
+		// 파일에 저장하는 메서드를 호출!
+	}
+
+	public ArrayList<Rentcar> getAllCar() {
+
+		return rentcarList;
+	}
+
+	
+	public ArrayList<CarView> getAllReserve(String id) {
+		ArrayList<CarView> vec = new ArrayList<>();
+
+		// 실제 예약을 한 id carview 넣어주기 위해서 만든 것!
+		for (int i = 0; i < rentcarList.size(); i++) {
+
+			CarReserve reserve = carReserveList.get(i);
+
+			if (reserve.getId().equals(id)) {
+				for (int n = 0; n < rentcarList.size(); n++) {
+					if (reserve.getNo() == rentcarList.get(n).getNo()) {
+						Rentcar car = rentcarList.get(n);
+						CarView view = new CarView();
+						view.setName(car.getName());
+						view.setPrice(car.getPrice());
+						view.setImg(car.getImg());
+						view.setQty(reserve.getQty());
+						view.setDday(reserve.getDday());
+						view.setRday(reserve.getRday());
+						view.setUsein(reserve.getUsein());
+						view.setUsewifi(reserve.getUsewifi());
+						view.setUsenavi(reserve.getUsenavi());
+						view.setUseseat(reserve.getUseseat());
+						vec.add(view);
+					}
+				}
+			}
+		}
+		return vec;
 	}
 	
 	
-	// 회원가입 없으니 미리 초기설정
+	//삭제
+	public void carRemoveReserve(String id,String rday) {
+		for(int i=0; i<carReserveList.size(); i++) {
+			CarReserve reserve = carReserveList.get(i);
+			
+			if(id.equals(reserve.getId())) {
+				if(rday.equals(reserve.getRday())) {
+					carReserveList.remove(i);
+					break;
+				}
+			}
+		}
+	}
+
+	// 회원가입이 없어서 미리 초기 설정
 	public void memberBasicSet() {
+
 		Member mb = new Member();
 		mb.setId("aa");
 		mb.setPw1("11");
@@ -114,8 +183,9 @@ public class RentcarDAO {
 		memberList.add(mb);
 	}
 
-	// 렌트카에 대한 기본설정
+	// 렌트카에 대한 기본 설정
 	public void rentcarBasicSet() {
+
 		rentcarList.clear();
 		Rentcar rc;
 		rc = new Rentcar(1, "아반테", 1, 2000, 4, "기아", "rent_1.jpg", "아반테 자동차 입니다.");
@@ -156,4 +226,5 @@ public class RentcarDAO {
 		rentcarList.add(rc);
 
 	}
+
 }

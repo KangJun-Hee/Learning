@@ -4,15 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>center</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<table>
-		<tr height="500">
-			<td align="center">
+		<tr height = "500">
+			<td align ="center">
 				<img alt="" src="imgCar/rent_17.jpg" width="1000">
-			</td>		
-		</tr>
+			</td>
+		</tr>	
 	</table>
 </body>
 </html>

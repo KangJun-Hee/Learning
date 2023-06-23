@@ -4,12 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>log out</title>
+<title>로그 아웃 </title>
 </head>
 <body>
-	<%
-		session.invalidate();
-		response.sendRedirect("01_main.jsp");//페이지 이동 데이터X
-	%>
+<%
+	session.invalidate();
+	response.sendRedirect("01_main.jsp");  //페이지 이동
+
+%>
+
 </body>
 </html>
