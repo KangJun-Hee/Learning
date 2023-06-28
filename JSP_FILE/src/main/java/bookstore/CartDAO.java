@@ -135,40 +135,146 @@ public class CartDAO {
 	}
 
 	// 장바구니 담기를 누르면 수행되는 것으로 cart테이블에 새로운 레코드를 추가
-public void insertCart(CartDTO cart) {
-		
+	public void insertCart(CartDTO cart) {
+
 		int cart_id = 0;
-		
+
 		try {
 			conn = getConnection();
-			
+
 			String sql = "SELECT MAX(cart_id) FROM cart";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
+			if (rs.next()) {
 				cart_id = rs.getInt(1);
 			}
-			
+
 			sql = "INSERT INTO cart (cart_id, book_id, buyer, book_title, buy_price, buy_count, book_image) ";
 			sql += "VALUES (?,?,?,?,?,?,?)";
+
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setInt(1, cart_id + 1);
+			pstmt.setInt(2, cart.getBook_id());
+			pstmt.setString(3, cart.getBuyer());
+			pstmt.setString(4, cart.getBook_title());
+			pstmt.setInt(5, cart.getBuy_price());
+			pstmt.setInt(6, cart.getBuy_count());
+			pstmt.setString(7, cart.getBook_image());
+
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+				}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+				}
+			}
+		}
+	}
+
+	// 장바구니에서 수량을 수정시 실행되는 메서드
+	public void updateCount(int cart_id, int count) {
+
+		try {
+
+			conn = getConnection();
+
+			String sql = "UPDATE cart SET buy_count=? where cart_id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, count);
+			pstmt.setInt(2, cart_id);
+
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		} finally {
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+				}
+			}
+			if (conn != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+				}
+			}
+		}
+	}
+
+	// 장바구니에서 cart_id에 대한 레코드를 삭제하는 메서드
+	public void deleteList(int cart_id) {
+
+		try {
+
+			conn = getConnection();
+
+			String sql = "DELETE FROM cart WHERE cart_id=?";
 			
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, cart_id);
 			
-			pstmt.setInt(1, cart_id+1);
-            pstmt.setInt(2, cart.getBook_id());
-            pstmt.setString(3, cart.getBuyer());
-            pstmt.setString(4, cart.getBook_title());
-            pstmt.setInt(5, cart.getBuy_price());
-            pstmt.setInt(6, cart.getBuy_count());
-            pstmt.setString(7, cart.getBook_image());
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		} finally {
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+				}
+			}
+			if (conn != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+				}
+			}
+		}
+
+	}
+
+	// id에 해당하는 모든 레코드를 삭제하는 메서드[장바구니 비우기] 클릭시 실행된다.
+	public void deleteAll(String id) {
+		try {
+
+			conn = getConnection();
+			
+			String sql = "DELETE FROM cart WHERE buyer=?";
+			 
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, id);
             
-            pstmt.executeUpdate();			
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}finally {
-			if(pstmt != null) {try {pstmt.close();} catch (SQLException e) {}}
-			if(conn != null) {try {conn.close();} catch (SQLException e) {}}
+            pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		} finally {
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+				}
+			}
+			if (conn != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+				}
+			}
 		}
 	}
 

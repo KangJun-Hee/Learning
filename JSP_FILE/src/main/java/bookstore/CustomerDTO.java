@@ -1,12 +1,7 @@
 package bookstore;
 
+// 테이블명은 member
 public class CustomerDTO {
-
-	
-	// 이름 , 아이디 , 패스워드 , 가입일자 ,전화번호 , 주소 
-	// 생성자(기본,매개변수)
-	// setter , getter
-	// toString() 
 
 	private String id;					// 아이디
 	private String passwd;					// 패스워드
@@ -51,9 +46,5 @@ public class CustomerDTO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	@Override
-	public String toString() {
-		return "[id=" + id + ", passwd=" + passwd + ", name=" + name + ", reg_date=" + reg_date + ", tel="
-				+ tel + ", address=" + address + "]";
-	}	
+	
 }

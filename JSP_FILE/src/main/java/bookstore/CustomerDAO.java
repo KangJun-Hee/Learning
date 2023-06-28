@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class CustomerDAO {
 	
@@ -65,4 +66,60 @@ public class CustomerDAO {
 		}
 		return check;
 	}
+	
+	// 회원 정보 가지고 오기 
+	public CustomerDTO getMember(String id) {
+		
+		CustomerDTO dto = null;
+		
+		try {
+
+			conn = getConnection();
+
+			String sql = "SELECT * FROM member WHERE id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+
+			rs = pstmt.executeQuery();
+				
+			if(rs.next()) {
+				dto = new CustomerDTO();
+				
+				dto.setId(rs.getString("id"));
+				dto.setPasswd(rs.getString("passwd"));
+				dto.setName(rs.getString("name"));
+				dto.setReg_date(rs.getString("reg_date"));
+				dto.setTel(rs.getString("tel"));
+				dto.setAddress(rs.getString("address"));
+				
+			}			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+				}
+			}
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+				}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+				}
+			}
+		}
+		return dto;
+	}	
+	
+	
+	
+	
+	
 }
