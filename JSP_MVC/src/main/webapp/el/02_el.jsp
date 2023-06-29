@@ -7,15 +7,22 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<%
 		int number = 3;
-		out.print("number = "+number+"<br>");
+		out.print("number = " + number + "<br>");
 	%>
-	result = <%=number>4%><br>
+	result = <%= number > 4 %>		<br>
+	
 	<%
-		request.setAttribute("age",10);
-	  //request.getAttribute("age");
+		request.setAttribute("age", 10);
+	//	request.getAttribute("age");
+	//
 	%>
-	age = ${age}<br>
+	age = ${ age }					<br>
+	
+
+
+
 </body>
 </html>
