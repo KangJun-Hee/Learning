@@ -38,9 +38,11 @@ public class _05_LoginPro extends HttpServlet {
 		
 		request.setAttribute("check", check);
 		
-		RequestDispatcher dis = request.getRequestDispatcher("05_loginPro.jsp");
-		dis.forward(request, response);
 		
+		RequestDispatcher dis = request.getRequestDispatcher("05_loginView.jsp");
+		dis.forward(request, response);
+		// 서블릿에서 데이터를 이동을 주로 forward이 기본이 된다.
+		 
 	}
 
 }

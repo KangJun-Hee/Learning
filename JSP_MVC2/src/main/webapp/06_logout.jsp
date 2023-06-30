@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그아웃</title>
 </head>
 <body>
+	<script type="text/javascript">
+		alert('로그아웃 되었습니다.');
+		location.href = 'index.do';
+	</script>
 
 </body>
 </html>

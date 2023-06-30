@@ -10,30 +10,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/joinPro.do")
-public class _03_JoinPro extends HttpServlet {
-
+@WebServlet
+public class BoardListAction extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		reqPro(req,resp);
+		reqPro(req, resp);
 	}
-	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		reqPro(req,resp);
+		reqPro(req, resp);
 	}
-	protected void reqPro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+	public void reqPro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
-		// form에서 보내온 정도를 꺼내기
 		
-		// MemberBean 생성해서  멤버들을 관리하는 DAO
+		int num = Integer.parseInt(request.getParameter())
+		String id = request.getParameter("id");
+
 		
-		
-		RequestDispatcher dis = req.getRequestDispatcher("01_index.jsp");
-		dis.forward(req, resp);
-		
-		
+		RequestDispatcher dis = req.getRequestDispatcher("");
+		dis.forward(req,resp);
 	}
-	
 }

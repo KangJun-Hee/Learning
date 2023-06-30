@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원정보수정</title>
 </head>
 <body>
-
+	<script type="text/javascript">
+		alert('수정을 완료하였습니다!');
+		location.href = 'index.do';
+	</script>
 </body>
 </html>

@@ -14,10 +14,35 @@
 6. 응답이 완료되면 HttpServletRequest, HttpServletResponse 두 객체를 소멸시킨다.
 
 
+서블릿 컨테이너는 개발자가 웹서버와 통신하기 위하여 소켓을 생성하고, 특정 포트에 리스닝하고, 
+스트림을 생성하는 등의 복잡한 일들을 할 필요가 없게 해준다. 
+컨테이너는 servlet의 생성부터 소멸까지의 일련의 과정(Life Cycle)을 관리한다.
+ 서블릿 컨테이너는 요청이 들어올때마다 새로운 자바 스레드를 만든다. 
+ 우리가 알고 잇는 대표적인 Servlet Container가 Tomcat이다. 
+톰캣같은 was가 java파일을 컴파일해서 Class로 만들고 메모리에 올려 servlet 객체를 만든다.
+
 mvc 패턴 
 model : 비즈니스 영역의 로직을 처리한다. (자바코드)
 뷰    : 비즈니스 영역에 대한 사용자가 보여지게 되는 결과 화면 
 controller : 사용자의 입력 처리와 흐름 제어를 담당한다. 
+
+1) Servlet
+Servlet은 서블릿 프로그램을 개발할때 반드시 구현해야 하는 메서드를 선언하고 있는
+ 인터페이스이다. 이 표준을 구현해야 서블릿 컨테이너가 해당 서블릿을 실행할수 있다.
+
+2) GenericServlet
+GenericServlet은 Servlet 인터페이스를 상속하여 클라이언트-서버 환경에서 서버단의
+ 애플리케이션으로서 필요한 기능을 구현한 추상클래스이다. service() 메서드를 제외한 모든 메서드를 재정의하여 적절한 기능으로 구현했다. GenericServlet 클래스를 상속하면 애플리케이션의 프로토콜에 따라 메서드 재정의 구문을 적용해야 한다.
+
+3) HttpServlet
+일반적으로 서블릿이라하면 거의 대부분 HttpServlet을 상속받은 서블릿을 의미한다. 
+HttpServlet은 GenericServlet을 상속받았으며, GenericServlet의 유일한 추상
+ 메서드인 service를 HTTP 프로토콜 요청 메서드에 적합하게 재구현해놨다.
+
+
+이미 DELETE, GET, HEAD, OPTIONS, POST, PUT, TRACE를 처리하는
+ 메소드가 모두 정의되어 있다.
+
 
 서블릿 생명주기 (Servlet Lifecycle)
 
