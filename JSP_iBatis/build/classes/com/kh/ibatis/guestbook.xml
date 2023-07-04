@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<!-- 태그를 이용해 저장,출력하는 내용을 작성~ -->
+<!-- DOCTYPE이 sqlMap인 xml 파일은 처리할 SQL 명령을 기억하는 xml 파일이다. -->
+
+<!-- id : sql명령을 식별함~
+	parameterClass : sql명령으로 DAO클래스서 전달되는 데이터타입을 적는다~
+	resultClass : sql명령문이 실행되고 DAO클래스로 리턴되는 데이터타입을 적는다~ -->
+<sqlMap namespace="com.tjouen.vo.GuestBookVO">
+	<insert id="insert" parameterClass="com.tjouen.vo.GuestBookVO">
+		insert into guestbook (idx, name, password, memo, ip) 
+				values (guestbook_idx_seq.nextval, #name#, #password#, #memo#, #ip#)
+	</insert>
+</sqlMap>
