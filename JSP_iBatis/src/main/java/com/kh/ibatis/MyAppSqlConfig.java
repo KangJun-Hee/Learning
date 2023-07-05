@@ -7,6 +7,7 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
 public class MyAppSqlConfig {
+	
 	private static final SqlMapClient sqlMap;
 	static {	// 초기화 블록
 		// final로 선언된 변수는 상수로 사용되므로 선언과 동시에 반드시 초기화되어야 한다.
@@ -24,4 +25,6 @@ public class MyAppSqlConfig {
 	public static SqlMapClient getSqlMapInstance() {
 		return sqlMap;
 	}
+	
+	
 }
