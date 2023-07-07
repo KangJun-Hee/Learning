@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<!-- 데이터베이스 연결 정보가 저장된 파일의 위치 -->
+	<properties resource="com/kh/mybatis/db.properties" />
+
+	<!-- TypeAlias sql mapper파일에서 parameterType이나 resultType을 지정할 때 긴 이름의 클래스명을 
+		짧게 사용할 수있도록 설정하는 태그 alias ="별명" 별명 설정하기 -->
+	<typeAliases>
+		<typeAlias type="com.kh.vo.FreeboardVO" alias="vo" />
+
+	</typeAliases>
+
+
+	<!-- 데이터베이스 환경 정보를 설정할 때 사용한다. 이 태그를 이용하면 여러 개의 데이터베이스 접속 정보를 설정할 수 있다. 
+		설정된 DB정보 중 하나를 선택해서 default속성에 넣어서 사용한다. <environment> 각 데이터베이스의 관리 방식, 데이터소스 
+		설정에 사용한다. <environments> db연결 연결할 때 어떤 접속정보로 <environment> 중에서 id값을 가지고 선택해서 
+		원하는 디비에 접속한다. 
+		
+		<dataSource type="POOLED">
+		
+		POOLED
+			mybatis안에서 DB커넥션풀을 사용한다.
+			미리 DB커넥션 객체를 생성해서 pool공간에 두고 요청하면 즉시 반환한다.
+			데이터베이스 연결 초기화하고 사용자를 인증하는 과정을 없애준것 
+			그렇기 때문에 데이터베이스 정보를 가져오는 속도가 빠르다. 
+		
+		UNPOOLED 
+			DB 커넥션을 요청할 때마다 커넥션 객체를 생성한다.
+		
+		mybatis-config.xml 
+		
+		
+		마이바티스 동작방식
+		1) DAO는 SqlSessionFactory 에게 sql을 실행할 객체를 요구한다.
+		2) SqlSessionFactory는 sqlsession 객체를 생성하여 반환한다. 
+		3) DAO 가 받으면 sql을 실행요청 -> sqlsession
+		4) sqlsession객체는 sql이 저장된 매퍼 파일에서 sql을 찾는다.
+		5) sqlsession jdbc드라이버를 통해 db에 질의를 실행한다.
+		6) sqlsession db로 부터 가져온 데이터를 반환되는 타입의 목록으로 생성!
+		7) DAO는 사용이 다 끝난 sqlsession을 닫는다.
+		
+		-->
+	<environments default="dev">
+
+		<environment id="dev">
+			<transactionManager type="JDBC" />
+				<dataSource type="POOLED">
+						<property name="driver" value="${driver}" />
+						<property name="url" value="${url}" />
+						<property name="username" value="${username}" />
+						<property name="password" value="${password}" />
+
+				</dataSource>
+	
+			</environment>
+	</environments>
+
+
+
+	<!-- 실행 할 sql 명령이 저장된 파일의 위치 -->
+	<mappers>
+		<mapper resource="com/kh/mybatis/freeboard.xml" />
+
+	</mappers>
+
+
+
+</configuration>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace ="com.kh.vo.FreeboardVO">
+	<!--  namespce는 자바에서 패키지와 같은 역할  -->
+	<!--  메인글 1건을 저장한다.  -->
+	<insert id ="insert" parameterType="vo">
+		insert into freeboard (idx, name, password, subject, content, notice, ip) 
+		values (freeboard_idx_seq.nextval, #{name}, #{password}, #{subject}, #{content}
+		, #{notice}, #{ip})
+	</insert>
+
+
+
+</mapper>
+
+<!-- mybatis 
+
+mybatis란?
+	개발자가 작성한 sql 구문을 손쉽게 실행하고 결과를 조회 할 수 있도록 돕는 프레임 워크
+	
+필수 인터페이스 
+ 	sqlsession 객체를 얻어서 sqlsessionFactory 객체를 정적으로 선언해서 사용한다.
+ 	
+
+
+-->
+
+
+
+
+
+
