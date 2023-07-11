@@ -1,14 +1,13 @@
 package com.kh.ajax;
 
 public class AjaxDTO {
+	
 	private int idx;
 	private String name;
 	private int age;
 	private String gender;
 	private String email;
 	
-	//항상 기본,매개변수받는 생성자 두 개 만들기~
-	public AjaxDTO() {}
 	public AjaxDTO(int idx, String name, int age, String gender, String email) {
 		super();
 		this.idx = idx;
@@ -16,6 +15,9 @@ public class AjaxDTO {
 		this.age = age;
 		this.gender = gender;
 		this.email = email;
+	}
+	public AjaxDTO() {
+		super();
 	}
 	public int getIdx() {
 		return idx;
@@ -52,6 +54,7 @@ public class AjaxDTO {
 		return "AjaxDTO [idx=" + idx + ", name=" + name + ", age=" + age + ", gender=" + gender + ", email=" + email
 				+ "]";
 	}
-
+	
+	// 기본생성자, 매개변수 받는 생성자 두개 !
 	
 }
