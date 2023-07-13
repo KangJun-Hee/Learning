@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.kh.day1</groupId>
+	<artifactId>seoheespring</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<properties>
+		<jdk-version>11</jdk-version>
+		<springframework-version>4.3.25.RELEASE</springframework-version>
+	</properties>
+	<!-- jsp에서 사용하는 라이브러리들을 가지고 온다
+			groupid패키지명이 같을 수 있다 꼭 같을필욘 없음
+			단! 스프링관련 groupid들은 되도록 버전을 동일하게 사용해야
+			컴파일시 에러가 발생 안 함
+			
+			maven project만들고 폼 xml설정하고 내가 jsp에서 사용하는 
+			라이브러리들 설치하고 인코딩 설정 및 추가하면 spring mvc로
+			개발할 수 있는 뼈대가 만들어진다
+	-->
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${springframework-version}</version>
+		</dependency>
+
+		<!-- JSP mvc 서블릿 라이브러리를 포함하는 내용-->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				
+				<artifactId>maven-compiler-plugin</artifactId> <!-- 메이븐 컴파일러-->
+				<version>3.1</version> 
+				<configuration>    <!-- 설정 정보에는 버전 가지고 오기 그리고 인코딩 -->
+					<source>${jdk-version}</source>
+					<target>${jdk-version}</target>
+					<encoding>utf-8</encoding>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+
+	</build>
+</project>
+<!-- 
+	group id=도메인. 우리가 쓰는 url기준으로 뒤집어 패키지이름 주면 된다
+	artifect id는 프로젝트명이다!
+	패키징은 방식 톰캣같은 웹어플리케이션에서 배포할 수 있게 war라고 선택한다
+	
+	첫 번째로 설정해야 하는 내용
+	pom.xml 스프링시작시 젤먼저 설정파일 확인하는 공간
+-->

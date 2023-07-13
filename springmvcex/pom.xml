@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.kh.seohee</groupId>
+	<artifactId>springmvcex</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<properties>
+
+		<jdk-version>1.8</jdk-version>
+		<springframework-version>3.2.3.RELEASE</springframework-version>
+	</properties>
+
+	<!-- 의존 라이브러리 spring mvc를 위한 의존들을 설정한다. -->
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${springframework-version}</version>
+
+		</dependency>
+
+		<!-- 밑에는 jsp기반으로 설정해야되니 서블릿 개념을 알아야된다.
+			디팬더시를 이용해서 서블릿 설정하기 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+
+		</dependency>
+
+		<!-- 자주사용하니깐 jstl 설정한다. -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+
+		</dependency>
+	</dependencies>
+	<!--의존라이브러리 추가했고 jdk버전이 필요하다 위에 세가지가 필요하다 -->
+	<build>
+		<plugins>
+			<plugin>
+
+				<artifactId>maven-compiler-plugin</artifactId> <!-- 메이븐 컴파일러 -->
+				<version>3.1</version>
+				<configuration>    <!-- 설정 정보에는 버전 가지고 오기 그리고 인코딩 -->
+					<source>${jdk-version}</source>
+					<target>${jdk-version}</target>
+					<encoding>utf-8</encoding>
+				</configuration>
+			</plugin>
+
+		</plugins>
+
+	</build>
+
+</project>

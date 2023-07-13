@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns="http://java.sun.com/xml/ns/javaee"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
+  version="3.0">
+  <display-name>springmvcex</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- front controller spring
+  			요청들어오면 한 곳에서 다 받는 dispatcherServlet정의
+  			DispatcherServlet클래스의 설정값들 필요하다
+  			초기화하는 파라미터가 필요하다
+   -->
+   <servlet>
+   		<servlet-name>appServlet</servlet-name>
+   		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+   		<init-param>
+   			<param-name>contextConfigLocation</param-name>
+   			<param-value>
+				/WEB-INF/spring/root-context.xml
+				/WEB-INF/spring/appServlet/servlet-context.xml
+   			</param-value>
+   		</init-param>
+   		<load-on-startup>1</load-on-startup><!-- 1=바로시작해라 -->
+   </servlet>
+   
+   <!-- 서블릿매핑(/매핑은 default servlet동작 -->
+   <servlet-mapping>
+   		<servlet-name>appServlet</servlet-name>
+   		<url-pattern>/</url-pattern>
+   </servlet-mapping>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+</web-app>

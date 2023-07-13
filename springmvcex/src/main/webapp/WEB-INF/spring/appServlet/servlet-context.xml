@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<!-- root-context.xml
+		mvc설정과 관련된 여러처리를 담당하는 설정파일
+		xml형태의 빈(객체)들을 관리하는 문서
+		DAO,VO,DTO,service 필요시마다 이곳에 빈등록
+		<bean id="빈의이름" class="클래스의 위치">
+		
+		view와 관련되지 않은 객체를 정의하는 스프링설정파일
+		DB설정 관련한 내용들 작성!
+	 -->
+	 <!-- DispatcherServlet의 기반설정을 기록하는 파일
+	 		자바의 어노테이션 문법을 해석하게 하는 코드(기본적으로 등록 되어있다)
+	  -->
+	  <annotation-driven/>
+
+
+	<!-- view-resolvers 뷰페이지로 넘어갈 때 파일명 간단히 작성하게 할 수 있도로 설정해 주느 거 DispatcherServlet이 
+		요청수행하고 력과 보여주는 페이지요청시 view-resolvers태그가 가운데파일명만 받아 알아서 prefix와 suffix를 연결해 
+		하나의 파일명을 완성해 view폴더 안에 있는 파일 받아실행시켜준다 -->
+	<view-resolvers><!-- /WEB-INF/view/home.jsp -->
+		<jsp prefix="/WEB-INF/view" suffix=".jsp" />
+	</view-resolvers>
+	
+	<!-- hello경로가 들어오면 homecontroller 빈(객체)생성해 실행해야 함~ -->
+	<beans bean class ="com.seohee.controle\er.HomeController"/>
+</beans>

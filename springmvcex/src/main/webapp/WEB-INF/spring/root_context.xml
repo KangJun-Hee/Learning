@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="">
+	<!-- view-resolvers
+			뷰페이지로 넘어갈 때 파일명 간단히 작성하게 할 수 있도로
+			설정해 주느 거 
+		 DispatcherServlet이 요청수행하고 력과 보여주는 페이지요청시
+		 view-resolvers태그가 가운데파일명만 받아 알아서 prefix와 suffix를
+		 연결해 하나의 파일명을 완성해 view폴더 안에 있는 파일 받아실행시켜준다-->
+	<view-resolvers><!-- /WEB-INF/view/home.jsp -->
+		<jsp prefix="/WEB-INF/view" suffix=".jsp"/>
+	</view-resolvers>
+</beans>
