@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id = "myInfo" class="com.kh.springdi2.MyInfo">
+		<property name="name" value="강준희"/>
+		<property name="height" value="170"/>
+		<property name="weight" value="120"/>
+		
+		<!-- ArrayList저장 list태그로 value태그를 묶어 -->
+		<property name="hobbies">
+			<list>
+				<value>등산</value>
+				<value>바둑</value>
+				<value>낚시</value>
+			</list>
+		</property>
+		<property name="bmiCalculator" ref="bmiCalculator"/>
+	</bean>
+	<bean id="bmiCalculator" class="com.kh.springdi2.BMICalculator"/>
+	
+</beans>
