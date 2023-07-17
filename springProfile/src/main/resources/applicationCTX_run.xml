@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 객체생성 라이브러리 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	profile="run">
+	<bean id="serviceInfo" class="springProfile.ServiceInfo">
+		<property name="ipNumber" value="localhost"/>
+		<property name="portNumber" value="9090"/>
+	</bean>
+</beans>
+<!-- profile
+	어플리케이션의 런타임환경 관리가능~
+	테스트환경을 각각 외부설정파일을 통해 관리하는 예시!
+ -->

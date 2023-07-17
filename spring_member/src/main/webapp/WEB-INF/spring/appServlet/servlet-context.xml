@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+	xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing 
+		infrastructure -->
+
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
+		up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
+		in the /WEB-INF/views directory -->
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+
+	<!-- 컨트롤러들을 객체 생성해서 요청을 처리하려면 ! 요 내용이 필요하다! com.kh.ex 패키지 안에 요청이 들어왔을 때 
+		객체를 자동으로 생성해준다.! -->
+	<context:component-scan base-package="com.kh.ex" />
+
+	<beans:bean id="studentDAO" class="com.kh.ex.StudentDAO" />
+
+	<beans:bean id="insert" class="com.kh.ex.StudentInsert">
+		<beans:constructor-arg ref="studentDAO" />
+	</beans:bean>
+
+	<beans:bean id="select" class="com.kh.ex.StudentSelect">
+		<beans:constructor-arg ref="studentDAO" />
+	</beans:bean>
+
+	<beans:bean id="selectAll"
+		class="com.kh.ex.StudentSelectAll">
+		<beans:constructor-arg ref="studentDAO" />
+	</beans:bean>
+
+	<beans:bean id="studentController"
+		class="com.kh.ex.StudentController">
+
+		<beans:property name="stDAO">
+			<beans:ref bean="studentDAO" />
+		</beans:property>
+
+		<beans:property name="insert">
+			<beans:ref bean="insert" />
+		</beans:property>
+
+		<beans:property name="select">
+			<beans:ref bean="select" />
+		</beans:property>
+
+		<beans:property name="selectAll">
+			<beans:ref bean="selectAll" />
+		</beans:property>
+	</beans:bean>
+</beans:beans>
