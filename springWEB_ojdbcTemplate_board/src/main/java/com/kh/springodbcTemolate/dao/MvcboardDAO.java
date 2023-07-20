@@ -2,9 +2,12 @@ package com.kh.springodbcTemolate.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 
@@ -14,21 +17,21 @@ import com.kh.springodbcTemolate.vo.MvcboardVO;
 public class MvcboardDAO {
 
 	private static final Logger logger = LoggerFactory.getLogger(MvcboardDAO.class);
-	
+
 	// JdbcTemplate 설정
 	private JdbcTemplate template;
-	
+
 	// DAO 클래스의 bean이 기본 생성자로 생성되는 순간 servlet-context.xml
-	// 파일에서 생성되서 컨트롤러가 전달받아 Constant 클래스의  JdbcTemplate 클래스 타입의
+	// 파일에서 생성되서 컨트롤러가 전달받아 Constant 클래스의 JdbcTemplate 클래스 타입의
 	// static 객체에 저장한 bean으로 초기화 시킨다.
-	
+
 	public MvcboardDAO() {
 		template = Constant.template;
 	}
-	
+
 	// 밑에 있는DBCP 방식을 사용하는 객체를 초기화는 부분이므로 JdbcTemplate
 	// 으로 코드 변환이 완려되면 모두 주석처리 한다.
-	
+
 //	private DataSource dataSource;
 //	
 //	public MvcboardDAO() {
@@ -40,20 +43,19 @@ public class MvcboardDAO {
 //		}
 //	}
 //============================================================================	
-	
+
 // insert, delete, update sql 명령을 실행하는 메서드의 인수로 넘어온 데이터가 
 // 중간에 값이 변경되면 안되기 때문에 JdbcTemplate에서는 insert, delete
 // update sql 명령을 실행하는 메서드의 인수를 선언 할 때 final을 붙여서 넘어온 
 // 데이터를 수정할 수 없도록 선언해야 한다. 
-	
+
 	public void insert(final MvcboardVO mvcboardVO) {
-		
+
 		logger.info("insert()");
-		
-		String sql = "insert into mvcboard (idx, name, subject, content, gup, lev, seq) " + 
-				"values (mvcboard_idx_seq.nextval, ?, ?, ?, mvcboard_idx_seq.currval, 0, 0)";
-		
-			
+
+		String sql = "insert into mvcboard (idx, name, subject, content, gup, lev, seq) "
+				+ "values (mvcboard_idx_seq.nextval, ?, ?, ?, mvcboard_idx_seq.currval, 0, 0)";
+
 		template.update(sql, new PreparedStatementSetter() {
 			// PreparedStatementSetter 인터페이스 객체를 익명으로 구현하는 setValues()추상메서드가
 			// 자동으로 override가 되고 여기서 "?"를 채운다.
@@ -64,111 +66,112 @@ public class MvcboardDAO {
 				ps.setString(3, mvcboardVO.getContent());
 			}
 		});
-		
-		
-		/* update() : 테이블의 내용이 갱신되는 sql 명령 =>insert, delete,update
-		 * query() : 테이블의 내용이 갱신되지 않는 sql 명령 => select => 실행결과가 여러건일 경우 사용한다.
-		 * queryForInt():테이블의 내용이 갱신되지 않는 sql 명령 => select => 실행결과 정수일 경우 사용한다.
-		 * queryForObject():테이블의 내용이 갱신되지 않는 sql 명령 => select => 실행결과 1건 일때 사용한다.
+
+		/*
+		 * update() : 테이블의 내용이 갱신되는 sql 명령 =>insert, delete,update query() : 테이블의 내용이
+		 * 갱신되지 않는 sql 명령 => select => 실행결과가 여러건일 경우 사용한다. queryForInt():테이블의 내용이 갱신되지
+		 * 않는 sql 명령 => select => 실행결과 정수일 경우 사용한다. queryForObject():테이블의 내용이 갱신되지 않는
+		 * sql 명령 => select => 실행결과 1건 일때 사용한다.
 		 * 
 		 * 
 		 * 
 		 * 
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		try {
-			conn = dataSource.getConnection();
-			String sql = "insert into mvcboard (idx, name, subject, content, gup, lev, seq) " + 
-					"values (mvcboard_idx_seq.nextval, ?, ?, ?, mvcboard_idx_seq.currval, 0, 0)";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, mvcboardVO.getName());
-			pstmt.setString(2, mvcboardVO.getSubject());
-			pstmt.setString(3, mvcboardVO.getContent());
-			pstmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			if (conn != null) { try { conn.close(); } catch (SQLException e) { e.printStackTrace(); } }
-		}
-		*/
-		
-		
+		 * Connection conn = null; PreparedStatement pstmt = null; try { conn =
+		 * dataSource.getConnection(); String sql =
+		 * "insert into mvcboard (idx, name, subject, content, gup, lev, seq) " +
+		 * "values (mvcboard_idx_seq.nextval, ?, ?, ?, mvcboard_idx_seq.currval, 0, 0)";
+		 * pstmt = conn.prepareStatement(sql); pstmt.setString(1, mvcboardVO.getName());
+		 * pstmt.setString(2, mvcboardVO.getSubject()); pstmt.setString(3,
+		 * mvcboardVO.getContent()); pstmt.executeUpdate(); } catch (SQLException e) {
+		 * e.printStackTrace(); } finally { if (conn != null) { try { conn.close(); }
+		 * catch (SQLException e) { e.printStackTrace(); } } }
+		 */
+
 	}
-	
+
 	// 게시글의 총 개수
 	public int selectCount() {
 		logger.info("selectCount()");
-		
-		
+
 		/*
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		int result = 0;
-		try {
-			conn = dataSource.getConnection();
-			String sql = "select count(*) from mvcboard";
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			rs.next();
-			result = rs.getInt(1);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			if (conn != null) { try { conn.close(); } catch (SQLException e) { e.printStackTrace(); } }
-		}
-		return result;
-		*/
-		
+		 * Connection conn = null; PreparedStatement pstmt = null; ResultSet rs = null;
+		 * int result = 0; try { conn = dataSource.getConnection(); String sql =
+		 * "select count(*) from mvcboard"; pstmt = conn.prepareStatement(sql); rs =
+		 * pstmt.executeQuery(); rs.next(); result = rs.getInt(1); } catch (SQLException
+		 * e) { e.printStackTrace(); } finally { if (conn != null) { try { conn.close();
+		 * } catch (SQLException e) { e.printStackTrace(); } } } return result;
+		 */
+
 		String sql = "select count(*) from mvcboard";
 //		queryForObject(sql명령, 리턴타입.class)
 		return template.queryForObject(sql, Integer.class);
 	}
+
+	public ArrayList<MvcboardVO> selectList(HashMap<String, Integer> hmap) {
+		logger.info("selectList()");
+		
+		String sql = "select * from ("+
+				"select rownum rnum, AA.* from ("+ 
+				"select * from mvcboard order by gup desc, seq asc" +
+				 ") AA where rownum <= " + hmap.get("endNo") + 
+				 ") where rnum >= " + hmap.get("startNo");
+
+		//query(sql명령, new  BeanPropertyRowMapper(리턴할 클래스.class)
+		//sql명령이 실행결과를 BeanPropertyRowMapper 클래스 생성자 인수로 MvcboardVO 클래스
+		//를 넘겨 sql명령실행결과를 저장시켜 리턴한다.
+		//query()메서드의 실행결과가 list인터페이스로 저장된다 그래서 Arraylist타입으로 
+		//형변환해야 함
+		
+		return (ArrayList<MvcboardVO>)template.query(sql,new BeanPropertyRowMapper(MvcboardVO.class));
+	}
 	
-	
+	//조회수
+		public void increment(final int idx) {
+			logger.info("increment()");
+			
+			String sql = "update mvcboard set hit = hit + 1 where idx = ";
+		}
+		
+		//실제내용 수정하는 메서드
+		public void update(final int idx, final String subject, final String content) {
+			logger.info("update()메서드 실행 idx,subject,content()");
+			
+			//서식문자 %s 문자 %c 한문자 %d 정수 %lf 실수
+			String sql = String.format("update mvcboard set subject = %s, content = %s where idx = %d");
+
+			template.update(sql);
+		}
+
 	public MvcboardVO selectByIdx(int idx) {
 		logger.info("selectByIdx()");
 		/*
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		MvcboardVO mvcboardVO = null;
-		try {
-			conn = dataSource.getConnection();
-			String sql = "select * from mvcboard where idx = ?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, idx);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				AbstractApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationCTX.xml");
-				mvcboardVO = ctx.getBean("mvcboardVO", MvcboardVO.class);
-				mvcboardVO.setIdx(rs.getInt("idx"));
-				mvcboardVO.setName(rs.getString("name"));
-				mvcboardVO.setSubject(rs.getString("subject"));
-				mvcboardVO.setContent(rs.getString("content"));
-				mvcboardVO.setGup(rs.getInt("gup"));
-				mvcboardVO.setLev(rs.getInt("lev"));
-				mvcboardVO.setSeq(rs.getInt("seq"));
-				mvcboardVO.setHit(rs.getInt("hit"));
-				mvcboardVO.setWriteDate(rs.getTimestamp("writeDate"));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			if (conn != null) { try { conn.close(); } catch (SQLException e) { e.printStackTrace(); } }
-		}
-		return mvcboardVO;
-		*/
-		
-		String sql = "select * from mvcboard where idx= " + idx;	
-		
-		return template.queryForObject(sql,
-					new BeanPropertyRowMapper(MvcboardVO.class));
+		 * Connection conn = null; PreparedStatement pstmt = null; ResultSet rs = null;
+		 * MvcboardVO mvcboardVO = null; try { conn = dataSource.getConnection(); String
+		 * sql = "select * from mvcboard where idx = ?"; pstmt =
+		 * conn.prepareStatement(sql); pstmt.setInt(1, idx); rs = pstmt.executeQuery();
+		 * if (rs.next()) { AbstractApplicationContext ctx = new
+		 * GenericXmlApplicationContext("classpath:applicationCTX.xml"); mvcboardVO =
+		 * ctx.getBean("mvcboardVO", MvcboardVO.class);
+		 * mvcboardVO.setIdx(rs.getInt("idx"));
+		 * mvcboardVO.setName(rs.getString("name"));
+		 * mvcboardVO.setSubject(rs.getString("subject"));
+		 * mvcboardVO.setContent(rs.getString("content"));
+		 * mvcboardVO.setGup(rs.getInt("gup")); mvcboardVO.setLev(rs.getInt("lev"));
+		 * mvcboardVO.setSeq(rs.getInt("seq")); mvcboardVO.setHit(rs.getInt("hit"));
+		 * mvcboardVO.setWriteDate(rs.getTimestamp("writeDate")); } } catch
+		 * (SQLException e) { e.printStackTrace(); } finally { if (conn != null) { try {
+		 * conn.close(); } catch (SQLException e) { e.printStackTrace(); } } } return
+		 * mvcboardVO;
+		 */
+
+		String sql = "select * from mvcboard where idx= " + idx;
+
+		return template.queryForObject(sql, new BeanPropertyRowMapper(MvcboardVO.class));
 	}
-	
-	public  void delete(final int idx) {
+
+	public void delete(final int idx) {
 		logger.info("delete()");
-		
+
 		String sql = "delete from mvcboard where idx = " + idx;
 		template.update(sql);
 	}

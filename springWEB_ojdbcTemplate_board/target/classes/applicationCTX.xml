@@ -15,9 +15,13 @@
 	<!-- Serivce 클래스의 bean 을 만든다. -->
 	<bean id="contentView"
 		class="com.kh.springodbcTemolate.service.contentViewService" />
-	
+
 	<bean id="insert"
 		class="com.kh.springodbcTemolate.service.InsertSerive" />
+
+	<bean id="select"
+		class="com.kh.springodbcTemolate.service.SelectService" />
+
 
 	<!-- MvcboardDAO 클래스의 bean만든다. -->
 

@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.kh.springodbcTemolate.service.InsertSerive;
-import com.kh.springodbcTemolate.service.MvcboardSerive;
+import com.kh.springodbcTemolate.service.MvcboardService;
+import com.kh.springodbcTemolate.service.SelectService;
 
 
 @Controller
@@ -78,15 +81,65 @@ public class HomeController {
 		
 		model.addAttribute("request",request);
 		
-		
-		//applicationCTX파일포함하고
-		MvcboardSerive service = ctx.getBean("insert",InsertSerive.class);
+		AbstractApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationCTX.xml");
+
+		// applicationCTX 파일포함하고 
+		MvcboardService service = ctx.getBean("insert",InsertSerive.class);
 		service.execute(model);
-		
-		
 		
 		return "redirect:list";
 	}
+	
+	@RequestMapping("/list")
+	public String list(HttpServletRequest request, Model model) {
+		logger.info("list()");
+		
+		model.addAttribute("request",request);
+		AbstractApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationCTX.xml");
+
+		//인터페이스로 구현한 메서드 갖고 있고
+		//밑의 인터페이스로 구현한 객체들 공통적으로 저장할 수 잇다
+		MvcboardService service = ctx.getBean("select",SelectService.class);
+		return "list";
+	}
+	
+	
+	//조회수
+	public void increment(final int idx) {
+		logger.info("increment()");
+		
+		String sql = "update mvcboard set hit = hit + 1 where idx = ";
+	}
+	
+	//실제내용 수정하는 메서드
+	public void update(final int idx, final String subject, final String content) {
+		logger.info("update()메서드 실행 idx,subject,content()");
+		
+		//서식문자 %s 문자 %c 한문자 %d 정수 %lf 실수
+		String sql = String.format("update mvcboard set subject = %s, content = %s where idx = %d");
+
+		template.update(sql);
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

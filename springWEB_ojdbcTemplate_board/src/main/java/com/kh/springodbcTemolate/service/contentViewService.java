@@ -4,7 +4,7 @@ import org.springframework.ui.Model;
 
 import com.kh.springodbcTemolate.vo.MvcboardVO;
 
-public class contentViewService implements MvcboardSerive {
+public class contentViewService implements MvcboardService {
 
 	
 	@Override
