@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+		animation: 요소에 애니메이션을 설정 및 제어한다.
+		
+		단축 속성
+		animation: 애니메이션이름 재생시간 [타이밍함수 대기시간 반복횟수 반복방향 전후상태 재생/정지]
+		애니메이션 이름과 재생시간은 필수 입력 사항이고 나머지는 필요에 따라 생략 가능하다.
+		
+		개별 속성
+		animation-name: @keyframes로 만드는 애니메이션 규칙의 이름을 지정한다. none이 기본값
+		animation-duration: 애니메이션 지속 시간을 설정한다. 0s가 기본값
+		animation-timing-function: 타이밍 함수를 설정한다. ease가 기본값
+		animation-delay: 애니메이션의 대기 시간을 설정한다. 0s가 기본값
+		animation-intertion-count: 애니메이션의 반복 횟수를 지정한다. 1이 기본값
+		animation-direction: 애니메니션 반복 방향을 설정한다. normal이 기본값
+		animation-fill-mode: 애니메이션 전후 상태(위치)를 설정한다. none이 기본값
+		animation-play-state: 애니메니션의 재생과 정지를 설정한다. running이 기본값
+
+        /*
+animation-iteration-count: 애니메이션의 반복 횟수를 지정한다. 1이 기본값
+			=> 숫자: 반복 횟수를 지정한다.
+			=> infinite: 무한 반복
+		animation-direction: 애니메니션 반복 방향을 설정한다.
+			=> normal: 기본값, 정방향(0% => 100%)으로 실행한다.
+			=> reverse: 역방향(100% => 10%)으로 실행한다.
+			=> alternate: 정방향으로 실행한 후 역방향으로 실행한다. => 정방향 왕복해서 실행
+			=> alternate-reverse: 역방향으로 실행한 후 정방향으로 실행한다. => 역방향 왕복 실행
+
+    */
+        */ .box {
+            width: 100px;
+            height: 100px;
+            background-color: hotpink;
+        }
+
+        .box:hover {
+            animation: first-animation 2s infinite alternate;
+        }
+
+        /*
+    실행할 애니메이션을 만든다
+    @keyframes 를 사용해서 애니메이션을 설정.
+
+    반드시 애니메이션 이름을 작성해야 함!
+    */
+        @keyframes first-animation {
+
+            /*프레임 단위로 애니메이션을 설정한다.*/
+            0% {
+                /*시작*/
+                width: 100px;
+            }
+
+            100% {
+                /*끝*/
+                width: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

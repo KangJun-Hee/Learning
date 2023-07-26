@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input 태그</title>
+</head>
+<body>
+    <input>태그<br>
+    <hr>
+<!--
+    사용자가 정보를 입력하는 부분
+    type 어떤 양식 형식으로 폼을 결정한다.(비번, 이메일 등)
+    <input>태그는 끝나는 태그가 없다!
+
+
+    <br>
+    form태그
+    html에서 입력받은 다음에 데이터베이스나 서버로 전송해서
+    내가 추가적인 기능할 수 있도록 만들어 주는 것
+    
+    버튼
+    type
+    value 이름
+    onclick 버튼을 클릭했을 때 실행하는 기능 연결
+
+
+<form>
+    <input type="button" value="새 탭 열기" 
+    onclick="window.open()">
+</form>
+
+
+onclick="alert('확인완료!')" -> 웹브라우저의 팝업창!('메시지')
+text 태그 size="갯수,크기" maxlength=""
+
+    <form>
+        물품 가격:
+        <input type="text" size="10"><br>
+        물품 수량:
+        <input type="text"><br>
+        물품 재고:
+        <input type="text"><br>
+
+        <input type="button" value="확인" onclick="alert('확인완료!')">
+    </form>
+
+    textarea 여러 줄을 작성할 수 있는 태그
+    텍스트 창에 너비, 높이 지정 가능하다. html 행열, css 너비높이
+
+
+
+<form>
+    First name :<br>
+    <input type="text" name="firstname" maxLength="3" required><br> 필수입력 + 3자 제한
+    Last name :<br>
+    <input type="text" name="lastname"><br>
+    별명 :<br>
+    <input type="text" name="alias" placeholder="없을시 생략"> 힌트 표시
+  </form>
+  
+  체크박스 2개 이상 체크 가능하다.
+  기본값으로 체크를 선택 checked
+  라디오 버튼 1개 선택 가능
+-->
+<form>
+    과일 선택:
+    <input type="checkbox" checked> Apple
+    <input type="checkbox" checked> Grape
+    <input type="checkbox" checked> Orange
+
+    <br>
+    성별:
+    <input type="radio" name="gender" value="female">여성
+    <input type="radio" name="gender" value="female">여성
+
+    <br>
+    이메일:
+    <input type="email" required><br>
+    <input type="submit" value="전송하기">
+
+    <input type="color" name="mycolor">
+</form>
+</body>
+</html>

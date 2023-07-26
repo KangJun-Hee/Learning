@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+	/*
+		animation-play-state: 애니메니션의 재생과 정지를 설정한다.
+			=> running: 기본값, 애니메이션을 동작시킨다.
+			=> paused: 애니메이션을 일시 중지시킨다.
+	*/
+
+	.box {
+		width: 150px;
+		height: 100px;
+		background-color: tomato;
+		border-radius: 10px;
+		margin: 10px;
+		font-size: 30px;
+		font-weight: bold;
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		animation: size-up 3s linear infinite alternate;
+	}
+	
+	.box::before {
+		content: "running";
+	}
+	
+	.box:hover::before {
+		content: "pause";
+		color: dodgerblue;
+	}
+	
+	.box:hover {
+		animation-play-state: paused;
+	}
+	
+	@keyframes size-up {
+		0% {
+			width: 150px;
+		}
+		100% {
+			width: 100%;
+		}
+	}
+
+</style>
+
+</head>
+<body>
+
+	<div class="box"></div>
+
+</body>
+</html>
+

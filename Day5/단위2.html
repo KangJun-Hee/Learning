@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단위2</title>
+    <style>
+        /*px:픽셀, 고정된 크기
+        %:비율, 부모요소의 영향을 받는다.
+        em:자기 자신의 폰트 크기의 영향을 받는다.
+        rem(root em):가장 조상요소(html 태그)의 폰트크기에 영향받음
+                    배수로 커진다.
+                    font 16px-> 1em    3em     20em
+                    */
+        html{
+            font-size: 10px; /*1em*/
+        }
+        body *{
+            border:2px solid red;
+        }
+        .container{
+            font-size: 10px;
+
+            width:60em;
+            /*    10*60=600px   
+            container class font-size의 60배*/
+        }
+        .parent{
+            /*부모 요소에서 상속받은 font-size 10px
+                    10*2 -> 20px
+            */
+            font-size:2em;
+            width:15em;    /*300px*/
+        }
+        .child{
+            font-size: 2em;
+            width:15rem;
+            /*최상위 부모는 html 10px일 경우 150px 크기*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        Container
+        <div class="parent">
+            Parent
+            <div class="child">Child1</div>
+            <div class="child">Child2</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경이미지 스크롤특성</title>
+    <style>
+        /*
+		background-attachment: 배경 이미지의 스크롤 여부를 지정한다.
+			=> scroll: 기본값, 배경 이미지가 요소를 따라서 같이 스크롤된다.
+			=> fixed: 배경 이미지가 뷰 포트에 고정되어 요소와 같이 스크롤되지 않는다.
+			=> local: 요소 내 스크롤 시 배경 이미지가 같이 스크롤된다.
+		background-size: 배경 이미지의 크기를 지정한다.
+			=> auto: 기본값, 배경 이미지의 원래 크기로 표시된다.
+			=> 단위: px, em, % 등을 단위로 지정하고 width height 형태로 입력한다.
+				=> width만 입력하면 height는 원본과 입력한 width의 비율에 맞게 자동으로 수정된다.
+			=> cover: 배경 이미지가 크기 비율을 유지하며 width와 height 중에서 더 넓은 너비에 맞춰진다.
+			=> contain: 배경 이미지가 크기 비율을 유지하며 width와 height 중에서 더 좁은 너비에 맞춰진다.
+	*/
+
+    div{
+        height:300px;
+        border:2px solid black;
+    }
+    .box3{
+        /*1.이미지 가지고 오기*/
+        background-image: url("img.jpg");
+        /*2.너비 px 높이 300px*/
+        width:100%;
+        height:300px;
+        /*3.배경이미지 고정! fixed*/
+        background-attachment: fixed;
+        /*4.이미지사이즈 px*/
+        background-size: 700px;
+    }
+    section{
+        /*높이 300px 테두리(border)2px 실선 gray
+        배경색 핫핑크*/
+        height:300px;
+        border:2px solid gray;
+        background-color: hotpink;
+    }
+    .section3{
+        /*1.이미지 가지고오기*/
+        background-image: url("img.jpg");
+        /*너비높이 박스3랑 똑같이
+        이미지 고정, 이미지사이즈 박스3랑 똑같이
+        배경이미지 반복X*/
+        width:1560px;
+        height:300px;
+        background-attachment: fixed;
+        background-size: 700px;
+        background-repeat: no-repeat;
+    }
+    .container {
+		width: 400px;
+		height: 300px;
+		border: 4px solid red;
+		background-image: url("./images/jumbotronBackground.jpg");
+		overflow: auto;
+		background-attachment: local;
+		background-size: 100%;
+		margin: 50px;
+	}
+	
+	.for-scroll {
+		height: 2000px;
+	}
+
+	.box {
+		width: 400px;
+		height: 300px;
+		border: 2px solid blue;
+		background-image: url(./images/android.png);
+		background-repeat: no-repeat;
+		margin: 50px;
+		/* 가로, 세로 크기를 이미지 비율에 정확히 지정하지 않으면 이미지가 찌그러진다. */
+		/* background-size: 200px 100px; */
+		/* 가로 크기만 지정하면 세로 크기는 비율에 맞춰 자동으로 지정된다. */
+		/* background-size: 192px; */
+		/* cover는 가로, 세로 중 넓은 크기에 이미지를 맞추기 때문에 이미지가 잘려서 보일 수 있다. */
+		/* background-size: cover; */
+		/* cover는 가로, 세로 중 좁은 크기에 이미지를 맞추기 때문에 공백이 보일 수 있다. */
+		background-size: contain;
+	}
+    </style>
+</head>
+
+<body>
+    <div class="box3"></div>
+    <section></section>
+    <section class="section3"></section>
+</body>
+
+</html>

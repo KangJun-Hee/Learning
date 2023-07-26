@@ -1,0 +1,34 @@
+
+div{
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    border:1px solid blue;
+
+    /*해상도*/
+    /*상하좌우 모두 여백이 5px*/
+    margin:5px; 
+    padding: 10px;
+}
+span{
+background-color: aquamarine;
+margin: 20px;
+}
+
+
+/*
+p{border:5px solid red; background:yellow;}
+*/
+
+p{border:5px solid red; background:yellow;}
+
+/*padding은 부풀림~*/
+				.box1{padding:20px;}/*상,하,좌,우*/
+				.box2{padding:20px 50px;}/*상하, 좌우*/
+				.box3{padding:20px 50px 30px;}/*상, 좌우, 하*/
+				.box4{padding:20px 30px 50px 70px}/*상 우 하 좌*/
+
+.box1{margin:20px;}/*상,하,좌,우*/
+.box2{margin:20px 50px;}/*상하, 좌우*/
+.box3{margin:20px 50px 30px;}/*상, 좌우, 하*/
+.box4{margin:20px 30px 50px 70px}/*상 우 하 좌*/

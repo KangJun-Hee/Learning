@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>애니메이션 속성</title>
+
+<style type="text/css">
+
+	/*
+		animation-fill-mode: 애니메이션 전후 상태(위치)를 설정한다.
+			=> none: 기본값, 기존 위치에서 시작 => 애니메니션 시작 위치로 이동 => 실행 => 기존 위치로 복귀
+			=> forwards: 기존 위치에서 시작 => 애니메이션 시작 위치로 이동 => 실행 => 애니메이션 끝 위치에서 끝
+			=> backwards: 애니메이션 시작 위치에서 시작 => 실행 => 기존 위치에서 끝
+			=> both: 애니메이션 시작 위치에서 시작 => 실행 => 애니메이션 끝 위치에서 끝
+	*/
+
+	.box {
+		width: 100px;
+		height: 100px;
+		background-color: tomato;
+		border-radius: 10px;
+		margin: 10px;
+		
+		animation: fill 2s linear;
+		animation-fill-mode: both;
+	}
+	
+	@keyframes fill {
+		0% {
+			transform: translate(100px, 100px); /* 애니메이션 시작 위치 */
+			background-color: dodgerblue;
+		}
+		100% {
+			transform: translate(300px, 100px); /* 애니메니션 종료 위치 */
+			background-color: hotpink;
+		}
+	}
+	
+</style>
+
+</head>
+<body>
+
+	<div class="box"></div>
+
+</body>
+</html>

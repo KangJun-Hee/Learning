@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <style>
+        .navbar-brand {
+            font-weight: 700;
+        }
+
+        .card-title {
+            font-size: 40px;
+            font-weight: 500;
+        }
+
+        .card-body {
+            font-size: 17px;
+            background-color: rgb(230, 230, 230);
+            padding: 6%;
+
+        }
+
+        img {
+            width: 50%;
+        }
+
+        .container {
+            display: flex;
+            align-content: space-between;
+            flex-wrap: nowrap;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+
+
+
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">프론트엔드 입문!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div class="card-body">
+        <h1 class="card-title">프론트엔드 입문!</h5>
+
+            <br>
+            <p class="card-text">프론트엔드 학습을 위한 HTML과 CSS. 이를 부트스트랩 페이지로 정리해보자!</p>
+            <hr>
+            <p>더 자세한 내용을 원하신다면? 아래 버튼을 클릭해라~~~</p>
+            <a href="#" class="btn btn-primary m-3">Learn more</a>
+    </div>
+
+
+
+
+    <div class="container m-5">
+
+        <div class="row">
+            <div class="col-3">
+                <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="" ; class="justify-content-start">
+            </div>
+            <div class="col-7">
+                <h5>HTML?</h5>
+                <p>실제 문서의 내용, 꾸며지지 않은 순수 ㅓ앙! 아러민 미븅 가능.</p>
+            </div>
+
+
+            <div class="row">
+                <div class="col-3">
+                    <img src="https://cdn-icons-png.flaticon.com/512/919/919826.png" alt="" ;
+                        class="justify-content-start col">
+                </div>
+                <div class="col-7">
+                    <h5>CSS?</h5>
+                    <p>웹 문서를 꾸밈. 갈, 아아, 배치 등..! 아렁 마이라으 한다면..?</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <img src="data:image/png;base64,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"
+                        alt="" class="justify-content-start col">
+                </div>
+                <div class="col-7">
+                    <h5>HTML?</h5>
+                    <p>웹 프론트엔드 라이브럴. 미리 만들어진 Thdjd과 아아를 가져다가 쓰는 개념! 암알있느나 배우지 않은 관ㄱ로 생략.</p>
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

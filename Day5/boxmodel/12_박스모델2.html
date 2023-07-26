@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>박스 모델 - 폭, 너비</title>
+
+<style type="text/css">
+
+	/*
+		max-width: 부모 요소의 크기와 관계없이 요소의 최대 가로 너비를 지정한다.
+		min-width: 부모 요소의 크기와 관계없이 요소의 최소 가로 너비를 지정한다.
+		max-height: 부모 요소의 크기와 관계없이 요소의 최대 세로 너비를 지정한다.
+		min-height: 부모 요소의 크기와 관계없이 요소의 최소 세로 너비를 지정한다.
+	*/
+
+	.parent {
+		width: 150px;
+		height: 300px;
+		border: 4px solid tomato;
+		margin: 20px;
+	}
+
+	.child {
+		/* width: auto; */ /* 부모 크기에 따라 가변적 */
+		/* width: 100%; */ /* 부모 크기에 따라 가변적 */
+		/* width: 300px; */ /* 부모 크기에 상관없이 고정적 */
+		/*
+			parent class의 width가 200 ~ 400px 이면 꽉차게 보이지만 200px보다 작아지면 child class는 200px을
+			유지하고 400px보다 커지면 400px을 유지한다.
+		*/
+		max-width: 400px;
+		min-width: 200px;
+		height: 200px;
+		background-color: orange;
+	}
+
+</style>
+
+</head>
+<body>
+
+	<div class="parent">
+		<div class="child">
+		
+		</div>
+	</div>
+
+</body>
+</html>

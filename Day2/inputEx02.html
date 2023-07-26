@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전송화면</title>
+</head>
+<body>
+    <!--
+    <h2>이메일 전송화면</h2>
+    <form>
+        이름 :
+        <input type="text"><br><br>
+        이메일 주소 : <input type="email"><br><br>
+        내용 :<br>
+        <textarea rows="5" cols="50"></textarea><br>
+        <input type="submit" value="Send">
+        <input type="reset" value="Reset">
+    </form>
+
+    min, max 숫자 최소대값
+    step 숫자 단위, 5씩 올려 10씩 올려
+-->
+    <form>
+        <input type="number" min="230" max="260"
+        step="10" value="260">
+
+        <br>
+        <input type="range" min="1" max="10"
+        value="10">
+
+        <!--드롭다운 만들기-->
+        <select name="cars">
+            <option value="bmw">bmw</option>
+            <option value="benz"selected>Benz</option>
+            <option value="hyundai" >현대자동차</option>
+            <option value="kia">기아자동차</option>
+            <option value="porsche" disabled>포르쉐</option>
+        </select>
+
+        <!--라벨. 웹에서 글자표현 태그
+        레이블 태그 클릭하면 텍스트 컨트롤에 초점이 맞춰서
+        사용가능하고 
+        특히 모바일, 태블릿 환경에서 강점 발휘-->
+        <br>
+        <label for="pet-select">Choose a pet:</label><br />
+<select name="pets" id="pet-select">
+  <option value="">--Please choose an option--</option>
+  
+  <optgroup label="포유류"> <!-- 선택목록 그룹 -->
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="hamster">Hamster</option>
+  </optgroup>
+  
+  <optgroup label="조류">
+    <option value="parrot">Parrot</option>
+  </optgroup>
+  
+  <optgroup label="물고기">
+    <option value="goldfish">Goldfish</option>
+    <option value="spider">Shark</option>
+  </optgroup>
+</select>
+<!-- <input>의 list 속성값과 <datalist>의 id명을 똑같이 맞춰주어야 동작된다. -->
+    <br>
+    <label for="movie">What is your favourite Browser?</label>
+    <br>
+    <input type="text" list="browsers"/>
+    <datalist id="browsers">
+      <option value="Internet Explorer">
+      <option value="Firefox">
+      <option value="Chrome">
+      <option value="Opera">
+      <option value="Safari">
+    </datalist>
+
+    <form>
+        전화번호:
+        <input type="tel" required pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" title="###-####-####"><br>
+        <input type="submit" />
+    </form>
+
+    <h3>date</h3>
+    <input type="date" >
+    <hr>
+
+    <h3>datetime</h3>
+    <input type="datetime">
+    <hr>
+
+    <h3>datetime-local</h3>
+    <input type="datetime-local" >
+    <hr>
+
+    <h3>week</h3>
+    <input type="week">
+    <hr>
+
+        <!--콤보박스 안에서 그룹을 지어서 표현
+        -->
+    </form>
+
+
+
+
+
+
+
+
+</body>
+</html>

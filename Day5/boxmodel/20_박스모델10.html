@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>투명도</title>
+
+<style type="text/css">
+
+	/*
+		opacity: 요소의 투명도를 지정한다. 0부터 1 사이의 실수를 지정하며 기본값은 1이다.
+			1.0 => 100% 불투명도, 완전 불투명
+			0.5 => 50% 불투명도, 반투명
+			0.0 => 0% 불투명도, 완전 투명
+	*/
+
+	.parent {
+		width: 300px;
+		height: 250px;
+		background-color: hotpink;
+	}
+	
+	.parent .child {
+		width: 100px;
+		height: 100px;
+		background-color: yellowgreen;
+		font-size: 40px;
+		opacity: 0.5;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	/* .parent .child:first-child { */
+	.parent .child:nth-child(1) {
+		/* display: none; */ /* 사라져서 존재하지 않는다. */
+		opacity: 0; /* 존재하지만 보이지 않는다. */
+	}
+	
+</style>
+
+</head>
+<body>
+
+	<div class="parent">
+		<div class="child">123</div>
+		<div class="child">456</div>
+	</div>
+
+</body>
+</html>

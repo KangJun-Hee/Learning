@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복합 선택자</title>
+    <style>
+        /*복합선택자=기본 선택자를 붙여서 만든 선택자*/
+        /*span태그 중에서 class 속성이 orange요소 선택!*/
+        span.orange{
+            color:orangered;
+        }
+        /*자식 선택자: ">"로 선택한다. 자식요소=한 단계 아래요소를 선택함.*/
+        ul > .orange{
+            color:blueviolet;
+        }
+
+        /*자손 선택자 " "공백 1칸으로 선택. 자손요소(모든요소)를 선택함.*/
+        div .apple{
+            color:yellowgreen;
+        }
+
+        /*인접형제 선택자 "+" 다음형제 요소 1개를 선택함.*/
+        .apple + li{
+            color:aqua;
+        }
+
+        /*일반 선택자 "~" 다음형제 요소 모두를 선택한다.*/
+        .orange ~ li{
+            text-decoration:underline;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="apple">사과</li>
+            <li>딸기</li>
+            <li class="orange">오렌지</li>
+        </ul>
+        <div class="apple">당근</div>
+        <p>토마토</p>
+        <span class="orange">오렌지</span>
+    </div>
+    <ul>
+        <li>딸기</li>
+        <li>수박</li>
+        <li class="orange">오렌지</li>
+        <li>망고</li>
+        <li>사과</li>
+    </ul>
+</body>
+</html>
