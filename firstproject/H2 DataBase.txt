@@ -1,0 +1,12 @@
+H2 DataBase 사이트에서 All Platforms (zip, 9.5 MB)다운받고
+아무데나 압축해제. 어디 지정하거나 코드넣을필요없음
+
+application.properties file에 
+spring.h2.console.enabled=true라고 치고(#it makes can be use DataBase)
+홈페이지 들가서 localhost:포트번호/h2-console이라고 치면 된다
+
+콘솔 보면 H2 console available at '/h2-console'. Database available at라고 있을 텐데
+그 옆에 거가 url임 복붙해서 홈페이지에 띄운 Login창에
+ JDBC URL:에 있는 거 다 지우고  복붙 하면 창 넘어감 
+네모 박스에 쿼리문(예:select * from 클래스명) 치고 런하면 아래 테이블 뜸
+클래스명이 -> 테이블명 된다

@@ -1,0 +1,62 @@
+Spring Boot는 parent의 version
+
+application.properties file에 서버포트번호 지정
+
+
+pom.xml에 lombok dependency를 넣어 준다. 
+서버 안 돌아갈 수 있는데
+jre버전이 안 맞아서 그럴 수 있으니 11.0.0.1로 빌드패스를 바꿔 주고(EE11에서) 
+pom.xml의 parent version을 2.7.6으로 낮추고 
+properties java.version을 11로 바꾸면 된다.(기본으로 11지정
+인터넷창에 localhost:본인이 application.properties파일에 지정한 포트번호/프로젝트명   을 입력하면 뜬다.
+(그냥 localhost:포트번호   만 쳐도 뜸)
+
+
+
+resourcec/static 안에 있는 파일 돌리려면 localhost:포트번호/파일명.html이라고 하면 된다
+
+뭔가 임포트 안되면 preferences에 서 Advanced가서 API Tools Propasals, Java Proposals,Java Type Proposals를 선택하고
+apply하면 된다
+
+
+
+
+<!-- header template 적용-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>컨트롤러로 연결한 뷰페이지</h1>
+	<h1>mustache에서 모델에 있는 값 저장시 문법</h1>
+	<h1>{{username}}</h1>
+	
+	<!--시퀀스문자들은 중괄호 3개 사용. -->
+</body>
+</html>
+
+
+
+mustache 작성시 파일명 잘쓰기
+{{>.폴더명/파일명}}
+
+
+
+정리
+1.Spring Initializr나 걍 스프링에서 파일생성
+2.pom.xml에서 parent의 version을 2.7.6으로, properties의 java.version을 11로 변경
+  버전 그 밑에 <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>없으면 추가(이니셜라이저에서 눌러도 안 될
+		때가 있음)해야 라이브러리나 그런 거 생성
+  라이브러리를 JavaSE-11 말고 jds-11.0.0.1로 변경해야할 수도
+  scope가 test인 dependency 밑에 lombok추가!	
+3.applicaition.properties file에 가서 서버포트번호 지정, 인코딩과 h2콘솔 enabled를 true로 설정
+4.클라스생성후 @Controller달고 안에 메소드 만들어서 @GetMapping달아서(홈페이지에뭐라고입력할지)지정,
+  매개변수는 model달고 return은 viewpage이름으로 "파일명";라고 달기(확장자안적어도된다)
+5.view역할을 할 mustache작성법 : {{>./폴더명/파일명}} 이 방식으로 인클루드처럼 부를 수 있음
+
+
+
+
+

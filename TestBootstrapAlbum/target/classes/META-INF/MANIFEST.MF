@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: user1
+Build-Jdk: 11.0.0.1
+Implementation-Title: TestBootstrapAlbum
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.kh.mustache
+Implementation-URL: https://spring.io/projects/spring-boot/TestBootstrap
+ Album
+Created-By: Maven Integration for Eclipse
+

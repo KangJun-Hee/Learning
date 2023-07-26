@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: user1
+Build-Jdk: 11.0.0.1
+Implementation-Title: TestBootstrapLogin
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.springboot
+Implementation-URL: https://spring.io/projects/spring-boot/TestBootstrap
+ Login
+Created-By: Maven Integration for Eclipse
+
