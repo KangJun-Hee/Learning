@@ -3,7 +3,7 @@ Built-By: user1
 Build-Jdk: 11.0.0.1
 Implementation-Title: firstproject
 Implementation-Version: 0.0.1-SNAPSHOT
-Implementation-Vendor-Id: com.kh
+Implementation-Vendor-Id: com.tjoeun
 Implementation-URL: https://spring.io/projects/spring-boot/firstproject
 Created-By: Maven Integration for Eclipse
 

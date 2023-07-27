@@ -1,0 +1,44 @@
+{{>./layouts/header}}	
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col">ID</th>
+	      <th scope="col">Title</th>
+	      <th scope="col">Content</th>
+	    </tr>
+	  </thead>
+	  
+	  
+	  
+	  <tbody class="table-group-divider">
+	  <!-- 1.컨트롤러서 Model객체에 저장돼 넘어오는 데이터에 
+	  		"."을 찍어 멤버에 접근
+	  
+	  	{{#Article}}
+		    <tr>
+		      <td>{{article.id}}</td>
+		      <td>{{article.title}}</td>
+		      <td>{{article.content}}</td>
+		    </tr>
+	    {{/Article}}
+	   --!>
+	  
+	  
+	  	<!-- 2.아니면 값의 사용범위 지정가능 
+	  		#           시작,
+	  		/객체변수명       끝        
+	  	 --!>
+	  	{{#article}}
+	    <tr>
+	      <td>{{id}}</td>
+	      <td>{{title}}</td>
+	      <td>{{content}}</td>
+	    </tr>
+	    {{/article}}
+	    
+	  </tbody>
+	  
+	  
+	  
+	</table>
+{{>./layouts/footer}}

@@ -1,0 +1,41 @@
+{{>./layouts/header}}	
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col">ID</th>
+	      <th scope="col">Title</th>
+	      <th scope="col">Content</th>
+	    </tr>
+	  </thead>
+	  
+	  
+	  
+	  <tbody class="table-group-divider">
+
+	  
+	  
+	  	<!-- 2.아니면 값의 사용범위 지정가능 
+	  		#           시작,
+	  		/객체변수명       끝        
+	  	 --!>
+	  	{{#article}}
+	    <tr>
+	      <td>{{id}}</td>
+	      <td>{{title}}</td>
+	      <td>{{content}}</td>
+	    </tr>
+	    {{/article}}
+	    
+	  </tbody>
+	</table>
+	
+	<!-- 목록으로 돌아가기 링크 추가! --!>
+	<a href="/Articles" class="btn btn-success">목록으로</a>
+	
+	<!-- 수정 --!>
+	<a href="/Articles/{{id}}/edit" class="btn btn-info">수정하기</a>
+	
+	<!-- 삭제 --!>
+	<a href="/Articles/{{id}}/delete" class="btn btn-success">삭제하기</a>
+	
+{{>./layouts/footer}}
