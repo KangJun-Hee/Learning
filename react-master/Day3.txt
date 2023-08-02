@@ -1,0 +1,13 @@
+cd=change directory
+
+만약 노드모듈파일 없어서 npm start 안 되면
+vs 터미널에 npm i(install의 약자)  하면 node_modules 설치된다! 그 이후에 npm start하면 된다
+
+새폴더 cmd에서 만들기    npx create-react-app todolist
+
+import { Provider } from './Context';처럼 중괄호써서 임포트하는 건 그 파일에 export된 것들이 
+많아서 뭘 할지 몰라서임. 그래서 중괄호로 이거 가져오겠다고 표시하는 것
+
+잔디심을 때 node module은 안 올림!!!!
+
+js?react에서 function 대신 클래스 나오면 올드한 코드니 넘어가기

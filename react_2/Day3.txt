@@ -1,0 +1,6 @@
+cd=change directory
+
+만약 노드모듈파일 없어서 npm start 안 되면
+vs 터미널에 npm i(install의 약자)  하면 node_modules 설치된다! 그 이후에 npm start하면 된다
+
+js?react에서 function 대신 클래스 나오면 올드한 코드니 넘어가기
