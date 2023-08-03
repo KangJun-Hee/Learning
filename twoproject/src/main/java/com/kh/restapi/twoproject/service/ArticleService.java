@@ -1,6 +1,10 @@
 package com.kh.restapi.twoproject.service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -88,14 +92,101 @@ public class ArticleService {
 		return target;
 	}
 	
+	//트랜잭션(Transaction)
+	// - DB의 상태를 변화시키는 하나의 논리적기능 수행키 위한 작업단위
+	// - 사용자가 시스템에 대한 서비스 요구시 시스템이 응답하기 위한 상태변환과정의 작업단위
+	// - 여러 sql문들을 단일작업으로 묶어서 나눠질 수 없게 만드는 것이 트랜잭션
+	// - rollback:만약 실행중에 실패하면 내용을 전부 날리고 처음으로 돌아간다
+	// 예:계좌이체
+	// - 끝나면 commit or rollback을 해야 한다
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+  //@Transactional 어노테이션을 이용해 메서드를 묶는다
+  //데이터 추가시 문제 발생하면 추가한 내용 가지고 게시판에
+  //전체출력시 문제 발생하면 실행내용 모두 취소하고
+  //기존의 내용으로 돌아간다
+  
+  //정상적으로 실행하면 데이터를 영구적으로 저장까지 할 수 있도록 
+  //만들어 주는 게 트랜잭션 처리법~
+	@Transactional
+	public List<Article> createArticles(List<ArticleForm> dtos){
+		
+		log.info("ArticleService의 createArticles메서드 실행");
+		
+		//stream()
+		//java 8부터 추가된 자바스트림
+		//추가된 컬렉션의 저장요소를 하나씩 참조해 람다식으로
+		//처리를 할 수 있도록 해주는 반복자
+		//데이터소스를 변경하지 않는다(읽기모드)
+		//일회성스트림도 요소를 모두 읽고나면 닫혀서 사용불가
+		//필요시 새 스트림 생성해 사용
+		//내부적으로 반복처리함
+		
+		//람다식(코드를 간결히 사용()
+		//간단히 람다구조로 작성한다면,이렇게 작성
+		List<Article> articleList = dtos.stream()
+				.map(dto -> dto.toEntity())
+				.collect(Collectors.toList());
+		
+		log.info("articlesList:{}",articleList);
+		
+		articleList.stream().
+			forEach(article->articleRepository.save(article));
+		//강제 예외발생가능!
+		//DB처리과정서 예외발생시 orElseThrow()메서드를 이용해 예외처리
+		articleRepository.findById(-1L).orElseThrow(
+					()-> new IllegalArgumentException("exception~~~처리~~메시지")
+				);
+		
+		
+		
+		/*
+		 * 아이디 이용해 데이터저장
+		 * 전체적 글의 내용저장
+		 * 
+		//dto묶음을 entity 묶음으로 변환하는 작업
+		List<Article> articleList = new ArrayList<>();
+		for(int i = 0; i<dtos.size(); i++) {
+			Article entity = dtos.get(i).toEntity();
+			articleList.add(entity);
+		}
+		//entity 묶음을 DB로 저장한다
+		for(int i = 0; i<articleList.size(); i++) {
+			articleRepository.save(articleList.get(i));
+		}
+		*/
+		return articleList;
+	}
 }
+
+/*Test
+ * 프로그램의 품질검증을 위한 것!
+ * 우리 의도대로 프로그램이 동작하나 확인하는 것~
+ * 
+ * TDD(Test Driven Development)
+ * 소프트웨어 개발시 먼저 테스트 작성한 후 코드를 작성하는 걸 강조
+ * 코드작성 전 먼저 테스트해 코드작성하면 코드의 품질,안정성 높일 수 있다~
+ * 
+ * Junit
+ * 
+ * 
+ * 
+ * */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+이전에도 롬복을 디펜던시에 추가하거나 라이브러리에 직접 추가해도 안 되는 경우가 많았다.
+롬복.jar를 java application으로 실행 후 sts.exe를 재설치해도 바뀌는 점은 없었는데, 오늘
+sts.ini파일을 텍스트 편집기로 열어 맨 마지막 줄에 -javaagent:lombok.jar라는 문장을 추가해 주
+었더니 문제가 해결되었다. 
+
+잘 설치됐나 확인하려면 Help->About Spring Tool Suite-> 안에 버전이나 정보들 관련 텍스트가
+주르륵 써있는데 맨 마지막 줄에 Lombok v1.18.28 "Envious Ferret" is installed. https://projectlombok.org/
+이렇게 표시가 됐다면 성공이다

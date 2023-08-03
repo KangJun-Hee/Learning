@@ -1,0 +1,18 @@
+{{>./layouts/header}}
+	<form class="container p-5" action="/Articles/create" method="post">
+		<div class="mb-3">
+			<label for="title" class="form-label">제목</label>
+			<input type="text" class="form-control" id="title" name="title"/>
+		</div>
+		<div class="mb-3">
+			<label for="content" class="form-label">내용</label>
+			<textarea class="form-control" id="content" rows="5" name="content" style="resize: none;"></textarea>
+		</div>
+		<button type="submit" class="btn btn-primary">저장</button>
+	
+	<!-- 목록으로 돌아가기 링크 추가! --!>
+	<a href="/Articles" class="btn btn-success">목록으로</a>
+	
+	</form>
+	
+{{>./layouts/footer}}

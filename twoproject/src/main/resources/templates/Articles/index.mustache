@@ -1,0 +1,38 @@
+{{>./layouts/header}}
+
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Title</th>
+			<th scope="col">Content</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- Model 객체로 넘어온 데이터가 목록이면 자동으로 반복 처리한다. -->
+		{{#articleList}}
+		<tr>
+			<td>{{id}}</td>
+			<td>
+				<!-- 상세보기 링크 추가 -->
+				<a href="/Articles/{{id}}">{{title}}</a>
+			</td>
+			<td>{{content}}</td>
+		</tr>
+		{{/articleList}}
+		
+		<!-- Model 객체로 넘어온 데이터가 없을때 처리한다. -->
+		{{^articleList}}
+		<tr>
+			<th colspan="3">
+				저장된 글이 없습니다.
+			</th>
+		</tr>
+		{{/articleList}}
+	</tbody>
+</table>
+
+<!-- 새 글쓰기 링크 추가 -->
+<a href="/Articles/new" class="btn btn-success">글쓰기</a>
+
+{{>./layouts/footer}}

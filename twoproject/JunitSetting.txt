@@ -1,0 +1,13 @@
+프로젝트 우클릭->Build Path->Configure Build Path->Libraries->Classpath 클릭->Add Library...클릭
+->JUnit 클릭 후 Next클릭 Finish클릭   
+끝
+
+원하는 클라스 우클릭-> New->Other...->JUnit Test Case->Next클릭 후 원하는 메소드 선택->
+Finish
+끝
+
+Test 우클릭->Run as->JUnit Test
+(특정 메서드만 테스트하고프면 Test클라스 왼쪽 작은화살표 눌러서 객체,메소드들 목록 띄우고
+원하는 메서드 우클릭해서 JUnit Test
+아니면 Test클래스 내에서 원하는 메서드 제외한 나머지 주석처리하고 통으로 테스트해도 된다)
+끝
