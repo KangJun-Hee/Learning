@@ -1,0 +1,112 @@
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+public void jsonParsing1() {
+    String jsonString = "{\"title\": \"how to get stroage size\","
+            + "\"url\": \"https://codechacha.com/ko/get-free-and-total-size-of-volumes-in-android/\","
+            + "\"draft\": false,"
+            + "\"star\": 10"
+            + "}";
+
+    // JSONObjet를 가져와서 key-value를 읽습니다.
+    JSONObject jObject = new JSONObject(jsonString);
+    String title = jObject.getString("title");
+    String url = jObject.getString("url");
+    Boolean draft = jObject.getBoolean("draft");
+    int star = jObject.getInt("star");
+
+    System.out.println("title: " + title);
+    System.out.println("url: " + url);
+    System.out.println("draft: " + draft);
+    System.out.println("star: " + star);
+}
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+public void jsonParsing2() {
+    String jsonString =
+        "{"
+        +   "\"post1\": {"
+        +       "\"title\": \"how to get stroage size\","
+        +       "\"url\": \"https://codechacha.com/ko/get-free-and-total-size-of-volumes-in-android/\","
+        +       "\"draft\": false"
+        +"  },"
+        +   "\"post2\": {"
+        +       "\"title\": \"Android Q, Scoped Storage\","
+        +       "\"url\": \"https://codechacha.com/ko/android-q-scoped-storage/\","
+        +       "\"draft\": false"
+        +   "}"
+        +"}";
+
+    // 가장 큰 JSONObject를 가져옵니다.
+    JSONObject jObject = new JSONObject(jsonString);
+
+    // 첫번째 JSONObject를 가져와서 key-value를 읽습니다.
+    JSONObject post1Object = jObject.getJSONObject("post1");
+    System.out.println(post1Object.toString());
+    System.out.println();
+    String title = post1Object.getString("title");
+    String url = post1Object.getString("url");
+    boolean draft = post1Object.getBoolean("draft");
+    System.out.println("title(post1): " + title);
+    System.out.println("url(post1): " + url);
+    System.out.println("draft(post1): " + draft);
+    System.out.println();
+
+    // 두번째 JSONObject를 가져와서 key-value를 읽습니다.
+    JSONObject post2Object = jObject.getJSONObject("post2");
+    System.out.println(post2Object.toString());
+    System.out.println();
+    title = post2Object.getString("title");
+    url = post2Object.getString("url");
+    draft = post2Object.getBoolean("draft");
+    System.out.println("title(post1): " + title);
+    System.out.println("url(post1): " + url);
+    System.out.println("draft(post1): " + draft);
+}
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+public void jsonParsing3() {
+    String jsonString =
+    "{"
+    +   "\"posts\": ["
+    +       "{"
+    +           "\"title\": \"how to get stroage size\","
+    +           "\"url\": \"https://codechacha.com/ko/get-free-and-total-size-of-volumes-in-android/\","
+    +           "\"draft\": false"
+    +       "},"
+    +       "{"
+    +           "\"title\": \"Android Q, Scoped Storage\","
+    +           "\"url\": \"https://codechacha.com/ko/android-q-scoped-storage/\","
+    +           "\"draft\": false"
+    +       "},"
+    +       "{"
+    +           "\"title\": \"How to parse JSON in android\","
+    +           "\"url\": \"https://codechacha.com/ko/how-to-parse-json-in-android/\","
+    +           "\"draft\": true"
+    +       "}"
+    +   "]"
+    +"}";
+
+    // 가장 큰 JSONObject를 가져옵니다.
+    JSONObject jObject = new JSONObject(jsonString);
+    // 배열을 가져옵니다.
+    JSONArray jArray = jObject.getJSONArray("posts");
+
+    // 배열의 모든 아이템을 출력합니다.
+    for (int i = 0; i < jArray.length(); i++) {
+        JSONObject obj = jArray.getJSONObject(i);
+        String title = obj.getString("title");
+        String url = obj.getString("url");
+        boolean draft = obj.getBoolean("draft");
+        System.out.println("title(" + i + "): " + title);
+        System.out.println("url(" + i + "): " + url);
+        System.out.println("draft(" + i + "): " + draft);
+        System.out.println();
+    }
+}
+
+
