@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: user1
+Build-Jdk: 11.0.0.1
+Implementation-Title: khTestPrac2
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.example
+Implementation-URL: https://spring.io/projects/spring-boot/khTestPrac2
+Created-By: Maven Integration for Eclipse
+

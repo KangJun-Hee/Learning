@@ -1,0 +1,7 @@
+jsp에 The superclass "javax.servlet.http.HttpServlet" was not found on the Java Build Path라는 에러남
+프로젝트 라이브러리 문제인 것 같아 서버 확인하니 Pivaocla? 로 잡혀있고 톰캣 사라져있기에 톰캣으로 추가함
+
+톰캣 아파치 재등록법
+Window->Preferences->Server->Runtime Encironmentst->Add->아파치에서 톰캣 9.0선택
+위치 이상하다고 나올 수 있는데 본인이 톰캣다운받아 저장한 폴더 찾아서 
+apache-tomcat-9.0.74라는 이름의 폴더 잡으면 됨(그 안에 bin,conf등등 들어있음)

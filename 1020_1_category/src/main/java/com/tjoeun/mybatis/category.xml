@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tjoeun.vo.CategoryVO">
+
+	<!-- id: sql 명령을 식별한다. -->
+	<!-- parameterType: sql 명령으로 전달되는 데이터의 타입을 적는다. -->
+	<!-- resultType: sql 명령 실행결과 리턴되는 데이터의 타입을 적는다. -->
+
+	<!-- 메인 카테고리를 저장한다. -->
+	<insert id="insert" parameterType="vo">
+		<!--
+			nextval: 시퀀스 값을 1증가시킨다.
+			currval: 현재 시퀀스 값을 의미한다.
+			ibatis는 parameterClass로 지정된 객체 형태로 sql 명령에 넘어온 데이터를 #과 # 사이에 코딩했지만
+			mybatis는 parameterType으로 지정된 객체 형태로 sql 명령에 넘어온 데이터를 #{와 } 사이에 코딩한다.
+			메인 카테고리는 같은 글 그룹 내부에서 맨 위에 위치해야 하므로 레벨(lev)과 같은 그룹에서 카테고리
+			출력 순서를 의미하는 seq를 0으로 저장한다.
+		-->
+		insert into category (idx, category, gup, lev, seq) 
+		values (category_idx_seq.nextval, #{category}, category_idx_seq.currval, 0, 0)
+	</insert>
+	
+	<!-- 
+		테이블에 저장된 전체 카테고리 목록을 얻어온다.
+		카테고리 목록을 카테고리 그룹(gup)의 내림차순, 같은 카테고리 그룹에서는 카테고리 순서(seq)의 오름차순으로 
+		얻어온다.		
+	-->
+	<select id="selectList" resultType="vo">
+		select * from category order by gup desc, seq asc
+	</select>
+	
+	<!-- 같은 카테고리 그룹에서 카테고리 출력 순서를 조정하기 위해 seq를 수정한다. -->
+	<update id="increment" parameterType="java.util.HashMap">
+		<!-- gup, seq는 category 테이블의 필드이고 #{gup}, #{seq}는 HashMap에 저장되서 넘어오는 데이터의 key이다. -->
+		update category set seq = seq + 1 where gup = #{gup} and seq >= #{seq}
+	</update>
+	
+	<!-- 서브 카테고리를 저장한다. -->
+	<insert id="reply" parameterType="vo">
+		insert into category (idx, category, gup, lev, seq) 
+		values (category_idx_seq.nextval, #{category}, #{gup}, #{lev}, #{seq})
+	</insert>
+	
+	<!-- 카테고리 1건을 얻어온다. -->
+	<select id="selectByIdx" parameterType="int" resultType="vo">
+		select * from category where idx = #{idx}
+	</select>
+	
+	<!-- 카테고리 1건을 삭제한다. -->
+	<delete id="delete" parameterType="int">
+		delete from category where idx = #{idx}
+	</delete>
+	
+	<!-- category 필드를 "삭제된 카테고리 입니다."로 수정한다. -->
+	<update id="deleteCategory" parameterType="int">
+		update category set category = '삭제된 카테고리 입니다.' where idx = #{idx}
+	</update>
+	
+	<!-- deleteCheck 필드를 "YES"로 수정한다. -->
+	<update id="deleteCheck" parameterType="int">
+		update category set deleteCheck = 'YES' where idx = #{idx}
+	</update>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
