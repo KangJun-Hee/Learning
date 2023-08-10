@@ -1,0 +1,2 @@
+프로젝트의 프로퍼티스에서 자바 버전을 11로 변경했다면, pom.xml에 있는 
+<properties>의<java-version>도 11로 변경해 줘야 함

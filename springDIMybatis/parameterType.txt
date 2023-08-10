@@ -1,0 +1,17 @@
+.xml의 <mapper>의 명령문들(<insert>같은)의 parameterType이 정확하지 않았음.
+
+<insert id="insertMember"
+		parameterType="com.kh.mybatis.member.Member">
+		insert into member values(
+		#{id},#{password},#{name},#{age},
+		#{gender},#{phone},#{address},#{email},
+		#{
+		hobby,typeHandler =
+		com.kh.mybatis.member.common.MemberTypeHandler
+		},
+		default
+		)
+</insert>
+
+파라미터타입은 이 명령문으로 전달될 매개변수의 완전한 클래스 이름 또는 별명임
+나도 클래스의 위치를 잘 넣었어야 했는데 직접써서 틀림. 담엔 복붙하기로

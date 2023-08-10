@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<context:component-scan base-package="com.kh.mybatis" />
+	<!-- 사용자에 관한 Bean생성시
+		 id,name(속성값):객체명이 되는 것, id와 name 호환된다
+		 class(속성값):생성할 class의 패키지 포함한 이름
+		 property-ref(속성값):이미 생성한 Bean(객체)를 bean에 주입시키는 방법
+		 bean의 id를 넣으면 된다
+		 
+		 beans:property : 값을 넣은 태그,객체에 setter가 반드시 존재해야 함
+		 beans:constructor-arg : 생성자 호출시 사용하는 태그,반드시 생성자 파라미터 수와 일치해야한다-->
+	
+	<beans:bean id="testMember" class="com.kh.mybatis.member.Member">
+		<beans:property name="id" value="test1"/>
+		<beans:property name="name" value="홍길동"/>
+		<beans:property name="age" value="21"/>
+		<beans:property name="hobby" value="축구,야구"/>
+	</beans:bean>
+		  
+	<!-- testMember2 id:test2  name:최골동   age:30  hobby : 배구,골프,야구 -->
+	<beans:bean id="testMember2" class="com.kh.mybatis.member.Member">
+		<beans:property name="id" value="test2"/>
+		<beans:property name="name" value="최골동"/>
+		<beans:property name="age" value="30"/>
+		<beans:property name="hobby" value="배구,골프,야구"/>
+	</beans:bean>	  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+	
+	
+</beans:beans>
