@@ -29,41 +29,23 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
-	
-	<!-- 인코딩세팅 편리하게 설정하는법 Spring에서 제공하는 필터를 통해 간편히 설정가능 -->
-	<filter>
+
+	<filter> 
 		<filter-name>encodingFilter</filter-name>
-		<filter-class>org.springframework.web.filter.CharacterEncodingFilter
-		</filter-class>
-		<init-param>
-			<param-name>encoding</param-name>
-			<param-value>UTF-8</param-value>
-		</init-param>
-		<init-param>
-			<param-name>forceEncoding</param-name>
-			<param-value>true</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>encodingFilter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
+		<init-param> 
+			<param-name>encoding</param-name> 
+			<param-value>UTF-8</param-value> 
+		</init-param> 
+		<init-param> 
+			<param-name>forceEncoding</param-name> 
+			<param-value>true</param-value> 
+		</init-param> 
+	</filter> 
+	<filter-mapping> 
+		<filter-name>encodingFilter</filter-name> 
+		<url-pattern>/*</url-pattern> 
 	</filter-mapping>
 
-	<!-- Session시간설정(단위:분) -->
-	<session-config>
-		<session-timeout>180</session-timeout>
-	</session-config>
-	
-	<!-- error page 에러코드에 따른 에러페이지 설정가능 -->
-	<!-- <error-page> 
-			<error-code>401</error-code> 
-			<location>/resources/commons/error/serverError.jsp</location> 
-		</error-page> -->
-	
-	<!-- 4.welcom-file-list 어플리케이션 요청시 시작파일 지정가능 -->
-	<!-- <welcome-file-list> 
-			<welcome-file>/home/home.do</welcome-file> 
-		</welcome-file-list> -->
 
 </web-app>
