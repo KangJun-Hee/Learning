@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>URL 경로로 변수값을 넘기고 컨트롤러에서 Model로 계산한 결과를 뷰페이지로 출력하기!</title>
+</head>
+<body>
+	<h1 th:text="${num} + '까지의 총 합은 : ' + ${result} + '입니다.'"></h1>
+	<h1>[${num}]</h1>
+	
+	<!-- 
+		타임리프 변수값 출력시 html 태그가 포함된 내용을 출력해야된다.
+		th:utext를 사용해야된다.
+		안그러고 그냥 text로 사용하면 태그가 적용되지 않는다.
+	 -->
+	
+	
+</body>
+</html>

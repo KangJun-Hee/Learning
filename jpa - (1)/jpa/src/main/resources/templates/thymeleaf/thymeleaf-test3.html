@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>컨트롤러에서 model을 이용해서 데이터를 전달하고 넘어온 데이터를 (model) 타임리프로 받기</title>
+</head>
+<body>
+
+	<h1 th:text="'의적 :'+ ${data1}"></h1>
+	<h1 th:text="${data2}"></h1>
+	<!-- 
+		다른 태그를 사용해도 th:text 속성은 태그 안쪽의 값을 대체시킨다. 
+		
+		만약 문자열을 붙이고 싶다면?
+		더하기 (+) 연산자를 사용해서 변수와 문자열을 붙여준다.
+		이때 홑따옴표를 사용하는 것! 주의!
+	
+	 -->
+	
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>타임리프 th:text 속성 사용하기 - 변수 빈 값 체크하기 </title>
+</head>
+<body>
+	<div th:with="firstVal=${'aaa'}, secondVal=${'bbb'}">
+	
+		<h1 th:text="${firstVal == '' ? '빈 값입니다.' : firstVal}"></h1>
+		<h1 th:if="${secondVal != ''}" th:text="${secondVal}"></h1>
+	
+	</div>
+	<!-- th:with 
+		속성을 사용하면 변수 기능을 사용할 수 있다.
+		값을 직접 입력해서 사용하는것도 가능하지만 
+		보통은 컨트롤러에서 넘어온 매개변수의 값이나 객체의 값을 받아서 처리한다.
+		
+	 -->
+
+</body>
+</html>

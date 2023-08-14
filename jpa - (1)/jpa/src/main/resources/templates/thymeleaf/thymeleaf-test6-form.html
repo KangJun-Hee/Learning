@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form값 전달해 주고받기</title>
+</head>
+<body>
+	<h1>Form page</h1>
+	<h3 th:text="${msg}"></h3>
+	
+	<form action="/thymeleaf-test6" method="POST">
+		<input type="text" name="data1" th:value="${data1}">
+		<input type="submit" value="Send">	
+	</form>
+</body>
+</html>

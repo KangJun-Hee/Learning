@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form값 전달해 주고받기</title>
+</head>
+<body>
+	<h1>Form page</h1>
+	<h3 th:text="${msg}"></h3>
+	
+	<form action="/thymeleaf-test7" method="POST" th:object="${formData}">
+		아이디<input type="text" name="id" th:value="$*{id}">
+		이름<input type="text" name="name" th:value="$*{name}">
+		메일<input type="text" name="email" th:value="$*{email}">
+		나이<input type="text" name="age" th:value="$*{age}">
+		성별<input type="text" name="gender" th:value="$*{gender}">
+		
+		<input type="submit" value="Send">	
+	</form>
+</body>
+</html>

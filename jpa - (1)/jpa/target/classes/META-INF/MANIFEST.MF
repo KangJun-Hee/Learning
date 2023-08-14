@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: user1
+Build-Jdk: 11.0.0.1
+Implementation-Title: jpa
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.jpa.springboot
+Implementation-URL: https://spring.io/projects/spring-boot/jpa
+Created-By: Maven Integration for Eclipse
+

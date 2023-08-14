@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>thymeleaf-test.html</title>
+</head>
+<body>
+	<h1 th:text="조선시대의적">홍길동 </h1>
+	
+	<!--  th: text는  타임리프의 여러 속성 중 하나.
+		코드 상에는  저렇게 작성되지만 실제 브라우저에 최종 렌더링 된 결과는 해당 텍스트로 
+		대체가 되서 나타난다.
+		즉 해당 요소의 텍스트값이 th:text의 값으로 대체 
+		h1 감싸도 되고 안써줘도 됨
+		th:text  값은 보통 변수로 넘겨 받아서 출력    	     
+	     
+	    xmlns:th
+	    타임리프의 th 속성을 사용하기 위해 선언된 네임스페이스다.
+	    순수 html로만 이루어진 페이지의 경우 선언하지 않아도 무관하다.
+	    
+	    th:text 
+	      jsp의 el표현식인 ${} 사용이 가능하다. 컨트롤러에서 전달받은 데이터에 접근할 수있다.
+	            해당 속성은 일반적인 텍스트 형식으로 화면에 출력된다.
+	     
+	     
+ 	 -->
+	
+
+</body>
+</html>
