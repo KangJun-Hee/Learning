@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{fragments/layouts/no_footer_layout}"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+    crossorigin="anonymous"
+/>
+    <!-- <link rel="stylesheet" th:href="@{/css/파일이름.css}"> -->
+    <link rel="stylesheet" href="/css/map.css" />
+
+    <!-- <script type="text/javascript" th:src="@{/js/search/search.js}"></script>-->
+  </head>
+  <body layout:fragment="content">
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"
+></script>
+      
+
+
+
+
+    <div class="asideBarAll">
+        <div class="asideMenu">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <ul class="nav nav-tabs" id="amyTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
+                                지도 내 조건에 맞는 매물
+                                <span id="aTotalCount" class="count">357</span>
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+                                경기도 내 중개사무소
+                                <span id="aTotalCountAgency" class="count">7</span>
+                            </button>
+                        </li>
+                        
+                    </ul>
+                </li>
+                <li class="list-group-item">
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                            <!-- 최신순, 가격순, 면적순, 사진 많은 순 시작 -->
+                            <ul class="nav">
+                                <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">최신순</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="#">가격순</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link" href="#">면적순</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">사진많은순</a>
+                                </li>
+                            </ul>
+                            <!-- 최신순, 가격순, 면적순, 사진 많은 순 끝 -->
+                            <div>
+                                <div
+                                        data-bs-spy="scroll"
+                                        data-bs-target="#navbar-example2"
+                                        data-bs-root-margin="0px 0px -40%"
+                                        data-bs-smooth-scroll="true"
+                                        class="scrollspy-example bg-body-tertiary rounded-2"
+                                        tabindex="0"
+                                >
+                    
+                                    <div class="sideContents">
+                                            <ul class="list-group">
+                                                <li class="list-group-item a" style="">
+                                                    <a href="" class="abox" target="">        
+                                                        <div class="aimg_area">            
+                                                            <div class="athumb">                
+                                                                <img src="https://www.bdsplanet.com/common/thumbs.ytp?filepath=/COMP_20190619150536000003/upload/realty/RCODE_20230822163534000002/&amp;filename=1692689858337_106.jpg" alt="">            
+                                                            </div>            
+                                                            
+                                                        </div>        
+                                                        <div class="ainfo_area">            
+                                                            <div class="in">                
+                                                                <h5 class="ii loc_title">                    
+                                                                    <span class="pay f_num_b">전세 1억 4,000만</span>                
+                                                                </h5>                
+                                                                <div class="ii loc_ii01">                    
+                                                                    <span class="type">아파트</span>
+                                                                    <span class="loc">백천동 부영초록마을 110동</span>                
+                                                                </div>                
+                                                                <div class="ii etc_txt">                    
+                                                                    <span class="txt01">106.39/84.98㎡</span>                    
+                                                                    <span class="txt01">15/15층</span>                    
+                                                                    <span class="txt01">방3/욕실2                
+
+                                                                    </span>
+                                                                </div>                
+                                                                <div class="ii etc_info">                    
+                                                                    <span class="txt01">이사바로 ㅣ 탑층 ㅣ 층간소음 뚝</span>                
+                                                                </div>            
+                                                            </div>            
+                                                            <div class="bd_hashtag">                
+                                                                <span class="ht">#관리비 저렴</span>                
+                                                                <span class="ht">#주차시설 좋음</span>            
+                                                            </div>        
+                                                        </div>    
+                                                    </a>    
+                                                    <a href="javascript:void(0);" onclick="javascript:fnFavorityCheck(this ,'RAD_20230822163743000003');" class="fav ui_heart ">
+                                                        <span>
+
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="list-group-item a" style="">
+                                                    <a href="" class="abox" target="">        
+                                                        <div class="aimg_area">            
+                                                            <div class="athumb">                
+                                                                <img src="https://www.bdsplanet.com/common/thumbs.ytp?filepath=/COMP_20190619150536000003/upload/realty/RCODE_20230822163534000002/&amp;filename=1692689858337_106.jpg" alt="">            
+                                                            </div>            
+                                                            
+                                                        </div>        
+                                                        <div class="ainfo_area">            
+                                                            <div class="in">                
+                                                                <h5 class="ii loc_title">                    
+                                                                    <span class="pay f_num_b">전세 1억 4,000만</span>                
+                                                                </h5>                
+                                                                <div class="ii loc_ii01">                    
+                                                                    <span class="type">아파트</span>
+                                                                    <span class="loc">백천동 부영초록마을 110동</span>                
+                                                                </div>                
+                                                                <div class="ii etc_txt">                    
+                                                                    <span class="txt01">106.39/84.98㎡</span>                    
+                                                                    <span class="txt01">15/15층</span>                    
+                                                                    <span class="txt01">방3/욕실2                
+
+                                                                    </span>
+                                                                </div>                
+                                                                <div class="ii etc_info">                    
+                                                                    <span class="txt01">이사바로 ㅣ 탑층 ㅣ 층간소음 뚝</span>                
+                                                                </div>            
+                                                            </div>            
+                                                            <div class="bd_hashtag">                
+                                                                <span class="ht">#관리비 저렴</span>                
+                                                                <span class="ht">#주차시설 좋음</span>            
+                                                            </div>        
+                                                        </div>    
+                                                    </a>    
+                                                    <a href="javascript:void(0);" onclick="javascript:fnFavorityCheck(this ,'RAD_20230822163743000003');" class="fav ui_heart ">
+                                                        <span>
+
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="list-group-item a" style="">
+                                                    <a href="" class="abox" target="">        
+                                                        <div class="aimg_area">            
+                                                            <div class="athumb">                
+                                                                <img src="https://www.bdsplanet.com/common/thumbs.ytp?filepath=/COMP_20190619150536000003/upload/realty/RCODE_20230822163534000002/&amp;filename=1692689858337_106.jpg" alt="">            
+                                                            </div>            
+                                                            
+                                                        </div>        
+                                                        <div class="ainfo_area">            
+                                                            <div class="in">                
+                                                                <h5 class="ii loc_title">                    
+                                                                    <span class="pay f_num_b">전세 1억 4,000만</span>                
+                                                                </h5>                
+                                                                <div class="ii loc_ii01">                    
+                                                                    <span class="type">아파트</span>
+                                                                    <span class="loc">백천동 부영초록마을 110동</span>                
+                                                                </div>                
+                                                                <div class="ii etc_txt">                    
+                                                                    <span class="txt01">106.39/84.98㎡</span>                    
+                                                                    <span class="txt01">15/15층</span>                    
+                                                                    <span class="txt01">방3/욕실2                
+
+                                                                    </span>
+                                                                </div>                
+                                                                <div class="ii etc_info">                    
+                                                                    <span class="txt01">이사바로 ㅣ 탑층 ㅣ 층간소음 뚝</span>                
+                                                                </div>            
+                                                            </div>            
+                                                            <div class="bd_hashtag">                
+                                                                <span class="ht">#관리비 저렴</span>                
+                                                                <span class="ht">#주차시설 좋음</span>            
+                                                            </div>        
+                                                        </div>    
+                                                    </a>    
+                                                    <a href="javascript:void(0);" onclick="javascript:fnFavorityCheck(this ,'RAD_20230822163743000003');" class="fav ui_heart ">
+                                                        <span>
+
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="list-group-item a" style="">
+                                                    <a href="" class="abox" target="">        
+                                                        <div class="aimg_area">            
+                                                            <div class="athumb">                
+                                                                <img src="https://www.bdsplanet.com/common/thumbs.ytp?filepath=/COMP_20190619150536000003/upload/realty/RCODE_20230822163534000002/&amp;filename=1692689858337_106.jpg" alt="">            
+                                                            </div>            
+                                                            
+                                                        </div>        
+                                                        <div class="ainfo_area">            
+                                                            <div class="in">                
+                                                                <h5 class="ii loc_title">                    
+                                                                    <span class="pay f_num_b">전세 1억 4,000만</span>                
+                                                                </h5>                
+                                                                <div class="ii loc_ii01">                    
+                                                                    <span class="type">아파트</span>
+                                                                    <span class="loc">백천동 부영초록마을 110동</span>                
+                                                                </div>                
+                                                                <div class="ii etc_txt">                    
+                                                                    <span class="txt01">106.39/84.98㎡</span>                    
+                                                                    <span class="txt01">15/15층</span>                    
+                                                                    <span class="txt01">방3/욕실2                
+
+                                                                    </span>
+                                                                </div>                
+                                                                <div class="ii etc_info">                    
+                                                                    <span class="txt01">이사바로 ㅣ 탑층 ㅣ 층간소음 뚝</span>                
+                                                                </div>            
+                                                            </div>            
+                                                            <div class="bd_hashtag">                
+                                                                <span class="ht">#관리비 저렴</span>                
+                                                                <span class="ht">#주차시설 좋음</span>            
+                                                            </div>        
+                                                        </div>    
+                                                    </a>    
+                                                    <a href="javascript:void(0);" onclick="javascript:fnFavorityCheck(this ,'RAD_20230822163743000003');" class="fav ui_heart ">
+                                                        <span>
+
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="list-group-item a" style="">
+                                                    <a href="" class="abox" target="">        
+                                                        <div class="aimg_area">            
+                                                            <div class="athumb">                
+                                                                <img src="https://www.bdsplanet.com/common/thumbs.ytp?filepath=/COMP_20190619150536000003/upload/realty/RCODE_20230822163534000002/&amp;filename=1692689858337_106.jpg" alt="">            
+                                                            </div>            
+                                                            
+                                                        </div>        
+                                                        <div class="ainfo_area">            
+                                                            <div class="in">                
+                                                                <h5 class="ii loc_title">                    
+                                                                    <span class="pay f_num_b">전세 1억 4,000만</span>                
+                                                                </h5>                
+                                                                <div class="ii loc_ii01">                    
+                                                                    <span class="type">아파트</span>
+                                                                    <span class="loc">백천동 부영초록마을 110동</span>                
+                                                                </div>                
+                                                                <div class="ii etc_txt">                    
+                                                                    <span class="txt01">106.39/84.98㎡</span>                    
+                                                                    <span class="txt01">15/15층</span>                    
+                                                                    <span class="txt01">방3/욕실2                
+
+                                                                    </span>
+                                                                </div>                
+                                                                <div class="ii etc_info">                    
+                                                                    <span class="txt01">이사바로 ㅣ 탑층 ㅣ 층간소음 뚝</span>                
+                                                                </div>            
+                                                            </div>            
+                                                            <div class="bd_hashtag">                
+                                                                <span class="ht">#관리비 저렴</span>                
+                                                                <span class="ht">#주차시설 좋음</span>            
+                                                            </div>        
+                                                        </div>    
+                                                    </a>    
+                                                    <a href="javascript:void(0);" onclick="javascript:fnFavorityCheck(this ,'RAD_20230822163743000003');" class="fav ui_heart ">
+                                                        <span>
+
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="list-group-item a" style="">
+                                                    <a href="" class="abox" target="">        
+                                                        <div class="aimg_area">            
+                                                            <div class="athumb">                
+                                                                <img src="https://www.bdsplanet.com/common/thumbs.ytp?filepath=/COMP_20190619150536000003/upload/realty/RCODE_20230822163534000002/&amp;filename=1692689858337_106.jpg" alt="">            
+                                                            </div>            
+                                                            
+                                                        </div>        
+                                                        <div class="ainfo_area">            
+                                                            <div class="in">                
+                                                                <h5 class="ii loc_title">                    
+                                                                    <span class="pay f_num_b">전세 1억 4,000만</span>                
+                                                                </h5>                
+                                                                <div class="ii loc_ii01">                    
+                                                                    <span class="type">아파트</span>
+                                                                    <span class="loc">백천동 부영초록마을 110동</span>                
+                                                                </div>                
+                                                                <div class="ii etc_txt">                    
+                                                                    <span class="txt01">106.39/84.98㎡</span>                    
+                                                                    <span class="txt01">15/15층</span>                    
+                                                                    <span class="txt01">방3/욕실2                
+
+                                                                    </span>
+                                                                </div>                
+                                                                <div class="ii etc_info">                    
+                                                                    <span class="txt01">이사바로 ㅣ 탑층 ㅣ 층간소음 뚝</span>                
+                                                                </div>            
+                                                            </div>            
+                                                            <div class="bd_hashtag">                
+                                                                <span class="ht">#관리비 저렴</span>                
+                                                                <span class="ht">#주차시설 좋음</span>            
+                                                            </div>        
+                                                        </div>    
+                                                    </a>    
+                                                    <a href="javascript:void(0);" onclick="javascript:fnFavorityCheck(this ,'RAD_20230822163743000003');" class="fav ui_heart ">
+                                                        <span>
+
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="list-group-item a" style="">
+                                                    <a href="" class="abox" target="">        
+                                                        <div class="aimg_area">            
+                                                            <div class="athumb">                
+                                                                <img src="https://www.bdsplanet.com/common/thumbs.ytp?filepath=/COMP_20190619150536000003/upload/realty/RCODE_20230822163534000002/&amp;filename=1692689858337_106.jpg" alt="">            
+                                                            </div>            
+                                                            
+                                                        </div>        
+                                                        <div class="ainfo_area">            
+                                                            <div class="in">                
+                                                                <h5 class="ii loc_title">                    
+                                                                    <span class="pay f_num_b">전세 1억 4,000만</span>                
+                                                                </h5>                
+                                                                <div class="ii loc_ii01">                    
+                                                                    <span class="type">아파트</span>
+                                                                    <span class="loc">백천동 부영초록마을 110동</span>                
+                                                                </div>                
+                                                                <div class="ii etc_txt">                    
+                                                                    <span class="txt01">106.39/84.98㎡</span>                    
+                                                                    <span class="txt01">15/15층</span>                    
+                                                                    <span class="txt01">방3/욕실2                
+
+                                                                    </span>
+                                                                </div>                
+                                                                <div class="ii etc_info">                    
+                                                                    <span class="txt01">이사바로 ㅣ 탑층 ㅣ 층간소음 뚝</span>                
+                                                                </div>            
+                                                            </div>            
+                                                            <div class="bd_hashtag">                
+                                                                <span class="ht">#관리비 저렴</span>                
+                                                                <span class="ht">#주차시설 좋음</span>            
+                                                            </div>        
+                                                        </div>    
+                                                    </a>    
+                                                    <a href="javascript:void(0);" onclick="javascript:fnFavorityCheck(this ,'RAD_20230822163743000003');" class="fav ui_heart ">
+                                                        <span>
+
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="list-group-item a" style="">
+                                                    <a href="" class="abox" target="">        
+                                                        <div class="aimg_area">            
+                                                            <div class="athumb">                
+                                                                <img src="https://www.bdsplanet.com/common/thumbs.ytp?filepath=/COMP_20190619150536000003/upload/realty/RCODE_20230822163534000002/&amp;filename=1692689858337_106.jpg" alt="">            
+                                                            </div>            
+                                                            
+                                                        </div>        
+                                                        <div class="ainfo_area">            
+                                                            <div class="in">                
+                                                                <h5 class="ii loc_title">                    
+                                                                    <span class="pay f_num_b">전세 1억 4,000만</span>                
+                                                                </h5>                
+                                                                <div class="ii loc_ii01">                    
+                                                                    <span class="type">아파트</span>
+                                                                    <span class="loc">백천동 부영초록마을 110동</span>                
+                                                                </div>                
+                                                                <div class="ii etc_txt">                    
+                                                                    <span class="txt01">106.39/84.98㎡</span>                    
+                                                                    <span class="txt01">15/15층</span>                    
+                                                                    <span class="txt01">방3/욕실2                
+
+                                                                    </span>
+                                                                </div>                
+                                                                <div class="ii etc_info">                    
+                                                                    <span class="txt01">이사바로 ㅣ 탑층 ㅣ 층간소음 뚝</span>                
+                                                                </div>            
+                                                            </div>            
+                                                            <div class="bd_hashtag">                
+                                                                <span class="ht">#관리비 저렴</span>                
+                                                                <span class="ht">#주차시설 좋음</span>            
+                                                            </div>        
+                                                        </div>    
+                                                    </a>    
+                                                    <a href="javascript:void(0);" onclick="javascript:fnFavorityCheck(this ,'RAD_20230822163743000003');" class="fav ui_heart ">
+                                                        <span>
+
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                
+                                              </ul>
+
+            
+                                            
+                                        
+                    
+                    
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                            <div
+                                        data-bs-spy="scroll"
+                                        data-bs-target="#navbar-example2"
+                                        data-bs-root-margin="0px 0px -40%"
+                                        data-bs-smooth-scroll="true"
+                                        class="scrollspy-example bg-body-tertiary rounded-2"
+                                        tabindex="0"
+                                >
+                    
+                                    <div class="sideContents">
+                            <ul class="list-group">
+                                <li class="list-group-item b">
+                                    <div class="aboxSamu">		
+                                        <div class="ainfoarea">			
+                                            <div class="sname">				
+                                                <span class="txt01">산내들공인중개사사무소</span>			
+                                            </div>			
+                                            <div class="aSamuAddr">				
+                                                <span class="txt01">
+                                                    경기도 용인시 기흥구 중부대로788번길 3 103호(상하동,신풍빌딩)
+
+                                                </span>			
+                                            </div>		
+                                        </div>		
+                                        <div class="aBtnArea">			
+                                            <button type="button" class="btn btn-primary aSamuPhone">
+                                                <img style="width: 20px;"src="https://cdn.imweb.me/thumbnail/20190316/5c8c84f7a62a7.png"> 
+                                            </button>
+                                        </div>	
+                                    </div>
+                                </li>
+                                <li class="list-group-item b">
+                                    <div class="aboxSamu">		
+                                        <div class="ainfoarea">			
+                                            <div class="sname">				
+                                                <span class="txt01">산내들공인중개사사무소</span>			
+                                            </div>			
+                                            <div class="aSamuAddr">				
+                                                <span class="txt01">
+                                                    경기도 용인시 기흥구 중부대로788번길 3 103호(상하동,신풍빌딩)
+
+                                                </span>			
+                                            </div>		
+                                        </div>		
+                                        <div class="aBtnArea">			
+                                            <button type="button" class="btn btn-primary aSamuPhone">
+                                                <img style="width: 20px;"src="https://cdn.imweb.me/thumbnail/20190316/5c8c84f7a62a7.png"> 
+                                            </button>
+                                        </div>	
+                                    </div>
+                                </li>
+                                <li class="list-group-item b">
+                                    <div class="aboxSamu">		
+                                        <div class="ainfoarea">			
+                                            <div class="sname">				
+                                                <span class="txt01">산내들공인중개사사무소</span>			
+                                            </div>			
+                                            <div class="aSamuAddr">				
+                                                <span class="txt01">
+                                                    경기도 용인시 기흥구 중부대로788번길 3 103호(상하동,신풍빌딩)
+
+                                                </span>			
+                                            </div>		
+                                        </div>		
+                                        <div class="aBtnArea">			
+                                            <button type="button" class="btn btn-primary aSamuPhone">
+                                                <img style="width: 20px;"src="https://cdn.imweb.me/thumbnail/20190316/5c8c84f7a62a7.png"> 
+                                            </button>
+                                        </div>	
+                                    </div>
+                                </li>
+                                <li class="list-group-item b">
+                                    <div class="aboxSamu">		
+                                        <div class="ainfoarea">			
+                                            <div class="sname">				
+                                                <span class="txt01">산내들공인중개사사무소</span>			
+                                            </div>			
+                                            <div class="aSamuAddr">				
+                                                <span class="txt01">
+                                                    경기도 용인시 기흥구 중부대로788번길 3 103호(상하동,신풍빌딩)
+
+                                                </span>			
+                                            </div>		
+                                        </div>		
+                                        <div class="aBtnArea">			
+                                            <button type="button" class="btn btn-primary aSamuPhone">
+                                                <img style="width: 20px;"src="https://cdn.imweb.me/thumbnail/20190316/5c8c84f7a62a7.png"> 
+                                            </button>
+                                        </div>	
+                                    </div>
+                                </li>
+                                <li class="list-group-item b">
+                                    <div class="aboxSamu">		
+                                        <div class="ainfoarea">			
+                                            <div class="sname">				
+                                                <span class="txt01">산내들공인중개사사무소</span>			
+                                            </div>			
+                                            <div class="aSamuAddr">				
+                                                <span class="txt01">
+                                                    경기도 용인시 기흥구 중부대로788번길 3 103호(상하동,신풍빌딩)
+
+                                                </span>			
+                                            </div>		
+                                        </div>		
+                                        <div class="aBtnArea">			
+                                            <button type="button" class="btn btn-primary aSamuPhone">
+                                                <img style="width: 20px;"src="https://cdn.imweb.me/thumbnail/20190316/5c8c84f7a62a7.png"> 
+                                            </button>
+                                        </div>	
+                                    </div>
+                                </li>
+                                <li class="list-group-item b">
+                                    <div class="aboxSamu">		
+                                        <div class="ainfoarea">			
+                                            <div class="sname">				
+                                                <span class="txt01">산내들공인중개사사무소</span>			
+                                            </div>			
+                                            <div class="aSamuAddr">				
+                                                <span class="txt01">
+                                                    경기도 용인시 기흥구 중부대로788번길 3 103호(상하동,신풍빌딩)
+
+                                                </span>			
+                                            </div>		
+                                        </div>		
+                                        <div class="aBtnArea">			
+                                            <button type="button" class="btn btn-primary aSamuPhone">
+                                                <img style="width: 20px;"src="https://cdn.imweb.me/thumbnail/20190316/5c8c84f7a62a7.png"> 
+                                            </button>
+                                        </div>	
+                                    </div>
+                                </li>
+                                <li class="list-group-item b">
+                                    <div class="aboxSamu">		
+                                        <div class="ainfoarea">			
+                                            <div class="sname">				
+                                                <span class="txt01">산내들공인중개사사무소</span>			
+                                            </div>			
+                                            <div class="aSamuAddr">				
+                                                <span class="txt01">
+                                                    경기도 용인시 기흥구 중부대로788번길 3 103호(상하동,신풍빌딩)
+
+                                                </span>			
+                                            </div>		
+                                        </div>		
+                                        <div class="aBtnArea">			
+                                            <button type="button" class="btn btn-primary aSamuPhone">
+                                                <img style="width: 20px;"src="https://cdn.imweb.me/thumbnail/20190316/5c8c84f7a62a7.png"> 
+                                            </button>
+                                        </div>	
+                                    </div>
+                                </li>
+                                <li class="list-group-item b">
+                                    <div class="aboxSamu">		
+                                        <div class="ainfoarea">			
+                                            <div class="sname">				
+                                                <span class="txt01">산내들공인중개사사무소</span>			
+                                            </div>			
+                                            <div class="aSamuAddr">				
+                                                <span class="txt01">
+                                                    경기도 용인시 기흥구 중부대로788번길 3 103호(상하동,신풍빌딩)
+
+                                                </span>			
+                                            </div>		
+                                        </div>		
+                                        <div class="aBtnArea">			
+                                            <button type="button" class="btn btn-primary aSamuPhone">
+                                                <img style="width: 20px;"src="https://cdn.imweb.me/thumbnail/20190316/5c8c84f7a62a7.png"> 
+                                            </button>
+                                        </div>	
+                                    </div>
+                                </li>
+                                <li class="list-group-item b">
+                                    <div class="aboxSamu">		
+                                        <div class="ainfoarea">			
+                                            <div class="sname">				
+                                                <span class="txt01">산내들공인중개사사무소</span>			
+                                            </div>			
+                                            <div class="aSamuAddr">				
+                                                <span class="txt01">
+                                                    경기도 용인시 기흥구 중부대로788번길 3 103호(상하동,신풍빌딩)
+
+                                                </span>			
+                                            </div>		
+                                        </div>		
+                                        <div class="aBtnArea">			
+                                            <button type="button" class="btn btn-primary aSamuPhone">
+                                                <img style="width: 20px;"src="https://cdn.imweb.me/thumbnail/20190316/5c8c84f7a62a7.png"> 
+                                            </button>
+                                        </div>	
+                                    </div>
+                                </li>
+                                <li class="list-group-item b">
+                                    <div class="aboxSamu">		
+                                        <div class="ainfoarea">			
+                                            <div class="sname">				
+                                                <span class="txt01">산내들공인중개사사무소</span>			
+                                            </div>			
+                                            <div class="aSamuAddr">				
+                                                <span class="txt01">
+                                                    경기도 용인시 기흥구 중부대로788번길 3 103호(상하동,신풍빌딩)
+
+                                                </span>			
+                                            </div>		
+                                        </div>		
+                                        <div class="aBtnArea">			
+                                            <button type="button" class="btn btn-primary aSamuPhone">
+                                                <img style="width: 20px;"src="https://cdn.imweb.me/thumbnail/20190316/5c8c84f7a62a7.png"> 
+                                            </button>
+                                        </div>	
+                                    </div>
+                                </li>
+                                <li class="list-group-item b">
+                                    <div class="aboxSamu">		
+                                        <div class="ainfoarea">			
+                                            <div class="sname">				
+                                                <span class="txt01">산내들공인중개사사무소</span>			
+                                            </div>			
+                                            <div class="aSamuAddr">				
+                                                <span class="txt01">
+                                                    경기도 용인시 기흥구 중부대로788번길 3 103호(상하동,신풍빌딩)
+
+                                                </span>			
+                                            </div>		
+                                        </div>		
+                                        <div class="aBtnArea">			
+                                            <button type="button" class="btn btn-primary aSamuPhone">
+                                                <img style="width: 20px;"src="https://cdn.imweb.me/thumbnail/20190316/5c8c84f7a62a7.png"> 
+                                            </button>
+                                        </div>	
+                                    </div>
+                                </li>
+                                <li class="list-group-item b">
+                                    <div class="aboxSamu">		
+                                        <div class="ainfoarea">			
+                                            <div class="sname">				
+                                                <span class="txt01">산내들공인중개사사무소</span>			
+                                            </div>			
+                                            <div class="aSamuAddr">				
+                                                <span class="txt01">
+                                                    경기도 용인시 기흥구 중부대로788번길 3 103호(상하동,신풍빌딩)
+
+                                                </span>			
+                                            </div>		
+                                        </div>		
+                                        <div class="aBtnArea">			
+                                            <button type="button" class="btn btn-primary aSamuPhone">
+                                                <img style="width: 20px;"src="https://cdn.imweb.me/thumbnail/20190316/5c8c84f7a62a7.png"> 
+                                            </button>
+                                        </div>	
+                                    </div>
+                                </li>
+                                <li class="list-group-item b">
+                                    <div class="aboxSamu">		
+                                        <div class="ainfoarea">			
+                                            <div class="sname">				
+                                                <span class="txt01">산내들공인중개사사무소</span>			
+                                            </div>			
+                                            <div class="aSamuAddr">				
+                                                <span class="txt01">
+                                                    경기도 용인시 기흥구 중부대로788번길 3 103호(상하동,신풍빌딩)
+
+                                                </span>			
+                                            </div>		
+                                        </div>		
+                                        <div class="aBtnArea">			
+                                            <button type="button" class="btn btn-primary aSamuPhone">
+                                                <img style="width: 20px;"src="https://cdn.imweb.me/thumbnail/20190316/5c8c84f7a62a7.png"> 
+                                            </button>
+                                        </div>	
+                                    </div>
+                                </li>
+                                <li class="list-group-item b">
+                                    <div class="aboxSamu">		
+                                        <div class="ainfoarea">			
+                                            <div class="sname">				
+                                                <span class="txt01">산내들공인중개사사무소</span>			
+                                            </div>			
+                                            <div class="aSamuAddr">				
+                                                <span class="txt01">
+                                                    경기도 용인시 기흥구 중부대로788번길 3 103호(상하동,신풍빌딩)
+
+                                                </span>			
+                                            </div>		
+                                        </div>		
+                                        <div class="aBtnArea">			
+                                            <button type="button" class="btn btn-primary aSamuPhone">
+                                                <img style="width: 20px;"src="https://cdn.imweb.me/thumbnail/20190316/5c8c84f7a62a7.png"> 
+                                            </button>
+                                        </div>	
+                                    </div>
+                                </li>
+                                <li class="list-group-item b">
+                                    <div class="aboxSamu">		
+                                        <div class="ainfoarea">			
+                                            <div class="sname">				
+                                                <span class="txt01">산내들공인중개사사무소</span>			
+                                            </div>			
+                                            <div class="aSamuAddr">				
+                                                <span class="txt01">
+                                                    경기도 용인시 기흥구 중부대로788번길 3 103호(상하동,신풍빌딩)
+
+                                                </span>			
+                                            </div>		
+                                        </div>		
+                                        <div class="aBtnArea">			
+                                            <button type="button" class="btn btn-primary aSamuPhone">
+                                                <img style="width: 20px;"src="https://cdn.imweb.me/thumbnail/20190316/5c8c84f7a62a7.png"> 
+                                            </button>
+                                        </div>	
+                                    </div>
+                                </li>
+                                
+                                
+                                
+                            </ul>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+
+      <!-- 지도를 표시할 div 입니다 -->
+      <div id="map" style="width: 100%; height: 100%">
+        <div class="afilter">
+            <div class="afilterLeft">
+                
+                    <div class="alOrB">
+                        <button class="btn btn-primary living on"><span>주거용</span></a>
+                        <button class="btn btn-primary commercial"><span>상업용</span></a>
+                    </div>
+                
+                
+                
+        
+        
+        
+                
+                <!-- 통합검색 -->
+                <div class="aSearchAll" style="width: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;">
+                    <div class="aSearch_area">
+                        <img style="margin-left:8px; width:20px; background-color: transparent;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvcGRzbD6HIXhyARcDnuzWTfGVeLEZHVLS9A&usqp=CAU">
+                        <input type="text" name="asearch_keyword" placeholder="" class="aSearchInput" autocomplete="off">
+                        <script>
+                            $(function() {
+                                totalSearch.fnInit("P","map","living");
+                            });
+                        </script>
+                    </div>
+                </div>
+        
+                <!-- //통합검색 -->
+        
+                 <!-- 검색필터 -->
+                
+        
+        
+        
+        
+        <div class="afilterdrops">
+        
+        <!-- 거래종류 -->
+        <div class="aPaykind">
+            <button class="btn btn-outline-primary filter" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              거래종류
+            </button>
+            <ul class="dropdown-menu aPaykind">
+                <div class="top"><strong class="tit">거래종류</strong></div>
+                <div class="aPaykinds">
+                    <li>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            전체
+                        </label>
+                    </li>
+                    <li>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            매매
+                        </label>
+                    </li>
+                    <li>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            전세
+                        </label>
+                    </li>
+                    <li>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            월세
+                        </label>
+                    </li>
+                    <li>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            단기임대
+                        </label>
+                    </li>
+            </div>
+            </ul>
+          </div>
+        <!--//거래종류-->
+        
+        <!-- 가격 -->
+        <div class="aPrice">
+            <button class="btn btn-outline-primary filter" type="button" data-bs-toggle="dropdown" aria-expanded="false"data-bs-auto-close="false">
+                가격
+            </button>
+            <ul class="dropdown-menu">
+                <div class="top"><strong class="tit">매매가/전세가/보증금</strong></div>
+                
+                    <div class="box_tac01 maemae" id="priceDiv">
+                        <li></li>
+                        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off"
+                            value="1000" order="999" status="under">
+                        <label class="btn btn-outline-primary" for="btncheck1">
+                            ~1천
+                        </label>
+
+                        
+                        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off"
+                        value="1000" order="1000">
+                        <label class="btn btn-outline-primary" for="btncheck2">
+                            1천
+                        </label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off"
+                        value="2000" order="2000">
+                        <label class="btn btn-outline-primary" for="btncheck3">
+                            2천
+                        </label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off"
+                        value="3000" order="3000">
+                        <label class="btn btn-outline-primary" for="btncheck4">
+                            3천
+                        </label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off"
+                        value="4000" order="4000">
+                        <label class="btn btn-outline-primary" for="btncheck5">
+                            4천
+                        </label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off"
+                        value="5000" order="5000">
+                        <label class="btn btn-outline-primary" for="btncheck6">
+                            5천
+                        </label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off"
+                        value="6000" order="6000">
+                        <label class="btn btn-outline-primary" for="btncheck7">
+                            6천
+                        </label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off"
+                        value="7000" order="7000">
+                        <label class="btn btn-outline-primary" for="btncheck8">
+                            7천
+                        </label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off"
+                        value="7000" order="7000">
+                        <label class="btn btn-outline-primary" for="btncheck9">
+                            8천
+                        </label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck10" autocomplete="off"
+                        value="8000" order="8000">
+                        <label class="btn btn-outline-primary" for="btncheck10">
+                            9천
+                        </label>
+                        <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off"
+                        value="9000" order="9000">
+                        <label class="btn btn-outline-primary" for="btncheck11">
+                            10억
+                        </label>
+                        <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off"
+                        value="10000" order="10000">
+                        <label class="btn btn-outline-primary" for="btncheck12">
+                            11억
+                        </label>
+                        <input type="checkbox" class="btn-check" id="btncheck13" autocomplete="off"
+                        value="11000" order="11000">
+                        <label class="btn btn-outline-primary" for="btncheck13">
+                            12억
+                        </label>
+                        <input type="checkbox" class="btn-check" id="btncheck14" autocomplete="off"
+                        value="12000" order="12000">
+                        <label class="btn btn-outline-primary" for="btncheck14">
+                            12억
+                        </label>
+                        <input type="checkbox" class="btn-check" id="btncheck15" autocomplete="off"
+                        value="13000" order="13000">
+                        <label class="btn btn-outline-primary" for="btncheck15">
+                            13억
+                        </label>
+                        <input type="checkbox" class="btn-check" id="btncheck16" autocomplete="off"
+                        value="13000" order="13001">
+                        <label class="btn btn-outline-primary" for="btncheck16">
+                            13억~
+                        </label>
+                        
+                        
+                    
+                        
+        
+                
+                  
+              </ul>
+        
+        </div>
+        <!--//가격-->
+        
+        <!-- 면적 -->
+        <div class="aTtangSize">
+            <button class="btn btn-outline-primary filter" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                면적
+            </button>
+            <ul class="dropdown-menu aTtang">
+                <div class="top"><strong class="tit">면적</strong></div>
+                
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                        
+                </div>
+        
+                
+                  <div class="tac_area">
+                      <div class="tcon">
+                          <div class="top">
+                              <div class="unit_radio">
+                                  <div class="dg_radiobox blue">
+                                      <input type="radio" name="searchAreaUnit" id="dunit01" value="m2" checked="">
+                                      <label for="dunit01"><span class="check"></span><span class="txt">㎡</span></label>
+                                    </div>
+                                    <div class="dg_radiobox blue">
+                                        <input type="radio" name="searchAreaUnit" id="dunit02" value="py">
+                                        <label for="dunit02"><span class="check"></span><span class="txt">평</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tbody">
+                                <div class="tbc">
+                                    <div class="box_tac01 ddang" id="areaDiv"><button value="33" m2="33" py="10" order="32" status="under" style="width: 90.7px;">~33㎡</button><button value="33" m2="33" py="10" order="33" style="width: 90.7px;">33㎡</button><button value="66" m2="66" py="20" order="66" style="width: 90.7px;">66㎡</button><button value="99" m2="99" py="30" order="99" style="width: 90.7px;">99㎡</button><button value="132" m2="132" py="40" order="132" style="width: 90.7px;">132㎡</button><button value="165" m2="165" py="50" order="165" style="width: 90.7px;">165㎡</button><button value="198" m2="198" py="60" order="198" style="width: 90.7px;">198㎡</button><button value="231" m2="231" py="70" order="231" style="width: 90.7px;">231㎡</button><button value="264" m2="264" py="80" order="264" style="width: 90.7px;">264㎡</button><button value="297" m2="297" py="90" order="297" style="width: 90.7px;">297㎡</button><button value="330" m2="330" py="100" order="330" style="width: 90.7px;">330㎡</button><button value="330" m2="330" py="100" order="331" status="over" style="width: 90.7px;">330㎡~</button></div>
+                                </div>
+                                <div class="tbc">
+                                    <div class="price_input_db">
+                                        <div class="price_input">
+                                            <button class="bt minus" id="searchAreaStartMinus"><i></i></button>
+                                            <div class="d_input style01">
+                                                <input type="text" name="searchAreaStart" placeholder="최소">
+                                                <input type="hidden" name="searchAreaStartTemp">
+                                            </div>
+                                            <button class="bt plus" id="searchAreaStartPlus"><i></i></button>
+                                        </div>
+                                        <span class="dash">~</span>
+                                        <div class="price_input">
+                                            <button class="bt minus" id="searchAreaEndMinus"><i></i></button>
+                                            <div class="d_input style01">
+                                                <input type="text" name="searchAreaEnd" placeholder="최대">
+                                                <input type="hidden" name="searchAreaEndTemp">
+                                            </div>
+                                            <button class="bt plus" id="searchAreaEndPlus"><i></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="f_btnarea">
+                            <a href="#" class="btns btn_line_gray01 dae_filter_init" id="btnInitArea"><span class="ico_init"></span><span class="txt">초기화</span></a>
+                        </div>
+                        <a href="#" class="ui_img_btn_close01 closebtn"></a>
+                    </div>
+                    <div class="dimm"></div>
+                </div>
+            </ul>
+                <!--//면적-->
+                
+                
+        
+        <!-- 옵션 -->
+        <div class="map_tac category_tac option_tac">
+            <button class="btn btn-outline-primary filter" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                옵션
+            </button>
+        
+                <ul class="dropdown-menu aOption">
+                    <div class="tac_area">
+                        <div class="aOptionsUp">
+                            <div class="tcon first room" style="width:120px;">
+                                <div class="top">
+                                    <strong class="tit">방개수</strong>
+                                </div>
+                                <div class="tbody">
+                                    <ul class="t_radio_ul oneline" id="roomCountUL"><li>    <div class="dg_checkbox blue">			<input type="checkbox" id="searchRoomCountAll" name="searchRoomCountAll" value="">		<label for="searchRoomCountAll"><span class="check"></span><span class="txt">전체</span></label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchRoomCount_SRC01" value="SRC01" name="searchRoomCount">		<label for="maesearchRoomCount_SRC01">			<span class="check"></span><span class="txt">1개</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchRoomCount_SRC02" value="SRC02" name="searchRoomCount">		<label for="maesearchRoomCount_SRC02">			<span class="check"></span><span class="txt">2개</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchRoomCount_SRC03" value="SRC03" name="searchRoomCount">		<label for="maesearchRoomCount_SRC03">			<span class="check"></span><span class="txt">3개</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchRoomCount_SRC04" value="SRC04" name="searchRoomCount">		<label for="maesearchRoomCount_SRC04">			<span class="check"></span><span class="txt">4개 이상</span>		</label>	</div></li></ul>
+                                </div>
+                            </div>
+                            <div class="tcon pl bath" style="style:130px;">
+                                <div class="top">
+                                    <strong class="tit">욕실수</strong>
+                                </div>
+                                <div class="tbody">
+                                    <ul class="t_radio_ul oneline" id="bathRoomCountUL"><li>    <div class="dg_checkbox blue">			<input type="checkbox" id="searchBathRoomCountAll" name="searchBathRoomCountAll" value="">		<label for="searchBathRoomCountAll"><span class="check"></span><span class="txt">전체</span></label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchBathRoomCount_SBC01" value="SBC01" name="searchBathRoomCount">		<label for="maesearchBathRoomCount_SBC01">			<span class="check"></span><span class="txt">1개</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchBathRoomCount_SBC02" value="SBC02" name="searchBathRoomCount">		<label for="maesearchBathRoomCount_SBC02">			<span class="check"></span><span class="txt">2개</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchBathRoomCount_SBC03" value="SBC03" name="searchBathRoomCount">		<label for="maesearchBathRoomCount_SBC03">			<span class="check"></span><span class="txt">3개</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchBathRoomCount_SBC04" value="SBC04" name="searchBathRoomCount">		<label for="maesearchBathRoomCount_SBC04">			<span class="check"></span><span class="txt">4개 이상</span>		</label>	</div></li></ul>
+                                </div>
+                            </div>
+                            <div class="tcon pl ch">
+                                <div class="top">
+                                    <strong class="tit">층수</strong>
+                                </div>
+                                <div class="tbody">
+                                    <ul class="t_radio_ul oneline twoline" id="floorCountUL"><li>    <div class="dg_checkbox blue">			<input type="checkbox" id="searchFloorCountAll" name="searchFloorCountAll" value="">		<label for="searchFloorCountAll"><span class="check"></span><span class="txt">전체</span></label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchFloorCount_C00W21" value="C00W21" name="searchFloorCount">		<label for="maesearchFloorCount_C00W21">			<span class="check"></span><span class="txt">지하층</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchFloorCount_C00W22" value="C00W22" name="searchFloorCount">		<label for="maesearchFloorCount_C00W22">			<span class="check"></span><span class="txt">지하1층</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchFloorCount_C00W23" value="C00W23" name="searchFloorCount">		<label for="maesearchFloorCount_C00W23">			<span class="check"></span><span class="txt">1층</span>		</label>	</div></li><li class="full">    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchFloorCount_C00W24" value="C00W24" name="searchFloorCount">		<label for="maesearchFloorCount_C00W24">			<span class="check"></span><span class="txt">2~5층</span>		</label>	</div></li><li class="full">    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchFloorCount_C00W25" value="C00W25" name="searchFloorCount">		<label for="maesearchFloorCount_C00W25">			<span class="check"></span><span class="txt">6~10층</span>		</label>	</div></li><li class="full">    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchFloorCount_C00W26" value="C00W26" name="searchFloorCount">		<label for="maesearchFloorCount_C00W26">			<span class="check"></span><span class="txt">10층이상</span>		</label>	</div></li><li class="full">    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchFloorCount_C00W27" value="C00W27" name="searchFloorCount">		<label for="maesearchFloorCount_C00W27">			<span class="check"></span><span class="txt">20층이상</span>		</label>	</div></li><li class="full">    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchFloorCount_C00W28" value="C00W28" name="searchFloorCount">		<label for="maesearchFloorCount_C00W28">			<span class="check"></span><span class="txt">옥탑방</span>		</label>	</div></li></ul>
+                                </div>
+                            </div>
+                            <div class="tcon pl adc">
+                                <div class="top">
+                                    <strong class="tit">관리비</strong>
+                                </div>
+                                <div class="tbody">
+                                    <ul class="t_radio_ul oneline" id="maintenanceUL"><li>    <div class="dg_radiobox blue first">			<input type="radio" id="searchMaintenance" name="searchMaintenance" value="">		<label for="searchMaintenance"><span class="check"></span><span class="txt">상관없음</span></label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchMaintenance_S_MAINTENANCE02" value="S_MAINTENANCE02" name="searchMaintenance">		<label for="maesearchMaintenance_S_MAINTENANCE02">			<span class="check"></span><span class="txt">~10만원</span>		</label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchMaintenance_S_MAINTENANCE03" value="S_MAINTENANCE03" name="searchMaintenance">		<label for="maesearchMaintenance_S_MAINTENANCE03">			<span class="check"></span><span class="txt">~20만원</span>		</label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchMaintenance_S_MAINTENANCE04" value="S_MAINTENANCE04" name="searchMaintenance">		<label for="maesearchMaintenance_S_MAINTENANCE04">			<span class="check"></span><span class="txt">~30만원</span>		</label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchMaintenance_S_MAINTENANCE05" value="S_MAINTENANCE05" name="searchMaintenance">		<label for="maesearchMaintenance_S_MAINTENANCE05">			<span class="check"></span><span class="txt">~40만원</span>		</label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchMaintenance_S_MAINTENANCE06" value="S_MAINTENANCE06" name="searchMaintenance">		<label for="maesearchMaintenance_S_MAINTENANCE06">			<span class="check"></span><span class="txt">40만원~</span>		</label>	</div></li></ul>
+                                </div>
+                            </div>
+                            
+                            <div class="tcon pl day" style="display:none;">
+                                <div class="top">
+                                    <strong class="tit">입주시기</strong>
+                                </div>
+                                <div class="tbody">
+                                    <ul class="t_radio_ul oneline" id="moveInUL"><li>    <div class="dg_radiobox blue first">			<input type="radio" id="searchMoveIn" name="searchMoveIn" value="">		<label for="searchMoveIn"><span class="check"></span><span class="txt">전체</span></label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchMoveIn_S_MOVEIN01" value="S_MOVEIN01" name="searchMoveIn">		<label for="maesearchMoveIn_S_MOVEIN01">			<span class="check"></span><span class="txt">즉시</span>		</label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchMoveIn_S_MOVEIN02" value="S_MOVEIN02" name="searchMoveIn">		<label for="maesearchMoveIn_S_MOVEIN02">			<span class="check"></span><span class="txt">1개월이내</span>		</label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchMoveIn_S_MOVEIN03" value="S_MOVEIN03" name="searchMoveIn">		<label for="maesearchMoveIn_S_MOVEIN03">			<span class="check"></span><span class="txt">3개월이내</span>		</label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchMoveIn_S_MOVEIN04" value="S_MOVEIN04" name="searchMoveIn">		<label for="maesearchMoveIn_S_MOVEIN04">			<span class="check"></span><span class="txt">6개월이내</span>		</label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchMoveIn_S_MOVEIN05" value="S_MOVEIN05" name="searchMoveIn">		<label for="maesearchMoveIn_S_MOVEIN05">			<span class="check"></span><span class="txt">협의</span>		</label>	</div></li></ul>
+                                </div>
+                            </div>
+                            <div class="tcon pl ev" style="width:265px">
+                                <div class="top">
+                                    <strong class="tit">엘리베이터</strong>
+                                </div>
+                                <div class="tbody">
+                                    <ul class="t_radio_ul oneline" id="elevatorUL"><li>    <div class="dg_radiobox blue first">			<input type="radio" id="searchElevator" name="searchElevator" value="">		<label for="searchElevator"><span class="check"></span><span class="txt">전체</span></label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchElevator_S_ELEVATOR01" value="S_ELEVATOR01" name="searchElevator">		<label for="maesearchElevator_S_ELEVATOR01">			<span class="check"></span><span class="txt">있음 </span>		</label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchElevator_S_ELEVATOR02" value="S_ELEVATOR02" name="searchElevator">		<label for="maesearchElevator_S_ELEVATOR02">			<span class="check"></span><span class="txt">없음</span>		</label>	</div></li></ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="aOptionsDown">
+                            <div class="tcon first sadae" style="width:120px;">
+                                <div class="top">
+                                    <strong class="tit">세대수</strong>
+                                </div>
+                                <div class="tbody">
+                                    <ul class="t_radio_ul oneline" id="houseNumberUL"><li>    <div class="dg_radiobox blue first">			<input type="radio" id="searchHouseNumber" name="searchHouseNumber" value="">		<label for="searchHouseNumber"><span class="check"></span><span class="txt">전체</span></label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchHouseNumber_S_HOUSENUMBER01" value="S_HOUSENUMBER01" name="searchHouseNumber">		<label for="maesearchHouseNumber_S_HOUSENUMBER01">			<span class="check"></span><span class="txt">100세대~</span>		</label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchHouseNumber_S_HOUSENUMBER02" value="S_HOUSENUMBER02" name="searchHouseNumber">		<label for="maesearchHouseNumber_S_HOUSENUMBER02">			<span class="check"></span><span class="txt">500세대~</span>		</label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchHouseNumber_S_HOUSENUMBER03" value="S_HOUSENUMBER03" name="searchHouseNumber">		<label for="maesearchHouseNumber_S_HOUSENUMBER03">			<span class="check"></span><span class="txt">1000세대~</span>		</label>	</div></li></ul>
+                                </div>
+                            </div>
+                            <div class="tcon pl door" style="style:130px;">
+                                <div class="top">
+                                    <strong class="tit">현관구조</strong>
+                                </div>
+                                <div class="tbody">
+                                    <ul class="t_radio_ul oneline" id="doorTypeUL"><li>    <div class="dg_checkbox blue">			<input type="checkbox" id="searchDoorTypeAll" name="searchDoorTypeAll" value="">		<label for="searchDoorTypeAll"><span class="check"></span><span class="txt">전체</span></label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchDoorType_C00402" value="C00402" name="searchDoorType">		<label for="maesearchDoorType_C00402">			<span class="check"></span><span class="txt">계단</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchDoorType_C00403" value="C00403" name="searchDoorType">		<label for="maesearchDoorType_C00403">			<span class="check"></span><span class="txt">복도</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchDoorType_C00404" value="C00404" name="searchDoorType">		<label for="maesearchDoorType_C00404">			<span class="check"></span><span class="txt">코아</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchDoorType_C00405" value="C00405" name="searchDoorType">		<label for="maesearchDoorType_C00405">			<span class="check"></span><span class="txt">혼합식</span>		</label>	</div></li></ul>
+                                </div>
+                            </div>
+                            <div class="tcon pl dir">
+                                <div class="top">
+                                    <strong class="tit">방향</strong>
+                                </div>
+                                <div class="tbody">
+                                    <ul class="t_radio_ul twoline dir" id="directionUL"><li>    <div class="dg_checkbox blue">			<input type="checkbox" id="searchDirectionAll" name="searchDirectionAll" value="">		<label for="searchDirectionAll"><span class="check"></span><span class="txt">전체</span></label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchDirection_C00702" value="C00702" name="searchDirection">		<label for="maesearchDirection_C00702">			<span class="check"></span><span class="txt">동</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchDirection_C00703" value="C00703" name="searchDirection">		<label for="maesearchDirection_C00703">			<span class="check"></span><span class="txt">서</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchDirection_C00704" value="C00704" name="searchDirection">		<label for="maesearchDirection_C00704">			<span class="check"></span><span class="txt">남</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchDirection_C00705" value="C00705" name="searchDirection">		<label for="maesearchDirection_C00705">			<span class="check"></span><span class="txt">북</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchDirection_C00706" value="C00706" name="searchDirection">		<label for="maesearchDirection_C00706">			<span class="check"></span><span class="txt">남동</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchDirection_C00707" value="C00707" name="searchDirection">		<label for="maesearchDirection_C00707">			<span class="check"></span><span class="txt">남서</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchDirection_C00708" value="C00708" name="searchDirection">		<label for="maesearchDirection_C00708">			<span class="check"></span><span class="txt">북동</span>		</label>	</div></li><li>    <div class="dg_checkbox blue">		<input type="checkbox" id="maesearchDirection_C00709" value="C00709" name="searchDirection">		<label for="maesearchDirection_C00709">			<span class="check"></span><span class="txt">북서</span>		</label>	</div></li></ul>
+                                </div>
+                            </div>
+                            
+                            <div class="tcon pl park">
+                                <div class="top">
+                                    <strong class="tit">주차</strong>
+                                </div>
+                                <div class="tbody">
+                                    <ul class="t_radio_ul oneline" id="parkCountUL"><li>    <div class="dg_radiobox blue first">			<input type="radio" id="searchParkCount" name="searchParkCount" value="">		<label for="searchParkCount"><span class="check"></span><span class="txt">상관없음</span></label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchParkCount_SPC01" value="SPC01" name="searchParkCount">		<label for="maesearchParkCount_SPC01">			<span class="check"></span><span class="txt">주차가능</span>		</label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchParkCount_SPC02" value="SPC02" name="searchParkCount">		<label for="maesearchParkCount_SPC02">			<span class="check"></span><span class="txt">세대당 1대이상</span>		</label>	</div></li><li>    <div class="dg_radiobox blue">		<input type="radio" id="maesearchParkCount_SPC03" value="SPC03" name="searchParkCount">		<label for="maesearchParkCount_SPC03">			<span class="check"></span><span class="txt">세대당 1.5대 이상</span>		</label>	</div></li></ul>
+                                </div>
+                            </div>
+                            <div class="tcon pl hashtag_con">
+                                <div class="top">
+                                    <strong class="tit">테마</strong>
+                                </div>
+                                <div class="tbody" style="margin-top:5px !important">
+                                    <ul class="bd_hashtag ul_check_tac" id="themeUL"><li>		<input type="checkbox" id="maesearchTheme_S_THEME01" value="반려동물" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME01">			반려동물		</label></li><li>		<input type="checkbox" id="maesearchTheme_S_THEME02" value="올수리" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME02">			올수리		</label></li><li>		<input type="checkbox" id="maesearchTheme_S_THEME03" value="역세권" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME03">			역세권		</label></li><li>		<input type="checkbox" id="maesearchTheme_S_THEME04" value="급매" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME04">			급매		</label></li><li>		<input type="checkbox" id="maesearchTheme_S_THEME05" value="신축" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME05">			신축		</label></li><li>		<input type="checkbox" id="maesearchTheme_S_THEME06" value="풀옵션" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME06">			풀옵션		</label></li><li>		<input type="checkbox" id="maesearchTheme_S_THEME07" value="로얄층" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME07">			로얄층		</label></li><li>		<input type="checkbox" id="maesearchTheme_S_THEME08" value="신혼" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME08">			신혼		</label></li><li>		<input type="checkbox" id="maesearchTheme_S_THEME09" value="시세보다 저렴" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME09">			시세보다 저렴		</label></li><li>		<input type="checkbox" id="maesearchTheme_S_THEME10" value="관리비 저렴" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME10">			관리비 저렴		</label></li><li>		<input type="checkbox" id="maesearchTheme_S_THEME11" value="베란다 확장" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME11">			베란다 확장		</label></li><li>		<input type="checkbox" id="maesearchTheme_S_THEME12" value="주변환경 우수" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME12">			주변환경 우수		</label></li><li>		<input type="checkbox" id="maesearchTheme_S_THEME13" value="교육환경 우수" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME13">			교육환경 우수		</label></li><li>		<input type="checkbox" id="maesearchTheme_S_THEME14" value="주차시설 좋음" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME14">			주차시설 좋음		</label></li><li>		<input type="checkbox" id="maesearchTheme_S_THEME15" value="단지 내 학교" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME15">			단지 내 학교		</label></li><li>		<input type="checkbox" id="maesearchTheme_S_THEME16" value="무융자" name="searchTheme">		<label class="ht" for="maesearchTheme_S_THEME16">			무융자		</label></li></ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="f_btnarea">
+                            <a href="#" class="btns btn_line_gray01 dae_filter_init"><span class="ico_init"></span><span class="txt">초기화</span></a>
+                        </div>
+                        <a href="#" class="ui_img_btn_close01 closebtn"></a>
+                    </div>
+                    <div class="dimm"></div>
+                </div>
+                <!--//옵션-->
+            </ul>
+            
+        </div>
+        
+        <!-- //검색필터 -->
+        
+        </div>
+            <div class="afilterRight">
+                <button class="btn btn-primary">초기화</button>
+            </div>
+        </div>
+        <!--우측 지도도구-->
+        <div class="map_util">
+          <div
+            class="btn-group-vertical"
+            role="group"
+            aria-label="Vertical button group"
+          >
+            <div class="btn-group dropstart" role="group">
+              <button
+                type="button"
+                class="btn btn-primary dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                학군
+              </button>
+              <ul class="dropdown">
+                <div class="dropdown-menu">
+                  <div class="edu">
+                    <button class="map-utilSBtn">
+                      <img
+                        style="width: 50px; height: 30px"
+                        src="https://e7.pngegg.com/pngimages/836/224/png-clipart-pictogram-and-icon-collection-from-public-signage-to-web-icons-roseola-child-child-child-baby.png"
+                      />
+                    </button>
+                    <span class="edukind">어린이집</span>
+                  </div>
+                  <div class="edu">
+                    <button class="map-utilSBtn">
+                      <img
+                        style="width: 50px; height: 30px"
+                        src="https://e7.pngegg.com/pngimages/989/150/png-clipart-pictogram-microsoft-dynamics-nav-computer-icons-child-alcorcon-others-child-text.png"
+                      />
+                    </button>
+                    <span class="edukind">유치원</span>
+                  </div>
+                  <div class="edu">
+                    <button class="map-utilSBtn">
+                      <img
+                        style="width: 50px; height: 30px"
+                        src="https://w7.pngwing.com/pngs/261/891/png-transparent-pictogram-others-english-text-photography.png"
+                      />
+                    </button>
+                    <span class="edukind">초등학교</span>
+                  </div>
+                  <div class="edu">
+                    <button class="map-utilSBtn">
+                      <img
+                        style="width: 35px; height: 30px"
+                        src="https://thumb.silhouette-ac.com/t/a3/a33e87822359f0a3e65fa924844c06b5_t.jpeg"
+                      />
+                    </button>
+                    <span class="edukind">중학교</span>
+                  </div>
+                  <div class="edu">
+                    <button class="map-utilSBtn">
+                      <img
+                        style="width: 40px; height: 30px"
+                        src="https://thumb.silhouette-ac.com/t/f2/f2c0df7db0d36e322d8ec497a94a6a92_t.jpeg"
+                      />
+                    </button>
+                    <span class="edukind">고등학교</span>
+                  </div>
+                  <div class="edu">
+                    <button class="map-utilSBtn">
+                      <img
+                        style="width: 20px; height: 30px"
+                        src="https://cdn.pixabay.com/photo/2013/07/13/13/21/book-160871_1280.png"
+                      />
+                    </button>
+                    <span class="edukind">대학교</span>
+                  </div>
+                </div>
+              </ul>
+            </div>
+            <div class="btn-group dropstart" role="group">
+              <button
+                type="button"
+                class="btn btn-primary dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                상권
+              </button>
+            </div>
+          </div>
+
+          <button
+            style="width: 61px; height: 25px; text-align: center"
+            type="button"
+            id="hsBtn"
+            class="btn btn-primary position-relative"
+          >
+            집 내놓기
+            <span
+              class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger"
+            >
+              10초만에 쉽고 빠르게!
+              <span class="visually-hidden">unread messages</span>
+            </span>
+          </button>
+        </div>
+      </div>
+      <script
+        type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=179914fda820a3439d6be6c03abcd66f
+&libraries=clusterer"
+      ></script>
+      <script>
+        var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+          mapOption = {
+            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+            level: 3, // 지도의 확대 레벨
+          };
+
+        // 지도를 생성합니다
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+
+        // 마커를 표시할 위치와 title 객체 배열입니다
+        var positions = [
+          {
+            title: "카카오",
+            latlng: new kakao.maps.LatLng(33.450705, 126.570677),
+          },
+          {
+            title: "생태연못",
+            latlng: new kakao.maps.LatLng(33.450936, 126.569477),
+          },
+          {
+            title: "텃밭",
+            latlng: new kakao.maps.LatLng(33.450879, 126.56994),
+          },
+          {
+            title: "근린공원",
+            latlng: new kakao.maps.LatLng(33.451393, 126.570738),
+          },
+        ];
+
+        var markers = positions.map(function (position) {
+          // 마커를 배열 단위로 묶음
+          return new kakao.maps.Marker({
+            position: new kakao.maps.LatLng(position.lat, position.lng),
+          });
+        });
+
+        // 커스텀 오버레이에 표시할 내용입니다
+        // HTML 문자열 또는 Dom Element 입니다
+        var content = '<div class="overlay_info">';
+        content +=
+          '    <a href="https://place.map.kakao.com/987729279" target="_blank"><p>단독/다가구</p><b>5,000만</b></a>';
+        content += '    <div class="desc">';
+        content += '    <span class="address">2021년</span>';
+        content += "    </div>";
+        content += "</div>";
+
+        // 커스텀 오버레이를 표시할 위치와 content 객체 배열입니다
+        var positions = [
+          {
+            content:
+              '<div class="overlay_info"><a href="https://place.map.kakao.com/987729279" target="_blank"><p>단독/다가구</p><b>5,000만</b></a><div class="desc"><span class="address">2021년</span></div></div>',
+            latlng: new kakao.maps.LatLng(33.450705, 126.570677),
+          },
+          {
+            title: "생태연못",
+            latlng: new kakao.maps.LatLng(33.450936, 126.569477),
+          },
+          {
+            title: "텃밭",
+            latlng: new kakao.maps.LatLng(33.450879, 126.56994),
+          },
+          {
+            title: "근린공원",
+            latlng: new kakao.maps.LatLng(33.451393, 126.570738),
+          },
+        ];
+
+        // 커스텀 오버레이가 표시될 위치입니다
+        var position = new kakao.maps.LatLng(33.450936, 126.569477);
+
+        // 커스텀 오버레이를 생성합니다
+        var mapCustomOverlay = new kakao.maps.CustomOverlay({
+          position: position,
+          content: content,
+          xAnchor: 0.5, // 커스텀 오버레이의 x축 위치입니다. 1에 가까울수록 왼쪽에 위치합니다. 기본값은 0.5 입니다
+          yAnchor: 1.1, // 커스텀 오버레이의 y축 위치입니다. 1에 가까울수록 위쪽에 위치합니다. 기본값은 0.5 입니다
+        });
+
+        // 커스텀 오버레이를 지도에 표시합니다
+        mapCustomOverlay.setMap(map);
+
+        var clusterer = new kakao.maps.MarkerClusterer({
+          map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체
+          averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정
+          minLevel: 5, // 클러스터 할 최소 지도 레벨
+          markers: markers, // 클러스터에 마커 추가
+        });
+
+        // 마커 이미지의 이미지 주소입니다
+        var imageSrc =
+          "https://w7.pngwing.com/pngs/331/347/png-transparent-bus-stop-train-trolleybus-transport-bus-service-logo-school-bus.png";
+
+        for (var i = 0; i < positions.length; i++) {
+          // 마커 이미지의 이미지 크기 입니다
+          var imageSize = new kakao.maps.Size(24, 24);
+
+          // 마커 이미지를 생성합니다
+          var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+          // 마커를 생성합니다
+          var marker = new kakao.maps.Marker({
+            map: map, // 마커를 표시할 지도
+            position: positions[i].latlng, // 마커를 표시할 위치
+            title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+            image: markerImage, // 마커 이미지
+          });
+
+          clusterer.addMarker(marker); // 마커를 클러스터러에 추가
+        }
+      </script>
+  </body>
+</html>

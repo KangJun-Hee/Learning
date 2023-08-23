@@ -1,177 +1,182 @@
-<!-- <div>
-            <button
-                    class="btn btn-primary"
-                    type="button"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasExample"
-                    aria-controls="offcanvasExample"
-            >
-                세부창
-            </button>
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layouts/no_footer_layout}">
 
-            <div
-                    class="offcanvas offcanvas-start"
-                    tabindex="-1"
-                    id="offcanvasExample"
-                    aria-labelledby="offcanvasExampleLabel"
-            >
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-                    <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="offcanvas"
-                            aria-label="Close"
-                    ></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div>
-                        Some text as placeholder. In real life you can have the elements you
-                        have chosen. Like, text, images, lists, etc.
-                    </div>
-                </div>
-            </div> -->
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <!--여기에 적용하실 css 나 js 작성하시면 됩니다. 아래는 예시들 입니다. -->
 
-<!-- <div>
-        <ul class="list-group">
-            <li class="list-group-item">
-                <div class="input-group">
-                    <input
-                            type="text"
-                            class="form-control"
-                            placeholder="아파트, 지역 또는 학교명 검색"
-                    />
-                    <button
-                            type="submit"
-                            class="btn-close"
-                            aria-label="Close"
-                    ></button>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <p class="d-inline-flex gap-1">
-                    <button
-                            class="btn btn-primary"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#multiCollapseExample1"
-                            aria-expanded="false"
-                            aria-controls="multiCollapseExample1"
-                    >
-                        매매
-                    </button>
-                    <button
-                            class="btn btn-primary"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#multiCollapseExample2"
-                            aria-expanded="false"
-                            aria-controls="multiCollapseExample2"
-                    >
-                        거래연도
-                    </button>
-                    <button
-                            class="btn btn-primary"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#multiCollapseExample2"
-                            aria-expanded="false"
-                            aria-controls="multiCollapseExample2"
-                    >
-                        거래연도
-                    </button
-                    >
-                    <button
-                            class="btn btn-primary"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#multiCollapseExample2"
-                            aria-expanded="false"
-                            aria-controls="multiCollapseExample2"
-                    >
-                        거래연도
-                    </button>
-                    <button
-                            class="btn btn-primary"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#multiCollapseExample2"
-                            aria-expanded="false"
-                            aria-controls="multiCollapseExample2"
-                    >
-                        거래연도
-                    </button>
-                </p>
-                <div class="row">
-                    <div
-                            class="collapse multi-collapse"
-                            id="multiCollapseExample1"
-                            data-bs-parent="#accordionExample"
-                    >
-                        <div class="card card-body">
-                            거래유형
-                            <button class="btn btn-primary">매매</button>
-                            <button class="btn btn-primary">전월세</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div
-                                class="collapse multi-collapse"
-                                id="multiCollapseExample2"
-                                data-bs-parent="#accordionExample"
-                        >
-                            <div class="card card-body">
-                                <div>
-                                    <button id="yBtm" class="btn btn-primary">2023년</button>
-                                    <button id="yBtm" class="btn btn-primary">2022년</button>
-                                    <button id="yBtm" class="btn btn-primary">2021년</button>
-                                    <button id="yBtm" class="btn btn-primary">2020년</button>
-                                    <button id="yBtm" class="btn btn-primary">2019년</button>
-                                    <button id="yBtm" class="btn btn-primary">2018년</button>
-                                    <button id="yBtm" class="btn btn-primary">2017년</button>
-                                    <button id="yBtm" class="btn btn-primary">2016년</button>
-                                    <button id="yBtm" class="btn btn-primary">2015년</button>
-                                    <button id="yBtm" class="btn btn-primary">2014년</button>
-                                    <button id="yBtm" class="btn btn-primary">2013년</button>
-                                    <button id="yBtm" class="btn btn-primary">2012년</button>
-                                    <button id="yBtm" class="btn btn-primary">2011년</button>
-                                    <button id="yBtm" class="btn btn-primary">2010년</button>
-                                    <button id="yBtm" class="btn btn-primary">매매</button>
-                                    <button id="yBtm" class="btn btn-primary">전월세</button>
-                                    <button id="yBtm" class="btn btn-primary">매매</button>
-                                    <button id="yBtm" class="btn btn-primary">전월세</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div> -->
+  <!-- <link rel="stylesheet" th:href="@{/css/파일이름.css}"> -->
+  <link rel="stylesheet" th:href="@{/css/map.css}">
 
-<script src=""></script>
-<!-- <li class="nav-item">
-                                    <div class="container">
-                                        
-                                        <button type="button" class="btn btn-primary"
-                                        data-bs-toggle="popover" data-bs-placement="right"
-                                        data-bs-custom-class="custom-popover"
-                                        data-bs-title="이야기"
-                                        data-bs-content="<button>dd</button>">
-                                            커뮤니티
-                                        </button>   
-                                                               
-                                    </div>
-                                </li> -->
+  <!-- <script type="text/javascript" th:src="@{/js/search/search.js}"></script>-->
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> -->
+</head>
+<body layout:fragment="content">
+<div class="y-top-container">
+  여기는 필터 같은 거 나중에 추가할 거예요
+</div>
+<div class="y-main-container">
 
-<!-- <script>
-    var popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
-    var popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
-</script>
-<script>
-    $(document).ready(function(){
-    $('[data-toggle="popover"]').popover();   
-    });
-</script>       -->
+  <div class="y-side-container">
+
+    <!-- 지도 내 조건에 맞는 매물 시작 -->
+    <div class="y-fixed-container">
+      <div class="y-nav-container">
+
+        <div class="y-left">
+          <div class="y-nav-text">
+            지도 내 조건에 맞는 매물 {121}
+          </div>
+        </div>
+
+        <div class="y-right">
+          <div class="y-nav-text">
+            경기도 내 중개사무소 {25,317}
+          </div>
+        </div>
+
+      </div>
+      <!-- 지도 내 조건에 맞는 매물 끝 -->
+
+      <!-- 최신순, 가격순, 면적순, 사진 많은 순 시작 -->
+      <div class="y-filter-container">
+        <div class="y-filter-list">
+          <div class="text">
+            <a href="#">최신순</a>
+          </div>
+          <div class="text">
+            <a href="#">가격순</a>
+          </div>
+          <div class="text">
+            <a href="#">면적순</a>
+          </div>
+          <div class="text">
+            <a href="#">사진많은순</a>
+          </div>
+
+        </div>
+        <div class="y-likes">
+          <div class="y-likes-img"></div>
+          <div class="y-likes-counts">
+            0
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 최신순, 가격순, 면적순, 사진 많은 순 끝 -->
+
+    <!-- 매물 리스트 시작 -->
+    <div class="y-mamul-list-container">
+
+      <a href="#" class="y-list-container">
+        <div class="y-img-container">
+          <div class="y-img">
+            <img src="/img/thumbs.jpg" alt="d">
+          </div>
+
+          <div class="y-camera">
+            <div class="y-camera-img"></div>
+            <div class="y-camera-text">1</div>
+            <div class="y-camera-bgc"></div>
+          </div>
+        </div>
+        <!-- 사진 오른쪽 텍스트들 시작 -->
+        <div class="y-text-container">
+          <!-- 매매 100억 or 월세 1,000/75만 -->
+          <div class="y-price">
+            매매 8억 5,000만
+          </div>
+
+          <div class="y-category">
+            <!-- 아파트 / 빌라 / 단독주택 / 사무실 / 건물 등등 들어감. -->
+            <div class="y-c-text">
+              <div class="y-c-color">
+                다세대(빌라/연립)
+              </div>
+              <span class="y-loc"></span>
+              번동 다세대(빌라/연립)
+            </div>
+          </div>
+          <div class="y-ft">
+            44.47/26.46㎡
+            <span class="y-loc"></span>
+            지하-/지상6층
+          </div>
+          <div class="y-station-area-check">
+            강남역역세권 빌라 투룸매매
+          </div>
+
+          <div class="y-hash-tags-container">
+                            <span class="y-hash-tag">
+                                #반려동물
+                            </span>
+          </div>
+
+        </div>
+        <!-- 사진 오른쪽 텍스트들 끝 -->
+      </a>
+
+      <a href="#" class="y-list-container">
+        <div class="y-img-container">
+          <div class="y-img">
+            <img src="/img/thumbs.jpg" alt="d">
+          </div>
+          <div class="y-camera">
+            <div class="y-camera-img"></div>
+            <div class="y-camera-text">1</div>
+            <div class="y-camera-bgc"></div>
+          </div>
+        </div>
+        <!-- 사진 오른쪽 텍스트들 시작 -->
+        <div class="y-text-container">
+          <!-- 매매 100억 or 월세 1,000/75만 -->
+          <div class="y-price">
+            매매 8억 5,000만
+          </div>
+
+          <div class="y-category">
+            <!-- 아파트 / 빌라 / 단독주택 / 사무실 / 건물 등등 들어감. -->
+            <div class="y-c-text">
+              <div class="y-c-color">
+                다세대(빌라/연립)
+              </div>
+              <span class="y-loc"></span>
+              번동 다세대(빌라/연립)
+            </div>
+          </div>
+          <div class="y-ft">
+            44.47/26.46㎡
+            <span class="y-loc"></span>
+            지하-/지상6층
+          </div>
+          <div class="y-station-area-check">
+            강남역역세권 빌라 투룸매매
+          </div>
+
+          <div class="y-hash-tags-container">
+                            <span class="y-hash-tag">
+                                #반려동물
+                            </span>
+          </div>
+
+        </div>
+        <!-- 사진 오른쪽 텍스트들 끝 -->
+      </a>
+
+    </div>
+    <!-- 매물 리스트 끝 -->
+
+  </div>
+
+  <div class="y-map-container">
+    여기는 지도 뿌린다.
+  </div>
+
+</div>
+
+</body>
+</html>
