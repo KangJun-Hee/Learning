@@ -13,8 +13,7 @@
             crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/mapMain.css">
-    <link rel="stylesheet" th:href="@{/css/mainpage_header_footer.css}">
-    <script type="text/javascript" th:src="@{/js/cluster/map.js}" defer ></script>
+    <script type="text/javascript" th:src="@{/js/cluster/map.js}" defer></script>
 </head>
 <body layout:fragment="content">
 
@@ -25,8 +24,8 @@
 ></script>
 
 <div class="asideBarAll">
-    <div class="asideMenu">
-        <div>
+    <div class="asideMenu" style="height:100%;">
+        <div style="height:100%;">
             <ul class="list-group">
                 <li class="list-group-item">
                     <div class="input-group">
@@ -43,15 +42,31 @@
                                 </div>
                             </div>
                             <div class="right" style="align-items: center;">
-                                <button class="shareBtn"><img style="width:19px;"
+                                <button class="shareBtn" type="button" data-bs-toggle="modal" data-bs-target="#shareBtn">
+                                    <img style="width:19px;"
                                                               src="https://cdn.icon-icons.com/icons2/2368/PNG/512/share_icon_143700.png">
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="shareBtn" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">공유하기</h1>
+                                            </div>
+                                            <div class="modal-body">
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                                     <button type="button" class="btn-close" aria-label="Close"></button>
                             </div>
                         </div>
                     </div>
                 </li>
 
-                <li class="list-group-item">
+                <li class="list-group-item 2" style="height:100%;">
                     <nav id="navbar-example2" class="navbar bg-body-tertiary mb-3">
                         <ul id="nav-pills" class="nav nav-pills">
                             <li class="nav-item">
@@ -137,7 +152,7 @@
                                      aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-scrollable modal-xl">
                                         <div class="modal-content">
-                                            <div class="modal-header"style="height:46px;">
+                                            <div class="modal-header" style="height:46px;">
                                                 <a role="button" href="#" data-ga-event="aptSubReviewHeader,write"
                                                    class="css-x0ulhf">
                                                     <button type="button" class="towriteBtn"
@@ -365,7 +380,7 @@
                                                                                                             lIXK9ef
                                                                                                         </span>
                                                                                                     </div>
-                                                                                                        <span class="auploadDate">
+                                                                                                    <span class="auploadDate">
                                                                                                             18일 전
                                                                                                         </span>
                                                                                                 </div>
@@ -373,7 +388,7 @@
                                                                                                     <div class="arepContent">
                                                                                                         중순에서 말이랍니다.
                                                                                                     </div>
-                                                                                                </div> 
+                                                                                                </div>
                                                                                             </div>
                                                                                             <div class="css-1tn7e78">
                                                                                                 <a href="#"
@@ -389,10 +404,11 @@
                                                                                 <div class="css-xh77hs">
                                                                                     <div class="areplyOnPostAlign">
                                                                                         <input class="areplyOnPost"
-                                                                                                placeholder="kjh로 댓글 남기기"
-                                                                                                class="css-o9t7l3">
-                                                                                        
-                                                                                        <button type="button" class="btn btn-primary aSummitReply">
+                                                                                               placeholder="kjh로 댓글 남기기"
+                                                                                        >
+
+                                                                                        <button type="button"
+                                                                                                class="btn btn-primary aSummitReply">
                                                                                             등록
                                                                                         </button>
                                                                                     </div>
@@ -434,7 +450,7 @@
                                                                                                             lIXK9ef
                                                                                                         </span>
                                                                                                     </div>
-                                                                                                        <span class="auploadDate">
+                                                                                                    <span class="auploadDate">
                                                                                                             18일 전
                                                                                                         </span>
                                                                                                 </div>
@@ -442,7 +458,7 @@
                                                                                                     <div class="arepContent">
                                                                                                         중순에서 말이랍니다.
                                                                                                     </div>
-                                                                                                </div> 
+                                                                                                </div>
                                                                                             </div>
                                                                                             <div class="css-1tn7e78">
                                                                                                 <a href="#"
@@ -458,10 +474,11 @@
                                                                                 <div class="css-xh77hs">
                                                                                     <div class="areplyOnPostAlign">
                                                                                         <input class="areplyOnPost"
-                                                                                                placeholder="kjh로 댓글 남기기"
-                                                                                                class="css-o9t7l3">
-                                                                                        
-                                                                                        <button type="button" class="btn btn-primary aSummitReply">
+                                                                                               placeholder="kjh로 댓글 남기기"
+                                                                                        >
+
+                                                                                        <button type="button"
+                                                                                                class="btn btn-primary aSummitReply">
                                                                                             등록
                                                                                         </button>
                                                                                     </div>
@@ -473,17 +490,17 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                           
+
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="modal-footer"style="margin-top: 13px;">
+                                            <div class="modal-footer" style="margin-top: 13px;">
                                             </div>
                             </li>
                     </nav>
 
-                    <div>
+                    <div style="height:78%;">
                         <div
                                 data-bs-spy="scroll"
                                 data-bs-target="#navbar-example2"
@@ -500,7 +517,8 @@
                                         <div class="map-area" id="defaultMap"
                                              style="overflow: hidden; background: url(&quot;https://t1.daumcdn.net/mapjsapi/images/2x/bg_tile.png&quot;); z-index: 4;">
                                             <div class="mut-area left">
-                                                <a href="#" class="mut mut-maparound" style="pointer-events: auto;">주변</a>
+                                                <a href="#" class="mut mut-maparound"
+                                                   style="pointer-events: auto;">주변</a>
                                             </div>
                                             <div class="mut-area right">
                                                 <a href="#" class="mut mut-mapbigview">크게</a>
@@ -589,7 +607,8 @@
                                             </li>
                                             <li class="icon-ytp01 icon-yeo-666-12_12 summary-info summary-info-bldg">
                                                 <div class="yeo txt">
-                                            <span class="" data-dan-toggle-con="spif-yeo">건물 <em class="au on">108.29평</em><em
+                                            <span class="" data-dan-toggle-con="spif-yeo">건물 <em
+                                                    class="au on">108.29평</em><em
                                                     class="au">358㎡</em>(2동)</span>
                                                     <span class="">위험물저장처리</span>
                                                     <span class="">1F</span>
@@ -610,21 +629,21 @@
                                                 <span class="tx">저장</span>
                                             </a>
                                             <a href="#" id="mes-utils" class="alarm btnRpAlarm">
-                                                <button class="etcBtn"><img style="width: 25px;"
-                                                                            src="https://e7.pngegg.com/pngimages/522/320/png-clipart-bookmark-computer-icons-bookmark-miscellaneous-ribbon-thumbnail.png">
+                                                <button class="etcBtn"><img style="opacity: 83%;width: 26px;"
+                                                                            src="https://w7.pngwing.com/pngs/555/826/png-transparent-bell-notification-notification-icon-essential-icon.png">
                                                 </button>
                                                 <span class="tx">알림</span>
                                             </a>
                                             <a href="#" id="mes-utils" class="way btnRpWay">
-                                                <button class="etcBtn"><img style="width: 25px;"
-                                                                            src="https://e7.pngegg.com/pngimages/522/320/png-clipart-bookmark-computer-icons-bookmark-miscellaneous-ribbon-thumbnail.png">
+                                                <button class="etcBtn"><img style="opacity: 38%;width: 19px;"
+                                                                            src="https://e7.pngegg.com/pngimages/580/370/png-clipart-location-computer-icons-icon-geographical-position-location-geolocation-thumbnail.png">
                                                 </button>
                                                 <span class="tx">길찾기</span>
                                             </a>
                                             <a href="#" id="mes-utils"
                                                class="share aed-share-minibox-switch btnRpShare">
-                                                <button class="etcBtn"><img style="width: 25px;"
-                                                                            src="https://e7.pngegg.com/pngimages/522/320/png-clipart-bookmark-computer-icons-bookmark-miscellaneous-ribbon-thumbnail.png">
+                                                <button class="etcBtn"><img style="opacity: 38%;width: 23px;"
+                                                                            src="https://cdn.icon-icons.com/icons2/2368/PNG/512/share_icon_143700.png">
                                                 </button>
                                                 <span class="tx">공유</span>
                                             </a>
@@ -1028,7 +1047,6 @@
         </span>
         </button>
     </div>
-    
 
 
 </div>
