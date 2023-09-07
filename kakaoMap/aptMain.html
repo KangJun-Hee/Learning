@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+
+      layout:decorate="~{fragments/layouts/no_footer_layout}">
+
+
+<body layout:fragment="content">
+
+<!-- css 파일 연결 -->
+<link rel="stylesheet" href="/css/calculator.css">
+<link rel="stylesheet" href="/css/marker.css">
+
+<div id="map" style="width:100%;height:90vh;"></div>
+
+<!-- 지도 api 불러오기 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=40e606b0d3b62e8dc1753ec322a8c92d&libraries=services,clusterer"></script>
+
+<!-- controller에서 넘겨준 model(aptList)를 thymeleaf로 가져온다. -->
+<script th:inline="javascript"> /*<![CDATA[*/ var aptList = /*[[ ${aptList} ]]*/ []; /*]]>*/ </script>
+
+<script th:src="@{/js/apt/aptDbCoordinatesSave.js}" type="text/javascript"></script>
+<script th:src="@{/js/apt/marker.js}" type="text/javascript"></script>
+
+<!-- 계산기 js -->
+<script src="/js/apt/calculator.js" type="text/javascript"></script>
+
+
+<!-- 모달 버튼 -->
+<button class="e-modalButton" id="e-modalButton">
+    <img class="e-modalImg" src="/img/calculation.png">
+</button>
+<!-- 모달 컨텐츠 -->
+<div class="e-modalContent">
+    <!-- 타이틀과 닫기 버튼 -->
+    <div class="e-titleContainer">
+        <span class="e-modalTitle">대출 계산기</span>
+        <button class="e-button" id="e-close">x</button>
+    </div>
+
+    <!-- 계산기 내용 -->
+    <div class="e-tableContainer">
+        <table class="e-modalInfo">
+            <tr>
+                <th>대출 금액</th>
+                <td class="e-inputGroup">
+                    <input class="e-input" id="e-inputAmount" />
+                    <span>원</span>
+                </td>
+            </tr>
+            <tr>
+                <th>이자율</th>
+                <td class="e-inputGroup">
+                    <input class="e-input" id="e-inputRate" />
+                    <span>%</span>
+                </td>
+            </tr>
+            <tr>
+                <th>상환기간</th>
+                <td class="e-inputGroup">
+                    <input class="e-input" id="e-inputPeriod" />
+                    <span>년</span>
+                </td>
+            </tr>
+            <tr>
+                <th>상환방법</th>
+                <td>
+                    <div class="e-inputGroup" id="e-buttonRepayment">
+                        <button type="button" class="e-button" id="e-button1">원리금균등</button>
+                        <button type="button" class="e-button" id="e-button2">원금균등</button>
+                        <button type="button" class="e-button" id="e-button3">만기일시</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="e-buttonResult">
+                        <button type="reset" class="e-button" id="e-buttonReset">초기화</button>
+                        <button type="submit" class="e-button" id="e-buttonSubmit">계산하기</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 계산기 결과 -->
+    <div class="e-resultContainer">
+        <table class="e-resultTable">
+            <tr class="e-result1">
+                <th>대출원금</th>
+                <td>원</td>
+            </tr>
+            <tr class="e-result2">
+                <th>총 대출이자</th>
+                <td>원</td>
+            </tr>
+            <tr class="e-result3">
+                <th>총 상환금액</th>
+                <td>원</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <hr />
+                </td>
+            </tr>
+            <tr class="e-result4">
+                <th>1회차 월 상환금액</th>
+                <td>원</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>

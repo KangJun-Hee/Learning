@@ -1,0 +1,206 @@
+/** 모달 오픈 버튼 */
+.e-modalButton {
+    position: fixed;
+    bottom: 120px;
+    right: 35px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transform: scale(0.9);
+    z-index: 9999;
+}
+
+.e-modalImg {
+    width: 50px;
+}
+
+/** 모달 레이아웃 */
+.e-modalContent {
+    position: fixed;
+    width: 360px;
+    height: 478px;
+    border: 1px solid lightgray;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* 모달창 위치 조절 */
+    bottom: 180px;
+    right: 30px;
+    border-radius: 8px;
+    z-index: 9999;
+    background-color: white;
+}
+
+/** 타이틀 */
+.e-titleContainer {
+    position: absolute;
+    width: 100%;
+    top: 15px;
+    text-align: left;
+    margin-left: 5px;
+}
+
+.e-modalTitle {
+    position: relative;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/** 계산기 레이아웃 */
+.e-tableContainer {
+    position: absolute;
+    width: 100%;
+    top: 15%;
+    margin-left: 5px;
+}
+
+/** 계산기 테이블 */
+.e-modalInfo {
+    position: absolute;
+    width: 90%;
+    table-layout: fixed;
+}
+
+.e-modalInfo th {
+    text-align: left;
+    width: 18%;
+    font-size: 15px;
+}
+
+tr.firstTable{
+    height:43px;
+}
+
+/** 결과창 */
+.e-resultContainer {
+    position: absolute;
+    width: 100%;
+    top: 68%;
+    margin-left: 5px;
+}
+
+.e-resultTable {
+    position: absolute;
+    width: 90%;
+    table-layout: fixed;
+    text-align: left;
+    margin-top: -15px;
+}
+
+.e-resultTable .e-resultTh {
+    width: 40%;
+    font-size: 15px;
+}
+
+.e-resultTable td {
+    text-align: right;
+    width: 60%;
+}
+
+.e-result3 td {
+    color: red;
+    font-weight: bold;
+
+}
+
+
+/** input */
+.e-inputGroup {
+    position: relative;
+    height: 30px;
+    text-align: right;
+}
+
+
+.e-input {
+    width: 240px;
+    text-align: right;
+    margin: -15px;
+    border: none;
+    outline: none;
+    padding-right: 15px;
+}
+
+.e-inputGroup span {
+    color: gray;
+    margin-right: 5px;
+}
+
+
+
+/* 버튼  */
+.e-button {
+    background-color: white;
+    border-color: white;
+    border: 1px solid lightgray;
+    padding: 5px 15px;
+    width: 100%;
+    height: 35px;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+#e-close {
+    position: absolute;
+    left: 82%;
+    top: 1px;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    border-radius: 8px;
+}
+
+.e-buttonResult {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+#e-buttonRepayment {
+    border: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: -1px;
+}
+
+#e-buttonRepayment .e-button {
+    height: 20px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+#e-button1 {
+    margin-left: -1px;
+}
+
+#e-button2 {
+    margin-left: 1px;
+}
+
+#e-button3 {
+    margin-left: 1px;
+    margin-right: -2px;
+}
+
+.e-buttonResult .e-button {
+    border-radius: 8px;
+    height: 20px;
+    font-size: 14px;
+}
+
+/* 버튼 클릭 시 그림자 효과 */
+.e-button:active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#e-buttonSubmit {
+    background-color: #26abed;
+    border-color: #26abed;
+    color: white;
+    margin-left: 1px;
+}
